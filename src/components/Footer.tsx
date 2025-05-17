@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <h3 className="text-xl font-serif font-medium mb-4">
-              <span className="text-ksc-gold">King</span> Stock Capital
+              <span className="text-ksc-gold">King</span> Stock Capital Management
             </h3>
             <p className="text-sm text-gray-300 mb-6 max-w-md">
               Transforming wealth through strategic investment excellence since 2005.

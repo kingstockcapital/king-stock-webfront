@@ -42,11 +42,11 @@ const Navbar = () => {
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png" 
-            alt="King Stock Capital Logo" 
+            alt="King Stock Capital Management Logo" 
             className="h-10 mr-3" 
           />
           <h1 className="text-xl md:text-2xl font-serif font-semibold text-ksc-navy">
-            <span className="text-ksc-gold">King</span> Stock Capital
+            <span className="text-ksc-gold">King</span> Stock Capital Management
           </h1>
         </Link>
 
