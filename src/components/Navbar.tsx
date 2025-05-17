@@ -36,6 +36,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-4 md:px-6">
         <Link to="/" className="flex items-center">
+          <img 
+            src="/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png" 
+            alt="King Stock Capital Logo" 
+            className="h-10 mr-3" 
+          />
           <h1 className="text-xl md:text-2xl font-serif font-semibold text-ksc-navy">
             <span className="text-ksc-gold">King</span> Stock Capital
           </h1>
