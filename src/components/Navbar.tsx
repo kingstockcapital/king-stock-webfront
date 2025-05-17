@@ -37,7 +37,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-4 md:px-6">
         <Link to="/" className="flex items-center">
           <img 
-            src="/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png" 
+            src="/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png" 
             alt="King Stock Capital Logo" 
             className="h-10 mr-3" 
           />
