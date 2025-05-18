@@ -69,6 +69,37 @@ const services = [
   },
 ];
 
+const investmentProcess = [
+  {
+    number: 1,
+    title: "Assessment",
+    description: "We begin by understanding your financial goals, risk tolerance, time horizon, and overall financial situation to establish a solid foundation for your investment strategy.",
+    highlight: "Discovery Meeting",
+    highlightDescription: "A comprehensive analysis of your current financial situation, goals, and risk profile."
+  },
+  {
+    number: 2,
+    title: "Strategy Development",
+    description: "Based on our assessment, we develop a tailored investment strategy that aligns with your financial goals and risk tolerance, incorporating diversification across asset classes.",
+    highlight: "Customized Planning",
+    highlightDescription: "Development of a personalized investment plan with clear objectives and timelines."
+  },
+  {
+    number: 3,
+    title: "Implementation",
+    description: "We execute your investment strategy with precision and care, selecting appropriate investment vehicles and establishing the proper asset allocation.",
+    highlight: "Efficient Execution",
+    highlightDescription: "Careful selection of investments and strategic deployment of capital to maximize efficiency."
+  },
+  {
+    number: 4,
+    title: "Monitoring & Optimization",
+    description: "We continuously monitor your portfolio performance and make adjustments as needed to ensure alignment with your goals and adapt to changing market conditions.",
+    highlight: "Ongoing Management",
+    highlightDescription: "Regular reviews, performance reporting, and strategic adjustments to optimize results."
+  }
+];
+
 const Services = () => {
   return (
     <div className="min-h-screen">
@@ -145,7 +176,7 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* Process Section - Improved version */}
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
@@ -157,100 +188,28 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="relative max-w-4xl mx-auto">
-              {/* Connecting line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-px bg-ksc-gold/30 hidden md:block"></div>
-              
-              {/* Steps */}
-              <div className="space-y-12 md:space-y-24">
-                {/* Step 1 */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="md:text-right">
-                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">1. Assessment</h3>
-                    <p className="text-ksc-darkgray">
-                      We begin by understanding your financial goals, risk tolerance, time horizon, 
-                      and overall financial situation to establish a solid foundation for your investment strategy.
-                    </p>
+            <div className="max-w-4xl mx-auto space-y-16">
+              {investmentProcess.map((step, index) => (
+                <div key={index} className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-16 h-16 rounded-full bg-ksc-gold flex items-center justify-center flex-shrink-0 text-ksc-navy font-bold text-xl">
+                    {step.number}
                   </div>
-                  <div className="md:relative">
-                    <div className="hidden md:block absolute -left-12 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-ksc-gold rounded-full flex items-center justify-center text-white font-bold">
-                      1
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-sm md:ml-4">
-                      <h4 className="font-medium text-ksc-navy mb-2">Discovery Meeting</h4>
+                  <div className="flex-1">
+                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">
+                      {step.number}. {step.title}
+                    </h3>
+                    <p className="text-ksc-darkgray mb-6">
+                      {step.description}
+                    </p>
+                    <div className="bg-white p-6 rounded-lg shadow-sm">
+                      <h4 className="font-medium text-ksc-navy mb-2">{step.highlight}</h4>
                       <p className="text-sm text-ksc-darkgray">
-                        A comprehensive analysis of your current financial situation, goals, and risk profile.
+                        {step.highlightDescription}
                       </p>
                     </div>
                   </div>
                 </div>
-
-                {/* Step 2 */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="md:order-2">
-                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">2. Strategy Development</h3>
-                    <p className="text-ksc-darkgray">
-                      Based on our assessment, we develop a tailored investment strategy that aligns with your 
-                      financial goals and risk tolerance, incorporating diversification across asset classes.
-                    </p>
-                  </div>
-                  <div className="md:relative md:order-1">
-                    <div className="hidden md:block absolute -right-12 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-ksc-gold rounded-full flex items-center justify-center text-white font-bold">
-                      2
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-sm md:mr-4">
-                      <h4 className="font-medium text-ksc-navy mb-2">Customized Planning</h4>
-                      <p className="text-sm text-ksc-darkgray">
-                        Development of a personalized investment plan with clear objectives and timelines.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="md:text-right">
-                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">3. Implementation</h3>
-                    <p className="text-ksc-darkgray">
-                      We execute your investment strategy with precision and care, selecting appropriate 
-                      investment vehicles and establishing the proper asset allocation.
-                    </p>
-                  </div>
-                  <div className="md:relative">
-                    <div className="hidden md:block absolute -left-12 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-ksc-gold rounded-full flex items-center justify-center text-white font-bold">
-                      3
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-sm md:ml-4">
-                      <h4 className="font-medium text-ksc-navy mb-2">Efficient Execution</h4>
-                      <p className="text-sm text-ksc-darkgray">
-                        Careful selection of investments and strategic deployment of capital to maximize efficiency.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="md:order-2">
-                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">4. Monitoring & Optimization</h3>
-                    <p className="text-ksc-darkgray">
-                      We continuously monitor your portfolio performance and make adjustments as needed to ensure 
-                      alignment with your goals and adapt to changing market conditions.
-                    </p>
-                  </div>
-                  <div className="md:relative md:order-1">
-                    <div className="hidden md:block absolute -right-12 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-ksc-gold rounded-full flex items-center justify-center text-white font-bold">
-                      4
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-sm md:mr-4">
-                      <h4 className="font-medium text-ksc-navy mb-2">Ongoing Management</h4>
-                      <p className="text-sm text-ksc-darkgray">
-                        Regular reviews, performance reporting, and strategic adjustments to optimize results.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
