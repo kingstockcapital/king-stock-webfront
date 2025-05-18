@@ -6,7 +6,7 @@ import ServicesOverview from "@/components/ServicesOverview";
 import AboutSection from "@/components/AboutSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import CtaSection from "@/components/CtaSection";
-import { FileText } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -37,7 +37,7 @@ const Index = () => {
         <AboutSection />
         <ServicesOverview />
         
-        {/* Research & Insights Section */}
+        {/* Research & Insights Section - Redesigned */}
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-10">
@@ -52,23 +52,34 @@ const Index = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {featuredInsights.map((insight, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-start mb-4">
-                    <FileText className="h-5 w-5 text-ksc-gold mr-3 mt-1" />
-                    <h3 className="font-serif text-xl font-medium text-ksc-navy">
-                      {insight.title}
+                <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full">
+                  <div className="h-48 bg-ksc-gold flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png" 
+                      alt="King Stock Capital Logo" 
+                      className="h-24 w-auto" 
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                      <Calendar className="h-4 w-4" />
+                      <span>{insight.date}</span>
+                    </div>
+                    <h3 className="font-serif text-xl font-medium text-ksc-navy mb-4 hover:text-ksc-gold transition-colors">
+                      <Link to="/research">{insight.title}</Link>
                     </h3>
+                    <div className="mt-auto">
+                      <span className="text-ksc-gold text-sm">{insight.category}</span>
+                      <div className="mt-3">
+                        <Link 
+                          to="/research" 
+                          className="text-ksc-navy font-medium hover:text-ksc-gold transition-colors flex items-center"
+                        >
+                          Read More →
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex justify-between text-sm text-gray-500 mb-4">
-                    <span>{insight.date}</span>
-                    <span className="text-ksc-gold">{insight.category}</span>
-                  </div>
-                  <Link 
-                    to="/research" 
-                    className="text-ksc-navy font-medium hover:text-ksc-gold transition-colors"
-                  >
-                    Read More →
-                  </Link>
                 </div>
               ))}
             </div>
@@ -76,7 +87,7 @@ const Index = () => {
             <div className="text-center">
               <Button 
                 asChild
-                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white"
+                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8"
               >
                 <Link to="/research">View All Research</Link>
               </Button>
