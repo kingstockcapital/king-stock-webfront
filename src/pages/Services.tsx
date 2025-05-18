@@ -71,28 +71,24 @@ const services = [
 
 const investmentProcess = [
   {
-    number: 1,
     title: "Assessment",
     description: "We begin by understanding your financial goals, risk tolerance, time horizon, and overall financial situation to establish a solid foundation for your investment strategy.",
     highlight: "Discovery Meeting",
     highlightDescription: "A comprehensive analysis of your current financial situation, goals, and risk profile."
   },
   {
-    number: 2,
     title: "Strategy Development",
     description: "Based on our assessment, we develop a tailored investment strategy that aligns with your financial goals and risk tolerance, incorporating diversification across asset classes.",
     highlight: "Customized Planning",
     highlightDescription: "Development of a personalized investment plan with clear objectives and timelines."
   },
   {
-    number: 3,
     title: "Implementation",
     description: "We execute your investment strategy with precision and care, selecting appropriate investment vehicles and establishing the proper asset allocation.",
     highlight: "Efficient Execution",
     highlightDescription: "Careful selection of investments and strategic deployment of capital to maximize efficiency."
   },
   {
-    number: 4,
     title: "Monitoring & Optimization",
     description: "We continuously monitor your portfolio performance and make adjustments as needed to ensure alignment with your goals and adapt to changing market conditions.",
     highlight: "Ongoing Management",
@@ -176,7 +172,7 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Process Section - Improved version */}
+        {/* Process Section - Redesigned without numbered circles */}
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
@@ -188,25 +184,20 @@ const Services = () => {
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto space-y-16">
+            <div className="max-w-4xl mx-auto space-y-8">
               {investmentProcess.map((step, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="w-16 h-16 rounded-full bg-ksc-gold flex items-center justify-center flex-shrink-0 text-ksc-navy font-bold text-xl">
-                    {step.number}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-2xl text-ksc-navy mb-3">
-                      {step.number}. {step.title}
-                    </h3>
-                    <p className="text-ksc-darkgray mb-6">
-                      {step.description}
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="font-serif text-2xl text-ksc-navy mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-ksc-darkgray mb-6">
+                    {step.description}
+                  </p>
+                  <div className="bg-ksc-lightgray/50 p-4 rounded-md border border-ksc-navy/10">
+                    <h4 className="font-medium text-ksc-navy mb-2">{step.highlight}</h4>
+                    <p className="text-sm text-ksc-darkgray">
+                      {step.highlightDescription}
                     </p>
-                    <div className="bg-white p-6 rounded-lg shadow-sm">
-                      <h4 className="font-medium text-ksc-navy mb-2">{step.highlight}</h4>
-                      <p className="text-sm text-ksc-darkgray">
-                        {step.highlightDescription}
-                      </p>
-                    </div>
                   </div>
                 </div>
               ))}
