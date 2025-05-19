@@ -13,16 +13,19 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   const featuredInsights = [
     {
+      id: 1,
       title: "2025 Market Outlook: Navigating Economic Transitions",
       date: "May 10, 2025",
       category: "Market Analysis"
     },
     {
+      id: 2,
       title: "The Rise of Sustainable Investing: Impact and Returns",
       date: "April 28, 2025", 
       category: "Sustainable Finance"
     },
     {
+      id: 3,
       title: "Tech Sector Analysis: Innovations Driving Future Growth",
       date: "April 15, 2025",
       category: "Sector Analysis"
@@ -66,13 +69,13 @@ const Index = () => {
                       <span>{insight.date}</span>
                     </div>
                     <h3 className="font-serif text-xl font-medium text-ksc-navy mb-4 hover:text-ksc-gold transition-colors">
-                      <Link to="/research">{insight.title}</Link>
+                      <Link to={`/research/${insight.id}`}>{insight.title}</Link>
                     </h3>
                     <div className="mt-auto">
                       <span className="text-ksc-gold text-sm">{insight.category}</span>
                       <div className="mt-3">
                         <Link 
-                          to="/research" 
+                          to={`/research/${insight.id}`}
                           className="text-ksc-navy font-medium hover:text-ksc-gold transition-colors flex items-center"
                         >
                           Read More →
