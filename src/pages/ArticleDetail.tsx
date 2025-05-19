@@ -604,7 +604,7 @@ const ArticleDetail = () => {
                 {/* Article Text Content */}
                 <div className="flex-1">
                   <h6 className="text-ksc-gold font-medium mb-3">{article.category}</h6>
-                  <h1 className="font-serif text-3xl md:text-4xl font-semibold text-ksc-navy mb-4">
+                  <h1 className="font-serif text-3xl md:text-5xl font-bold text-ksc-navy mb-4 leading-tight">
                     {article.title}
                   </h1>
                   
@@ -621,7 +621,7 @@ const ArticleDetail = () => {
                 </div>
                 
                 {/* Featured Image - Smaller Size */}
-                <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-sm">
+                <div className="w-full md:w-1/4 rounded-lg overflow-hidden shadow-md">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -634,21 +634,21 @@ const ArticleDetail = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-10 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">              
               {/* Summary */}
-              <div className="mb-10 p-6 bg-ksc-lightgray rounded-lg border-l-4 border-ksc-gold">
-                <h2 className="font-serif text-xl font-semibold text-ksc-navy mb-3">
+              <div className="mb-12 p-6 bg-ksc-lightgray rounded-lg border-l-4 border-ksc-gold">
+                <h2 className="font-serif text-2xl font-bold text-ksc-navy mb-3">
                   Summary
                 </h2>
-                <p className="text-ksc-darkgray">
+                <p className="text-ksc-darkgray text-lg leading-relaxed">
                   {article.summary}
                 </p>
               </div>
               
               {/* Tags */}
-              <div className="mb-8 flex items-center flex-wrap gap-3">
+              <div className="mb-10 flex items-center flex-wrap gap-3">
                 <span className="flex items-center text-ksc-darkgray">
                   <Tag className="h-4 w-4 mr-1" />
                   Topics:
@@ -665,7 +665,25 @@ const ArticleDetail = () => {
               </div>
               
               {/* Article Content with enhanced typography */}
-              <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-ksc-navy prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-li:text-gray-700 prose-li:mb-1">
+              <div className="prose prose-lg max-w-none 
+                  prose-headings:font-serif 
+                  prose-headings:text-ksc-navy 
+                  prose-headings:font-bold 
+                  prose-h2:text-3xl 
+                  prose-h2:mt-12 
+                  prose-h2:mb-6 
+                  prose-h3:text-2xl 
+                  prose-h3:mt-10 
+                  prose-h3:mb-4 
+                  prose-p:text-gray-700 
+                  prose-p:text-lg
+                  prose-p:leading-relaxed 
+                  prose-p:my-6
+                  prose-ul:my-6
+                  prose-ol:my-6
+                  prose-li:text-lg
+                  prose-li:text-gray-700 
+                  prose-li:mb-2">
                 <div dangerouslySetInnerHTML={{ __html: article.content }} />
               </div>
             </div>
@@ -673,13 +691,13 @@ const ArticleDetail = () => {
         </section>
 
         {/* Related Articles and CTA */}
-        <section className="py-12 bg-ksc-lightgray">
+        <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-serif text-3xl font-semibold text-ksc-navy mb-8">
+              <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-10">
                 Continue Reading
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                 {articles
                   .filter(a => a.id !== article.id)
                   .slice(0, 2)
@@ -687,16 +705,16 @@ const ArticleDetail = () => {
                     <Link 
                       to={`/research/${relatedArticle.id}`}
                       key={relatedArticle.id}
-                      className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                      className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     >
-                      <h3 className="font-serif text-xl font-medium text-ksc-navy mb-2 hover:text-ksc-gold transition-colors">
+                      <h3 className="font-serif text-xl font-bold text-ksc-navy mb-3 hover:text-ksc-gold transition-colors">
                         {relatedArticle.title}
                       </h3>
                       <p className="text-ksc-darkgray mb-4 line-clamp-2">
                         {relatedArticle.summary}
                       </p>
                       <div className="flex justify-between items-center">
-                        <span className="text-ksc-gold text-sm">{relatedArticle.category}</span>
+                        <span className="text-ksc-gold text-sm font-medium">{relatedArticle.category}</span>
                         <span className="text-sm text-gray-500">{relatedArticle.date}</span>
                       </div>
                     </Link>
@@ -704,7 +722,7 @@ const ArticleDetail = () => {
               </div>
               <Button 
                 asChild
-                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8"
+                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-6 text-lg font-medium"
               >
                 <Link to="/publications">View All Publications</Link>
               </Button>
