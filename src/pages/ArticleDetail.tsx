@@ -230,7 +230,7 @@ const ArticleDetail = () => {
       
       <main>
         {/* Article Header */}
-        <section className="pt-24 pb-12 bg-ksc-lightgray">
+        <section className="pt-24 pb-8 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <Link 
@@ -241,19 +241,33 @@ const ArticleDetail = () => {
                 Back to all publications
               </Link>
               
-              <h6 className="text-ksc-gold font-medium mb-3">{article.category}</h6>
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-ksc-navy mb-6">
-                {article.title}
-              </h1>
-              
-              <div className="flex flex-col sm:flex-row sm:items-center text-ksc-darkgray gap-4 sm:gap-8">
-                <div className="flex items-center">
-                  <User className="h-5 w-5 mr-2" />
-                  <span>{article.author}</span>
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                {/* Article Text Content */}
+                <div className="flex-1">
+                  <h6 className="text-ksc-gold font-medium mb-3">{article.category}</h6>
+                  <h1 className="font-serif text-3xl md:text-4xl font-semibold text-ksc-navy mb-4">
+                    {article.title}
+                  </h1>
+                  
+                  <div className="flex flex-col sm:flex-row sm:items-center text-ksc-darkgray gap-4 sm:gap-8 mb-6">
+                    <div className="flex items-center">
+                      <User className="h-4 w-4 mr-2" />
+                      <span className="text-sm">{article.author}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      <span className="text-sm">{article.date}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  <span>{article.date}</span>
+                
+                {/* Featured Image - Smaller Size */}
+                <div className="w-full md:w-1/3 rounded-lg overflow-hidden shadow-sm">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -261,30 +275,21 @@ const ArticleDetail = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-12 bg-white">
+        <section className="py-10 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-              {/* Featured Image */}
-              <div className="mb-10 rounded-lg overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-auto"
-                />
-              </div>
-              
+            <div className="max-w-4xl mx-auto">              
               {/* Summary */}
               <div className="mb-10 p-6 bg-ksc-lightgray rounded-lg border-l-4 border-ksc-gold">
                 <h2 className="font-serif text-xl font-semibold text-ksc-navy mb-3">
                   Summary
                 </h2>
-                <p className="text-ksc-darkgray text-lg">
+                <p className="text-ksc-darkgray">
                   {article.summary}
                 </p>
               </div>
               
               {/* Tags */}
-              <div className="mb-10 flex items-center flex-wrap gap-3">
+              <div className="mb-8 flex items-center flex-wrap gap-3">
                 <span className="flex items-center text-ksc-darkgray">
                   <Tag className="h-4 w-4 mr-1" />
                   Topics:
@@ -300,8 +305,8 @@ const ArticleDetail = () => {
                 ))}
               </div>
               
-              {/* Article Content */}
-              <div className="prose prose-lg max-w-none">
+              {/* Article Content with proper styling for headings and paragraphs */}
+              <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-ksc-navy prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700">
                 <div dangerouslySetInnerHTML={{ __html: article.content }} />
               </div>
             </div>
