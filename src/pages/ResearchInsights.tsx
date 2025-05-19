@@ -221,8 +221,11 @@ const ResearchInsights = () => {
               </Table>
             </div>
             <div className="mt-8 text-center">
-              <Button className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none">
-                View All Publications
+              <Button 
+                asChild
+                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none px-8"
+              >
+                <Link to="/publications">View All Publications</Link>
               </Button>
             </div>
           </div>
