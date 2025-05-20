@@ -53,15 +53,7 @@ const Navbar = () => {
         </Link>
 
         {/* Hamburger Menu for all screen sizes */}
-        <div className="flex items-center gap-3">
-          <Button 
-            size="sm" 
-            className="bg-ksc-gold hover:bg-ksc-gold/90 text-white border-none"
-            asChild
-          >
-            <Link to="/client-portal">Client Portal</Link>
-          </Button>
-          
+        <div className="flex items-center">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-ksc-navy hover:bg-ksc-navy/10">
@@ -88,7 +80,7 @@ const Navbar = () => {
                   className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
                   asChild
                 >
-                  <Link to="/client-portal">Client Portal</Link>
+                  <Link to="/client-portal-login">Client Portal</Link>
                 </Button>
               </div>
             </SheetContent>

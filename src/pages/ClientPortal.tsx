@@ -1,5 +1,5 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +9,8 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from "recharts";
 import { CreditCard, ArrowUpRight, ArrowDownRight, DollarSign, Wallet, ChartPie } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 
 // Sample data for demonstration
 const performanceData = [
@@ -43,15 +45,75 @@ const transactionsData = [
 
 const ClientPortal = () => {
   const [progress, setProgress] = useState(78);
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check authentication
+    const storedUser = localStorage.getItem("clientPortalUser");
+    if (!storedUser) {
+      toast.error("Please login to access the client portal");
+      navigate("/client-portal-login");
+      return;
+    }
+
+    // Parse user data
+    try {
+      const userData = JSON.parse(storedUser);
+      setUser(userData);
+    } catch (e) {
+      // Invalid stored data
+      localStorage.removeItem("clientPortalUser");
+      navigate("/client-portal-login");
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("clientPortalUser");
+    toast.success("Logged out successfully");
+    navigate("/client-portal-login");
+  };
+
+  // Show loading state while checking auth
+  if (!user) {
+    return (
+      <>
+        <Navbar />
+        <main className="pt-24 pb-16 min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-4 border-ksc-gold border-t-transparent mx-auto mb-4"></div>
+            <p>Loading your portfolio...</p>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  // User is authenticated, show portal content
   return (
     <>
       <Navbar />
       <main className="pt-24 pb-16 bg-gray-50 min-h-screen">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold font-serif text-ksc-navy mb-2">Client Portal</h1>
-            <p className="text-ksc-darkgray">Welcome back, John Smith. Here's your portfolio overview.</p>
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-3xl font-bold font-serif text-ksc-navy mb-2">Client Portal</h1>
+              <div className="flex items-center">
+                <p className="text-ksc-darkgray">Welcome, {user.name}</p>
+                <span className="mx-2">•</span>
+                <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800">
+                  {user.type === 'retail' ? 'Retail Investor' : 'Institutional Investor'}
+                </span>
+              </div>
+            </div>
+            <Button 
+              variant="outline" 
+              className="border-ksc-navy text-ksc-navy hover:bg-ksc-navy/10"
+              onClick={handleLogout}
+            >
+              Sign Out
+            </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -103,6 +165,23 @@ const ClientPortal = () => {
             </Card>
           </div>
 
+          {/* Special content for institutional investors */}
+          {user.type === 'institutional' && (
+            <Card className="mb-8 bg-blue-50 border-blue-200">
+              <CardHeader>
+                <CardTitle className="text-xl">Institutional Services</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-blue-800">
+                  As an institutional investor, you have access to additional services including custom portfolio analysis, 
+                  direct fund manager access, and advanced reporting tools.
+                </p>
+                <Button className="mt-4 bg-blue-600 hover:bg-blue-700">Access Institutional Tools</Button>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Rest of existing content */}
           <Tabs defaultValue="performance" className="mb-8">
             <TabsList className="mb-4 bg-white border">
               <TabsTrigger value="performance">Performance</TabsTrigger>
@@ -284,5 +363,36 @@ const CustomTooltip = ({ active, payload }: any) => {
   }
   return null;
 };
+
+// Sample data for demonstration
+const performanceData = [
+  { month: "Jan", value: 1200 },
+  { month: "Feb", value: 1900 },
+  { month: "Mar", value: 1600 },
+  { month: "Apr", value: 2200 },
+  { month: "May", value: 1800 },
+  { month: "Jun", value: 2400 },
+  { month: "Jul", value: 2100 },
+  { month: "Aug", value: 2800 },
+  { month: "Sep", value: 3200 },
+  { month: "Oct", value: 3000 },
+  { month: "Nov", value: 3500 },
+  { month: "Dec", value: 3800 },
+];
+
+const allocationsData = [
+  { name: "Stocks", value: 45 },
+  { name: "Bonds", value: 30 },
+  { name: "Real Estate", value: 15 },
+  { name: "Cash", value: 10 },
+];
+
+const transactionsData = [
+  { date: "2025-05-15", type: "Deposit", amount: "$10,000", status: "Completed" },
+  { date: "2025-05-10", type: "Withdrawal", amount: "$2,500", status: "Completed" },
+  { date: "2025-05-01", type: "Dividend", amount: "$750", status: "Completed" },
+  { date: "2025-04-20", type: "Fee", amount: "$100", status: "Completed" },
+  { date: "2025-04-15", type: "Deposit", amount: "$5,000", status: "Completed" },
+];
 
 export default ClientPortal;
