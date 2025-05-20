@@ -94,7 +94,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export const AdvancedMetrics: React.FC<AdvancedMetricsProps> = ({ userType }) => {
+const AdvancedMetrics: React.FC<AdvancedMetricsProps> = ({ userType }) => {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
       {/* Risk Metrics (for both user types) */}

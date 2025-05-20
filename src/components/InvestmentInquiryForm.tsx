@@ -65,7 +65,7 @@ interface InvestmentInquiryFormProps {
   userType: 'retail' | 'institutional';
 }
 
-export const InvestmentInquiryForm: React.FC<InvestmentInquiryFormProps> = ({ userType }) => {
+const InvestmentInquiryForm: React.FC<InvestmentInquiryFormProps> = ({ userType }) => {
   const [submitting, setSubmitting] = useState(false);
   
   const investmentForm = useForm<z.infer<typeof investmentSchema>>({
@@ -457,7 +457,7 @@ export const InvestmentInquiryForm: React.FC<InvestmentInquiryFormProps> = ({ us
                       <FormLabel>Questions or Topics to Discuss</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Please list the specific questions or topics you would like to discuss during the consultation."
+                          placeholder="Please provide details about what you'd like to discuss in your consultation."
                           className="min-h-32"
                           {...field}
                         />
@@ -475,9 +475,6 @@ export const InvestmentInquiryForm: React.FC<InvestmentInquiryFormProps> = ({ us
           </TabsContent>
         </Tabs>
       </CardContent>
-      <CardFooter className="flex justify-between text-sm text-muted-foreground">
-        <p>Your inquiry will be reviewed by our team within 24 hours.</p>
-      </CardFooter>
     </Card>
   );
 };
