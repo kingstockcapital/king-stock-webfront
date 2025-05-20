@@ -364,35 +364,4 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
-// Sample data for demonstration
-const performanceData = [
-  { month: "Jan", value: 1200 },
-  { month: "Feb", value: 1900 },
-  { month: "Mar", value: 1600 },
-  { month: "Apr", value: 2200 },
-  { month: "May", value: 1800 },
-  { month: "Jun", value: 2400 },
-  { month: "Jul", value: 2100 },
-  { month: "Aug", value: 2800 },
-  { month: "Sep", value: 3200 },
-  { month: "Oct", value: 3000 },
-  { month: "Nov", value: 3500 },
-  { month: "Dec", value: 3800 },
-];
-
-const allocationsData = [
-  { name: "Stocks", value: 45 },
-  { name: "Bonds", value: 30 },
-  { name: "Real Estate", value: 15 },
-  { name: "Cash", value: 10 },
-];
-
-const transactionsData = [
-  { date: "2025-05-15", type: "Deposit", amount: "$10,000", status: "Completed" },
-  { date: "2025-05-10", type: "Withdrawal", amount: "$2,500", status: "Completed" },
-  { date: "2025-05-01", type: "Dividend", amount: "$750", status: "Completed" },
-  { date: "2025-04-20", type: "Fee", amount: "$100", status: "Completed" },
-  { date: "2025-04-15", type: "Deposit", amount: "$5,000", status: "Completed" },
-];
-
 export default ClientPortal;
