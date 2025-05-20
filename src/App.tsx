@@ -11,6 +11,7 @@ import ResearchInsights from "./pages/ResearchInsights";
 import AllPublications from "./pages/AllPublications";
 import ArticleDetail from "./pages/ArticleDetail";
 import Contact from "./pages/Contact";
+import ClientPortal from "./pages/ClientPortal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/publications" element={<AllPublications />} />
           <Route path="/research/:articleId" element={<ArticleDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/client-portal" element={<ClientPortal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

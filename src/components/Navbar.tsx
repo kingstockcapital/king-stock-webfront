@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -52,36 +53,47 @@ const Navbar = () => {
         </Link>
 
         {/* Hamburger Menu for all screen sizes */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="text-ksc-navy hover:bg-ksc-navy/10">
-              <Menu size={24} />
-            </Button>
-          </SheetTrigger>
-          <SheetContent className="w-[280px] sm:w-[350px] bg-white py-12">
-            <div className="flex flex-col space-y-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-lg font-medium transition-colors hover:text-ksc-gold ${
-                    location.pathname === link.path
-                      ? "text-ksc-gold border-l-4 border-ksc-gold pl-4"
-                      : "text-ksc-navy pl-4"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button 
-                size="lg" 
-                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
-              >
-                Client Portal
+        <div className="flex items-center gap-3">
+          <Button 
+            size="sm" 
+            className="bg-ksc-gold hover:bg-ksc-gold/90 text-white border-none"
+            asChild
+          >
+            <Link to="/client-portal">Client Portal</Link>
+          </Button>
+          
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-ksc-navy hover:bg-ksc-navy/10">
+                <Menu size={24} />
               </Button>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </SheetTrigger>
+            <SheetContent className="w-[280px] sm:w-[350px] bg-white py-12">
+              <div className="flex flex-col space-y-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className={`text-lg font-medium transition-colors hover:text-ksc-gold ${
+                      location.pathname === link.path
+                        ? "text-ksc-gold border-l-4 border-ksc-gold pl-4"
+                        : "text-ksc-navy pl-4"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <Button 
+                  size="lg" 
+                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
+                  asChild
+                >
+                  <Link to="/client-portal">Client Portal</Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
