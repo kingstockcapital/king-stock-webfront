@@ -1,10 +1,9 @@
-
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Tag, ArrowLeft } from "lucide-react";
+import { Calendar, User, Tag, ArrowLeft, FileText } from "lucide-react";
 
 // This represents our article database
 // In a real application, this would come from an API
@@ -574,7 +573,7 @@ const ArticleDetail = () => {
             </h1>
             <p className="mb-8">The article you're looking for doesn't exist or has been moved.</p>
             <Button asChild>
-              <Link to="/research">Return to Research</Link>
+              <Link to="/publications">Return to Publications</Link>
             </Button>
           </div>
         </main>
@@ -639,9 +638,12 @@ const ArticleDetail = () => {
             <div className="max-w-4xl mx-auto">              
               {/* Summary */}
               <div className="mb-12 p-6 bg-ksc-lightgray rounded-lg border-l-4 border-ksc-gold">
-                <h2 className="font-serif text-2xl font-bold text-ksc-navy mb-3">
-                  Summary
-                </h2>
+                <div className="flex items-center gap-2 mb-3">
+                  <FileText className="h-5 w-5 text-ksc-navy" />
+                  <h2 className="font-serif text-2xl font-bold text-ksc-navy">
+                    Summary
+                  </h2>
+                </div>
                 <p className="text-ksc-darkgray text-lg leading-relaxed">
                   {article.summary}
                 </p>
@@ -665,27 +667,31 @@ const ArticleDetail = () => {
               </div>
               
               {/* Article Content with enhanced typography */}
-              <div className="prose prose-lg max-w-none 
+              <article className="prose prose-lg max-w-none 
                   prose-headings:font-serif 
                   prose-headings:text-ksc-navy 
                   prose-headings:font-bold 
                   prose-h2:text-3xl 
                   prose-h2:mt-12 
                   prose-h2:mb-6 
+                  prose-h2:pb-2
+                  prose-h2:border-b
+                  prose-h2:border-gray-100
                   prose-h3:text-2xl 
                   prose-h3:mt-10 
-                  prose-h3:mb-4 
+                  prose-h3:mb-4
                   prose-p:text-gray-700 
                   prose-p:text-lg
                   prose-p:leading-relaxed 
                   prose-p:my-6
-                  prose-ul:my-6
-                  prose-ol:my-6
+                  prose-ul:my-8
+                  prose-ol:my-8
                   prose-li:text-lg
                   prose-li:text-gray-700 
-                  prose-li:mb-2">
+                  prose-li:mb-3
+                  prose-li:leading-normal">
                 <div dangerouslySetInnerHTML={{ __html: article.content }} />
-              </div>
+              </article>
             </div>
           </div>
         </section>
@@ -694,7 +700,8 @@ const ArticleDetail = () => {
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-10">
+              <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-10 flex items-center justify-center gap-2">
+                <FileText className="h-6 w-6" />
                 Continue Reading
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
