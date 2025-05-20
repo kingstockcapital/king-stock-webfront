@@ -224,7 +224,7 @@ export const InvestmentInquiryForm: React.FC<InvestmentInquiryFormProps> = ({ us
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="short">Short-term (< 2 years)</SelectItem>
+                            <SelectItem value="short">Short-term (&lt; 2 years)</SelectItem>
                             <SelectItem value="medium">Medium-term (2-5 years)</SelectItem>
                             <SelectItem value="long">Long-term (5+ years)</SelectItem>
                           </SelectContent>
