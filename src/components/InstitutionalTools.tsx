@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ChartContainer } from "@/components/ui/chart";
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from "recharts";
-import { Search, Filter, ChartPie, TrendingUp, Database, Bank } from "lucide-react";
+import { Search, Filter, ChartPie, TrendingUp, Database, Ban } from "lucide-react";
 
 // Sample data for metrics visualization
 const blockchainMetricsData = [
@@ -66,7 +65,7 @@ const metricCategories = [
   {
     id: "economics",
     name: "Economic & Valuation",
-    icon: <Bank className="h-5 w-5 text-green-500" />,
+    icon: <Ban className="h-5 w-5 text-green-500" />,
     metrics: [
       "NVT Ratio",
       "MVRV Ratio",
