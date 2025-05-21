@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Filter } from "lucide-react";
+import MetricDetailChart from "./MetricDetailChart";
 
 // Types of metrics based on the comprehensive article
 const marketMetrics = [
@@ -13,7 +14,7 @@ const marketMetrics = [
   { name: "Bid-Ask Spread", description: "The difference between the highest buy offer and lowest sell offer", value: "0.15%", change: "-0.05%", status: "Optimal" },
   { name: "Trading Volume", description: "Total volume of assets traded in a given period", value: "$452M", change: "+18.2%", status: "Monitor" },
   { name: "Market Cap / TVL Ratio", description: "Compares market capitalization to total value locked", value: "1.2", change: "-0.1", status: "Optimal" },
-  { name: "Volatility Index", description: "Measure of price fluctuations over time", value: "38.4", change: "+5.2", status: "Warning" },
+  { name: "Volatility Index", description: "Measure of price fluctuations over time", value: "38.4", change: "+5.2%", status: "Warning" },
   { name: "Liquidity Premium", description: "Additional return required for less liquid assets", value: "2.8%", change: "+0.3%", status: "Monitor" },
   { name: "Price Impact Metrics", description: "Effect of large orders on asset price", value: "1.25%", change: "-0.15%", status: "Optimal" },
   { name: "Slippage Rates", description: "Difference between expected price and execution price", value: "0.85%", change: "+0.1%", status: "Monitor" },
@@ -80,6 +81,7 @@ interface BlockchainMetricsProps {
 const BlockchainMetrics: React.FC<BlockchainMetricsProps> = ({ userType }) => {
   const [activeTab, setActiveTab] = useState("market");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedMetric, setSelectedMetric] = useState<any>(null);
 
   // Get current metrics based on active tab
   const getCurrentMetrics = () => {
@@ -98,6 +100,16 @@ const BlockchainMetrics: React.FC<BlockchainMetricsProps> = ({ userType }) => {
     metric.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
     metric.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Handle metric click
+  const handleMetricClick = (metric: any) => {
+    setSelectedMetric(metric);
+  };
+
+  // Handle close chart
+  const handleCloseChart = () => {
+    setSelectedMetric(null);
+  };
 
   return (
     <div className="space-y-6">
@@ -136,55 +148,64 @@ const BlockchainMetrics: React.FC<BlockchainMetricsProps> = ({ userType }) => {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>{activeTab === "market" ? "Market & Liquidity" : 
-                     activeTab === "activity" ? "Activity & Sentiment" : 
-                     activeTab === "valuation" ? "Valuation & Economics" :
-                     activeTab === "network" ? "Network & Flow" : "Predictive & Risk"} Metrics</CardTitle>
-          <CardDescription>
-            Comprehensive blockchain metrics providing insights into {activeTab} dynamics
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Metric</TableHead>
-                <TableHead>Description</TableHead>
-                <TableHead>Current Value</TableHead>
-                <TableHead>Change (24h)</TableHead>
-                <TableHead className="text-right">Status</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredMetrics.map((metric, index) => (
-                <TableRow key={index}>
-                  <TableCell className="font-medium">{metric.name}</TableCell>
-                  <TableCell className="text-sm text-muted-foreground">{metric.description}</TableCell>
-                  <TableCell>{metric.value}</TableCell>
-                  <TableCell className={metric.change.startsWith("+") ? "text-green-600" : "text-red-600"}>
-                    {metric.change}
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                      metric.status === "Optimal" 
-                        ? "bg-green-100 text-green-800" 
-                        : metric.status === "Monitor" 
-                          ? "bg-amber-100 text-amber-800" 
-                          : metric.status === "Neutral" 
-                            ? "bg-blue-100 text-blue-800" 
-                            : "bg-red-100 text-red-800"
-                    }`}>
-                      {metric.status}
-                    </span>
-                  </TableCell>
+      {selectedMetric ? (
+        <MetricDetailChart metric={selectedMetric} onClose={handleCloseChart} />
+      ) : (
+        <Card>
+          <CardHeader>
+            <CardTitle>{activeTab === "market" ? "Market & Liquidity" : 
+                      activeTab === "activity" ? "Activity & Sentiment" : 
+                      activeTab === "valuation" ? "Valuation & Economics" :
+                      activeTab === "network" ? "Network & Flow" : "Predictive & Risk"} Metrics</CardTitle>
+            <CardDescription>
+              Comprehensive blockchain metrics providing insights into {activeTab} dynamics
+              <span className="block mt-1 text-sm text-blue-600">Click on any metric to view detailed chart</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Metric</TableHead>
+                  <TableHead>Description</TableHead>
+                  <TableHead>Current Value</TableHead>
+                  <TableHead>Change (24h)</TableHead>
+                  <TableHead className="text-right">Status</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
+              </TableHeader>
+              <TableBody>
+                {filteredMetrics.map((metric, index) => (
+                  <TableRow 
+                    key={index} 
+                    className="cursor-pointer hover:bg-gray-50"
+                    onClick={() => handleMetricClick(metric)}
+                  >
+                    <TableCell className="font-medium">{metric.name}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{metric.description}</TableCell>
+                    <TableCell>{metric.value}</TableCell>
+                    <TableCell className={metric.change.startsWith("+") ? "text-green-600" : "text-red-600"}>
+                      {metric.change}
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
+                        metric.status === "Optimal" 
+                          ? "bg-green-100 text-green-800" 
+                          : metric.status === "Monitor" 
+                            ? "bg-amber-100 text-amber-800" 
+                            : metric.status === "Neutral" 
+                              ? "bg-blue-100 text-blue-800" 
+                              : "bg-red-100 text-red-800"
+                      }`}>
+                        {metric.status}
+                      </span>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 };
