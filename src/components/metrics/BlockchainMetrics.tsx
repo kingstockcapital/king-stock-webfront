@@ -103,6 +103,7 @@ const BlockchainMetrics: React.FC<BlockchainMetricsProps> = ({ userType }) => {
 
   // Handle metric click
   const handleMetricClick = (metric: any) => {
+    console.log("Metric clicked:", metric);
     setSelectedMetric(metric);
   };
 
