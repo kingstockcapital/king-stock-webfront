@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Import dashboard components
 import PortalHeader from "@/components/dashboard/PortalHeader";
@@ -19,6 +23,8 @@ const ClientPortal = () => {
   const [user, setUser] = useState<any>(null);
   const [activeTab, setActiveTab] = useState("overview");
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     // Check authentication
@@ -86,14 +92,39 @@ const ClientPortal = () => {
       <Navbar />
       <main className="pt-24 pb-16 bg-gray-50 min-h-screen">
         <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center mb-6 md:hidden">
+            <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="mr-2">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[240px] p-0">
+                <div className="py-4">
+                  <Sidebar 
+                    activeTab={activeTab} 
+                    setActiveTab={(tab) => {
+                      setActiveTab(tab);
+                      setSidebarOpen(false);
+                    }} 
+                    userType={user.type}
+                  />
+                </div>
+              </SheetContent>
+            </Sheet>
+            <h2 className="text-xl font-bold text-ksc-navy">Client Portal</h2>
+          </div>
+
           <PortalHeader user={user} onLogout={handleLogout} />
           
-          <div className="flex gap-6">
-            {/* Sidebar navigation */}
-            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} userType={user.type} />
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Sidebar navigation - hidden on mobile, shown in sheet */}
+            <div className="hidden md:block">
+              <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} userType={user.type} />
+            </div>
             
             {/* Main content area */}
-            <div className="flex-1 bg-white p-6 rounded-lg border shadow-sm">
+            <div className="flex-1 bg-white p-4 md:p-6 rounded-lg border shadow-sm">
               {renderDashboardContent()}
             </div>
           </div>

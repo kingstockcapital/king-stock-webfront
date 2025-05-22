@@ -1,9 +1,8 @@
 
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChartPieIcon, LineChart, BarChart3, BarChartHorizontal, Users, Settings } from "lucide-react";
+import { ChartPieIcon, LineChart, BarChart3, BarChartHorizontal, Users } from "lucide-react";
 
 interface SidebarProps {
   activeTab: string;
@@ -24,11 +23,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, userType }) 
   }
 
   return (
-    <Card className="h-[calc(100vh-180px)] w-64 rounded-lg overflow-hidden flex-shrink-0 bg-white border shadow-sm">
-      <div className="p-4 border-b">
-        <div className="font-medium text-lg text-ksc-navy">Dashboard Menu</div>
+    <Card className="w-full md:w-64 md:h-[calc(100vh-180px)] rounded-lg overflow-hidden flex-shrink-0 bg-white border shadow-sm">
+      <div className="p-3 md:p-4 border-b">
+        <div className="font-medium text-base md:text-lg text-ksc-navy">Dashboard Menu</div>
       </div>
-      <div className="p-2 space-y-1 h-full overflow-y-auto">
+      <div className="p-2 space-y-1 max-h-[70vh] md:h-full overflow-y-auto">
         {navItems.map((item) => (
           <Button
             key={item.id}
