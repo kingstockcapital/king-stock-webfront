@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SummaryCards from "./SummaryCards";
 import PerformanceChart from "./PerformanceChart";
 import AssetAllocation from "./AssetAllocation";
@@ -18,34 +17,25 @@ interface OverviewDashboardProps {
 const OverviewDashboard: React.FC<OverviewDashboardProps> = ({ progress, userType, onAccessTools }) => {
   return (
     <div className="space-y-8">
-      <SummaryCards progress={progress} />
+      <div>
+        <h2 className="text-2xl font-bold text-ksc-navy mb-6">Portfolio Overview</h2>
+        <SummaryCards progress={progress} />
+      </div>
 
       {userType === 'institutional' && (
         <InstitutionalBanner onAccessTools={onAccessTools} />
       )}
 
-      {/* Performance, Allocations, Transactions Tabs */}
-      <Tabs defaultValue="performance" className="mb-8">
-        <TabsList className="mb-4 bg-white border">
-          <TabsTrigger value="performance">Performance</TabsTrigger>
-          <TabsTrigger value="allocations">Asset Allocation</TabsTrigger>
-          <TabsTrigger value="transactions">Transactions</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="performance" className="m-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="lg:col-span-2">
           <PerformanceChart />
-        </TabsContent>
+        </div>
         
-        <TabsContent value="allocations" className="m-0">
-          <AssetAllocation />
-        </TabsContent>
-        
-        <TabsContent value="transactions" className="m-0">
-          <Transactions />
-        </TabsContent>
-      </Tabs>
+        <AssetAllocation />
+        <Transactions />
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <FinancialPlanning />
         <NextMeeting />
       </div>

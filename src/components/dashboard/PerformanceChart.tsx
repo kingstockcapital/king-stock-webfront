@@ -1,8 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ChartContainer } from "@/components/ui/chart";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from "recharts";
+import { Button } from "@/components/ui/button";
 
 // Sample data for demonstration
 const performanceData = [
@@ -33,10 +34,46 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 const PerformanceChart: React.FC = () => {
+  const [timeRange, setTimeRange] = useState("1Y");
+  
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Portfolio Performance</CardTitle>
+      <CardHeader className="flex flex-row items-center justify-between pb-2">
+        <CardTitle className="text-lg font-medium">Portfolio Performance</CardTitle>
+        <div className="flex space-x-2">
+          <Button 
+            variant={timeRange === "1M" ? "default" : "outline"} 
+            size="sm"
+            onClick={() => setTimeRange("1M")}
+            className={timeRange === "1M" ? "bg-ksc-navy text-white" : ""}
+          >
+            1M
+          </Button>
+          <Button 
+            variant={timeRange === "3M" ? "default" : "outline"} 
+            size="sm"
+            onClick={() => setTimeRange("3M")}
+            className={timeRange === "3M" ? "bg-ksc-navy text-white" : ""}
+          >
+            3M
+          </Button>
+          <Button 
+            variant={timeRange === "1Y" ? "default" : "outline"} 
+            size="sm"
+            onClick={() => setTimeRange("1Y")}
+            className={timeRange === "1Y" ? "bg-ksc-navy text-white" : ""}
+          >
+            1Y
+          </Button>
+          <Button 
+            variant={timeRange === "ALL" ? "default" : "outline"} 
+            size="sm"
+            onClick={() => setTimeRange("ALL")}
+            className={timeRange === "ALL" ? "bg-ksc-navy text-white" : ""}
+          >
+            All
+          </Button>
+        </div>
       </CardHeader>
       <CardContent>
         <div className="h-80">
@@ -54,12 +91,13 @@ const PerformanceChart: React.FC = () => {
                 </defs>
                 <XAxis dataKey="month" />
                 <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="3 3" opacity={0.1} />
                 <Tooltip content={<CustomTooltip />} />
                 <Area
                   type="monotone"
                   dataKey="value"
                   stroke="#D4AF37"
+                  strokeWidth={2}
                   fillOpacity={1}
                   fill="url(#colorValue)"
                 />
