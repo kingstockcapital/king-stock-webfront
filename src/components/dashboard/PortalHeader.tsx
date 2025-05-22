@@ -1,22 +1,16 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { UserRound } from "lucide-react";
-import ProfileModal from "./ProfileModal";
 
 interface PortalHeaderProps {
   user: {
     name: string;
     type: 'retail' | 'institutional';
-    email?: string;
-    organization?: string;
   };
   onLogout: () => void;
 }
 
 const PortalHeader: React.FC<PortalHeaderProps> = ({ user, onLogout }) => {
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-
   return (
     <div className="flex justify-between items-center mb-8">
       <div>
@@ -29,30 +23,13 @@ const PortalHeader: React.FC<PortalHeaderProps> = ({ user, onLogout }) => {
           </span>
         </div>
       </div>
-      <div className="flex gap-3">
-        <Button
-          variant="outline"
-          className="border-ksc-navy hover:bg-ksc-navy/10 flex items-center gap-2"
-          onClick={() => setIsProfileModalOpen(true)}
-        >
-          <UserRound size={16} />
-          <span>Profile</span>
-        </Button>
-        <Button 
-          variant="outline" 
-          className="border-ksc-navy text-ksc-navy hover:bg-ksc-navy/10"
-          onClick={onLogout}
-        >
-          Sign Out
-        </Button>
-      </div>
-
-      {/* Profile Modal */}
-      <ProfileModal
-        user={user}
-        isOpen={isProfileModalOpen}
-        onClose={() => setIsProfileModalOpen(false)}
-      />
+      <Button 
+        variant="outline" 
+        className="border-ksc-navy text-ksc-navy hover:bg-ksc-navy/10"
+        onClick={onLogout}
+      >
+        Sign Out
+      </Button>
     </div>
   );
 };
