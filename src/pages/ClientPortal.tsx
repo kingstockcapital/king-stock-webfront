@@ -14,9 +14,16 @@ import InvestmentInquiryForm from "@/components/InvestmentInquiryForm";
 import InstitutionalTools from "@/components/InstitutionalTools";
 import BlockchainMetrics from "@/components/metrics/BlockchainMetrics";
 
+interface UserData {
+  name: string;
+  type: 'retail' | 'institutional';
+  email: string;
+  organization?: string;
+}
+
 const ClientPortal = () => {
   const [progress, setProgress] = useState(78);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<UserData | null>(null);
   const [activeTab, setActiveTab] = useState("overview");
   const [showInstitutionalTools, setShowInstitutionalTools] = useState(false);
   const [showBlockchainMetrics, setShowBlockchainMetrics] = useState(false);
@@ -34,6 +41,10 @@ const ClientPortal = () => {
     // Parse user data
     try {
       const userData = JSON.parse(storedUser);
+      // Ensure we have all the required fields for profile
+      if (!userData.email) {
+        userData.email = userData.name.toLowerCase().replace(/\s/g, '.') + '@example.com';
+      }
       setUser(userData);
     } catch (e) {
       // Invalid stored data
