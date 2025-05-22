@@ -8,7 +8,7 @@ interface PortalHeaderProps {
   user: {
     name: string;
     type: 'retail' | 'institutional';
-    email: string; // Changed from optional to required
+    email?: string;
     organization?: string;
   };
   onLogout: () => void;
