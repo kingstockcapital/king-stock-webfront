@@ -1,5 +1,5 @@
 
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp } from "lucide-react";
+import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -17,16 +17,28 @@ const services = [
       "Comprehensive wealth management strategies designed to preserve and grow your assets over time.",
   },
   {
-    icon: <DollarSign className="h-8 w-8 text-ksc-gold" />,
+    icon: <Wallet className="h-8 w-8 text-ksc-gold" />,
     title: "Retirement Planning",
     description:
       "Strategic retirement planning to ensure financial security and prosperity in your retirement years.",
   },
   {
-    icon: <Coins className="h-8 w-8 text-ksc-gold" />,
+    icon: <DollarSign className="h-8 w-8 text-ksc-gold" />,
     title: "Tax Optimization",
     description:
       "Sophisticated tax strategies to minimize liabilities and maximize investment returns.",
+  },
+  {
+    icon: <Coins className="h-8 w-8 text-ksc-gold" />,
+    title: "Estate Planning",
+    description:
+      "Comprehensive estate planning services to preserve your wealth and legacy for future generations.",
+  },
+  {
+    icon: <Building2 className="h-8 w-8 text-ksc-gold" />,
+    title: "Corporate Advisory",
+    description:
+      "Strategic financial advisory services for corporations and institutional clients.",
   },
 ];
 
@@ -39,12 +51,11 @@ const ServicesOverview = () => {
             Our Services
           </h2>
           <p className="text-ksc-darkgray max-w-2xl mx-auto">
-            We offer a range of investment and wealth management services designed
-            to help you achieve your financial objectives.
+            We offer six comprehensive service areas designed to help you achieve your financial objectives.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}

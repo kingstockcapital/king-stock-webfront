@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
 import { Button } from "@/components/ui/button";
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet } from "lucide-react";
+import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -67,6 +67,18 @@ const services = [
       "Legacy planning",
     ],
   },
+  {
+    icon: <Building2 className="h-12 w-12 text-ksc-gold" />,
+    title: "Corporate Advisory",
+    description:
+      "We provide strategic financial advisory services for corporations and institutional clients. Our team helps businesses optimize their capital structure, manage treasury functions, and develop comprehensive financial strategies.",
+    benefits: [
+      "Corporate treasury management",
+      "Capital structure optimization",
+      "Risk management strategies",
+      "Financial restructuring",
+    ],
+  },
 ];
 
 const investmentProcess = [
@@ -108,63 +120,49 @@ const Services = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h6 className="text-ksc-gold font-medium mb-3">Our Services</h6>
               <h1 className="font-serif text-4xl md:text-5xl font-semibold text-ksc-navy mb-6">
-                Investment Solutions Tailored to Your Needs
+                Comprehensive Investment Solutions
               </h1>
               <p className="text-ksc-darkgray text-lg">
-                Comprehensive investment and wealth management services designed to help you achieve your financial goals.
+                Six specialized service areas designed to meet all your financial planning and investment management needs.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Services Detail */}
+        {/* Services Grid */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="space-y-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <div className="flex justify-center lg:justify-start mb-6">
-                      {service.icon}
-                    </div>
-                    <h2 className="font-serif text-3xl font-semibold text-ksc-navy mb-6 text-center lg:text-left">
-                      {service.title}
-                    </h2>
-                    <p className="text-ksc-darkgray mb-6">
-                      {service.description}
-                    </p>
-                    <div className="bg-ksc-lightgray p-6 rounded-lg">
-                      <h3 className="text-ksc-navy font-medium mb-4">Key Benefits</h3>
-                      <ul className="space-y-3">
-                        {service.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start">
-                            <span className="text-ksc-gold mr-2">•</span>
-                            <span className="text-ksc-darkgray">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                <div key={index} className="bg-ksc-lightgray p-8 rounded-lg hover:shadow-lg transition-all duration-300">
+                  <div className="flex justify-center mb-6">
+                    {service.icon}
                   </div>
-                  <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="relative">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-ksc-navy to-ksc-navy/70 rounded-lg flex items-center justify-center p-8">
-                        <div className="text-center text-white">
-                          <h3 className="font-serif text-2xl font-medium mb-4">
-                            {service.title}
-                          </h3>
-                          <p className="mb-6 text-gray-200">
-                            Personalized solutions to help you achieve your financial goals.
-                          </p>
-                          <Button 
-                            asChild
-                            className="bg-ksc-gold hover:bg-ksc-gold/90 text-ksc-navy border-none"
-                          >
-                            <Link to="/contact">Learn More</Link>
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="absolute -bottom-4 -right-4 h-24 w-1/3 bg-ksc-gold opacity-20 rounded-lg -z-10"></div>
-                    </div>
+                  <h3 className="font-serif text-xl font-semibold text-ksc-navy mb-4 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-ksc-darkgray text-sm mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <div className="bg-white p-4 rounded-md">
+                    <h4 className="text-ksc-navy font-medium mb-3 text-sm">Key Benefits</h4>
+                    <ul className="space-y-2">
+                      {service.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-start text-xs">
+                          <span className="text-ksc-gold mr-2 mt-1">•</span>
+                          <span className="text-ksc-darkgray">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-6 text-center">
+                    <Button 
+                      asChild
+                      className="bg-ksc-navy hover:bg-ksc-navy/90 text-white text-sm"
+                      size="sm"
+                    >
+                      <Link to="/contact">Learn More</Link>
+                    </Button>
                   </div>
                 </div>
               ))}
@@ -172,7 +170,7 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Process Section - Redesigned without numbered circles */}
+        {/* Process Section */}
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
@@ -180,7 +178,7 @@ const Services = () => {
                 Our Investment Process
               </h2>
               <p className="text-ksc-darkgray max-w-2xl mx-auto">
-                A disciplined, research-driven approach to building and managing investment portfolios.
+                A disciplined, research-driven approach to building and managing investment portfolios across all service areas.
               </p>
             </div>
 
