@@ -1,8 +1,10 @@
+
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, User, Tag, ArrowLeft, FileText, Clock, Share2 } from "lucide-react";
 
 const articles = [
@@ -630,14 +632,16 @@ const ArticleDetail = () => {
                   </div>
                 </div>
                 
-                {/* Featured Image */}
+                {/* Featured Image with proper aspect ratio */}
                 <div className="lg:col-span-1">
-                  <div className="bg-white p-2 rounded-lg shadow-xl">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-48 lg:h-64 object-cover rounded"
-                    />
+                  <div className="bg-white p-3 rounded-xl shadow-2xl">
+                    <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </AspectRatio>
                   </div>
                 </div>
               </div>
@@ -728,14 +732,16 @@ const ArticleDetail = () => {
                     <Link 
                       to={`/research/${relatedArticle.id}`}
                       key={relatedArticle.id}
-                      className="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
+                      className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border"
                     >
-                      <div className="aspect-video overflow-hidden">
-                        <img 
-                          src={relatedArticle.image}
-                          alt={relatedArticle.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
+                      <div className="overflow-hidden">
+                        <AspectRatio ratio={16/9}>
+                          <img 
+                            src={relatedArticle.image}
+                            alt={relatedArticle.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </AspectRatio>
                       </div>
                       <div className="p-6">
                         <Badge className="bg-ksc-gold/10 text-ksc-gold border-ksc-gold/20 mb-3">
