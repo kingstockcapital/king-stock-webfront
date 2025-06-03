@@ -3,7 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
 import { Button } from "@/components/ui/button";
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2 } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -83,122 +84,179 @@ const services = [
 
 const investmentProcess = [
   {
-    title: "Assessment",
-    description: "We begin by understanding your financial goals, risk tolerance, time horizon, and overall financial situation to establish a solid foundation for your investment strategy.",
-    highlight: "Discovery Meeting",
-    highlightDescription: "A comprehensive analysis of your current financial situation, goals, and risk profile."
+    step: "01",
+    title: "Discovery & Assessment",
+    description: "We begin with a comprehensive analysis of your financial situation, goals, risk tolerance, and investment timeline to establish a solid foundation.",
+    highlight: "Deep Financial Analysis",
+    highlightDescription: "Thorough evaluation of your current position and future aspirations to create a personalized roadmap."
   },
   {
-    title: "Strategy Development",
-    description: "Based on our assessment, we develop a tailored investment strategy that aligns with your financial goals and risk tolerance, incorporating diversification across asset classes.",
-    highlight: "Customized Planning",
-    highlightDescription: "Development of a personalized investment plan with clear objectives and timelines."
+    step: "02",
+    title: "Strategic Planning",
+    description: "Based on our assessment, we develop a tailored investment strategy with clear objectives, asset allocation, and risk management protocols.",
+    highlight: "Customized Strategy",
+    highlightDescription: "Bespoke investment plan designed specifically for your unique circumstances and goals."
   },
   {
+    step: "03",
     title: "Implementation",
-    description: "We execute your investment strategy with precision and care, selecting appropriate investment vehicles and establishing the proper asset allocation.",
-    highlight: "Efficient Execution",
-    highlightDescription: "Careful selection of investments and strategic deployment of capital to maximize efficiency."
+    description: "We execute your strategy with precision, selecting optimal investment vehicles and establishing proper diversification across asset classes.",
+    highlight: "Expert Execution",
+    highlightDescription: "Professional implementation with focus on cost efficiency and strategic timing."
   },
   {
+    step: "04",
     title: "Monitoring & Optimization",
-    description: "We continuously monitor your portfolio performance and make adjustments as needed to ensure alignment with your goals and adapt to changing market conditions.",
-    highlight: "Ongoing Management",
-    highlightDescription: "Regular reviews, performance reporting, and strategic adjustments to optimize results."
+    description: "Continuous portfolio oversight with regular performance reviews, rebalancing, and strategic adjustments to ensure alignment with your evolving needs.",
+    highlight: "Ongoing Excellence",
+    highlightDescription: "Proactive management with detailed reporting and transparent communication."
   }
 ];
 
 const Services = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30">
       <Navbar />
       
       <main>
-        {/* Hero */}
-        <section className="pt-24 pb-12 bg-ksc-lightgray">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h6 className="text-ksc-gold font-medium mb-3">Our Services</h6>
-              <h1 className="font-serif text-4xl md:text-5xl font-semibold text-ksc-navy mb-6">
-                Comprehensive Investment Solutions
+        {/* Enhanced Hero Section */}
+        <section className="pt-32 pb-20 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-6">
+                <span className="text-ksc-gold font-medium text-sm">Premium Investment Solutions</span>
+              </div>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                Comprehensive Investment
+                <span className="block text-ksc-gold">Excellence</span>
               </h1>
-              <p className="text-ksc-darkgray text-lg">
-                Six specialized service areas designed to meet all your financial planning and investment management needs.
+              <p className="text-gray-300 text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto">
+                Six specialized service areas designed to meet all your financial planning and investment management needs with institutional-grade expertise.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  asChild
+                  className="bg-ksc-gold hover:bg-ksc-gold/90 text-ksc-navy font-semibold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Link to="/contact">Schedule Consultation</Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  asChild
+                  className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-lg px-8 py-6 rounded-lg backdrop-blur-sm"
+                >
+                  <a href="tel:+12125551234">Call (212) 555-1234</a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-16 bg-white">
+        {/* Enhanced Services Grid */}
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center mb-16">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
+                Our Investment Services
+              </h2>
+              <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+                Each service is designed with institutional-grade standards and personalized attention to deliver exceptional results for our clients.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {services.map((service, index) => (
-                <div key={index} className="bg-ksc-lightgray p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-                  <div className="flex justify-center mb-6">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-serif text-xl font-semibold text-ksc-navy mb-4 text-center">
-                    {service.title}
-                  </h3>
-                  <p className="text-ksc-darkgray text-sm mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="bg-white p-4 rounded-md">
-                    <h4 className="text-ksc-navy font-medium mb-3 text-sm">Key Benefits</h4>
-                    <ul className="space-y-2">
-                      {service.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start text-xs">
-                          <span className="text-ksc-gold mr-2 mt-1">•</span>
-                          <span className="text-ksc-darkgray">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-6 text-center">
+                <Card key={index} className="group bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden">
+                  <CardHeader className="bg-gradient-to-br from-ksc-lightgray to-white p-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="bg-white p-4 rounded-2xl shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                        {service.icon}
+                      </div>
+                      <div className="text-6xl font-bold text-ksc-lightgray/50">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                    </div>
+                    <CardTitle className="font-serif text-2xl font-bold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-ksc-darkgray leading-relaxed text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  
+                  <CardContent className="p-8">
+                    <div className="bg-gradient-to-r from-ksc-lightgray/50 to-ksc-lightgray/30 p-6 rounded-xl mb-6">
+                      <h4 className="text-ksc-navy font-bold mb-4 text-lg">Key Benefits</h4>
+                      <ul className="space-y-3">
+                        {service.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-start text-sm">
+                            <CheckCircle className="h-5 w-5 text-ksc-gold mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-ksc-darkgray font-medium">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
                     <Button 
                       asChild
-                      className="bg-ksc-navy hover:bg-ksc-navy/90 text-white text-sm"
-                      size="sm"
+                      className="w-full bg-ksc-navy hover:bg-ksc-navy/90 text-white font-semibold py-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <Link to="/contact">Learn More</Link>
                     </Button>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-16 bg-ksc-lightgray">
+        {/* Enhanced Process Section */}
+        <section className="py-24 bg-gradient-to-b from-ksc-lightgray/50 to-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold text-ksc-navy mb-4">
+            <div className="text-center mb-16">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
                 Our Investment Process
               </h2>
-              <p className="text-ksc-darkgray max-w-2xl mx-auto">
-                A disciplined, research-driven approach to building and managing investment portfolios across all service areas.
+              <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+                A disciplined, research-driven approach to building and managing investment portfolios with proven methodologies and continuous optimization.
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto space-y-8">
-              {investmentProcess.map((step, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="font-serif text-2xl text-ksc-navy mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-ksc-darkgray mb-6">
-                    {step.description}
-                  </p>
-                  <div className="bg-ksc-lightgray/50 p-4 rounded-md border border-ksc-navy/10">
-                    <h4 className="font-medium text-ksc-navy mb-2">{step.highlight}</h4>
-                    <p className="text-sm text-ksc-darkgray">
-                      {step.highlightDescription}
-                    </p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {investmentProcess.map((step, index) => (
+                  <div key={index} className="relative">
+                    <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 rounded-2xl overflow-hidden h-full">
+                      <CardHeader className="relative bg-gradient-to-br from-ksc-navy to-ksc-navy/90 text-white p-8">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="bg-ksc-gold text-ksc-navy font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                            {step.step}
+                          </div>
+                          <div className="w-24 h-1 bg-ksc-gold rounded-full"></div>
+                        </div>
+                        <CardTitle className="font-serif text-2xl font-bold mb-4">
+                          {step.title}
+                        </CardTitle>
+                        <CardDescription className="text-gray-300 leading-relaxed text-base">
+                          {step.description}
+                        </CardDescription>
+                      </CardHeader>
+                      
+                      <CardContent className="p-8">
+                        <div className="bg-gradient-to-r from-ksc-gold/10 to-ksc-gold/5 p-6 rounded-xl border-l-4 border-ksc-gold">
+                          <h4 className="font-bold text-ksc-navy mb-3 text-lg">{step.highlight}</h4>
+                          <p className="text-ksc-darkgray text-sm leading-relaxed">
+                            {step.highlightDescription}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
