@@ -3,10 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Tag, ArrowLeft, FileText } from "lucide-react";
+import { Calendar, User, Tag, ArrowLeft, FileText, Clock, Share2 } from "lucide-react";
 
-// This represents our article database
-// In a real application, this would come from an API
 const articles = [
   {
     id: 1,
@@ -583,31 +581,40 @@ const ArticleDetail = () => {
   }
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       <main>
-        {/* Article Header */}
-        <section className="pt-24 pb-8 bg-ksc-lightgray">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
+        {/* Hero Section */}
+        <section className="pt-20 pb-16 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="max-w-5xl mx-auto">
               <Link 
                 to="/publications" 
-                className="inline-flex items-center text-ksc-navy hover:text-ksc-gold mb-6 transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors group"
               >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to all publications
+                <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+                Back to Publications
               </Link>
               
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                {/* Article Text Content */}
-                <div className="flex-1">
-                  <h6 className="text-ksc-gold font-medium mb-3">{article.category}</h6>
-                  <h1 className="font-serif text-3xl md:text-5xl font-bold text-ksc-navy mb-4 leading-tight">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                {/* Article Info */}
+                <div className="lg:col-span-2">
+                  <Badge className="bg-ksc-gold/20 text-ksc-gold border-ksc-gold/30 mb-4">
+                    {article.category}
+                  </Badge>
+                  
+                  <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                     {article.title}
                   </h1>
                   
-                  <div className="flex flex-col sm:flex-row sm:items-center text-ksc-darkgray gap-4 sm:gap-8 mb-6">
+                  <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8">
+                    {article.summary}
+                  </p>
+                  
+                  {/* Meta Info */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-white/80">
                     <div className="flex items-center">
                       <User className="h-4 w-4 mr-2" />
                       <span className="text-sm">{article.author}</span>
@@ -616,16 +623,22 @@ const ArticleDetail = () => {
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="text-sm">{article.date}</span>
                     </div>
+                    <div className="flex items-center">
+                      <Clock className="h-4 w-4 mr-2" />
+                      <span className="text-sm">12 min read</span>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Featured Image - Smaller Size */}
-                <div className="w-full md:w-1/4 rounded-lg overflow-hidden shadow-md">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-auto"
-                  />
+                {/* Featured Image */}
+                <div className="lg:col-span-1">
+                  <div className="bg-white p-2 rounded-lg shadow-xl">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-48 lg:h-64 object-cover rounded"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -633,106 +646,125 @@ const ArticleDetail = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-12 bg-white">
+        <section className="py-16">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">              
-              {/* Summary */}
-              <div className="mb-12 p-6 bg-ksc-lightgray rounded-lg border-l-4 border-ksc-gold">
-                <div className="flex items-center gap-2 mb-3">
-                  <FileText className="h-5 w-5 text-ksc-navy" />
-                  <h2 className="font-serif text-2xl font-bold text-ksc-navy">
-                    Summary
-                  </h2>
+            <div className="max-w-4xl mx-auto">
+              {/* Tags & Share */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 p-6 bg-white rounded-lg shadow-sm border">
+                <div className="flex items-center flex-wrap gap-3">
+                  <span className="flex items-center text-ksc-darkgray font-medium">
+                    <Tag className="h-4 w-4 mr-2" />
+                    Topics:
+                  </span>
+                  {article.tags.map((tag) => (
+                    <Badge 
+                      key={tag} 
+                      variant="outline"
+                      className="bg-ksc-lightgray/50 border-ksc-navy/20 text-ksc-navy hover:bg-ksc-navy hover:text-white transition-colors"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
                 </div>
-                <p className="text-ksc-darkgray text-lg leading-relaxed">
-                  {article.summary}
-                </p>
+                
+                <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <Share2 className="h-4 w-4" />
+                  Share
+                </Button>
               </div>
               
-              {/* Tags */}
-              <div className="mb-10 flex items-center flex-wrap gap-3">
-                <span className="flex items-center text-ksc-darkgray">
-                  <Tag className="h-4 w-4 mr-1" />
-                  Topics:
-                </span>
-                {article.tags.map((tag) => (
-                  <Badge 
-                    key={tag} 
-                    variant="outline"
-                    className="bg-gray-50"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
+              {/* Article Content with better typography */}
+              <div className="bg-white rounded-lg shadow-sm border p-8 lg:p-12">
+                <article className="prose prose-lg max-w-none 
+                    prose-headings:font-serif 
+                    prose-headings:text-ksc-navy 
+                    prose-headings:font-bold 
+                    prose-h2:text-3xl 
+                    prose-h2:mt-12 
+                    prose-h2:mb-6 
+                    prose-h2:pb-3
+                    prose-h2:border-b-2
+                    prose-h2:border-ksc-gold/20
+                    prose-h3:text-2xl 
+                    prose-h3:mt-10 
+                    prose-h3:mb-4
+                    prose-h3:text-ksc-navy/90
+                    prose-p:text-gray-700 
+                    prose-p:text-lg
+                    prose-p:leading-relaxed 
+                    prose-p:my-6
+                    prose-ul:my-8
+                    prose-ol:my-8
+                    prose-li:text-lg
+                    prose-li:text-gray-700 
+                    prose-li:mb-3
+                    prose-li:leading-relaxed
+                    prose-strong:text-ksc-navy
+                    prose-strong:font-semibold">
+                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                </article>
               </div>
-              
-              {/* Article Content with enhanced typography */}
-              <article className="prose prose-lg max-w-none 
-                  prose-headings:font-serif 
-                  prose-headings:text-ksc-navy 
-                  prose-headings:font-bold 
-                  prose-h2:text-3xl 
-                  prose-h2:mt-12 
-                  prose-h2:mb-6 
-                  prose-h2:pb-2
-                  prose-h2:border-b
-                  prose-h2:border-gray-100
-                  prose-h3:text-2xl 
-                  prose-h3:mt-10 
-                  prose-h3:mb-4
-                  prose-p:text-gray-700 
-                  prose-p:text-lg
-                  prose-p:leading-relaxed 
-                  prose-p:my-6
-                  prose-ul:my-8
-                  prose-ol:my-8
-                  prose-li:text-lg
-                  prose-li:text-gray-700 
-                  prose-li:mb-3
-                  prose-li:leading-normal">
-                <div dangerouslySetInnerHTML={{ __html: article.content }} />
-              </article>
             </div>
           </div>
         </section>
 
-        {/* Related Articles and CTA */}
+        {/* Related Articles */}
         <section className="py-16 bg-ksc-lightgray">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-10 flex items-center justify-center gap-2">
-                <FileText className="h-6 w-6" />
-                Continue Reading
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-4 flex items-center justify-center gap-3">
+                  <FileText className="h-8 w-8 text-ksc-gold" />
+                  Related Articles
+                </h2>
+                <p className="text-ksc-darkgray text-lg">Continue exploring our latest research and insights</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {articles
                   .filter(a => a.id !== article.id)
-                  .slice(0, 2)
+                  .slice(0, 3)
                   .map(relatedArticle => (
                     <Link 
                       to={`/research/${relatedArticle.id}`}
                       key={relatedArticle.id}
-                      className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                      className="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
                     >
-                      <h3 className="font-serif text-xl font-bold text-ksc-navy mb-3 hover:text-ksc-gold transition-colors">
-                        {relatedArticle.title}
-                      </h3>
-                      <p className="text-ksc-darkgray mb-4 line-clamp-2">
-                        {relatedArticle.summary}
-                      </p>
-                      <div className="flex justify-between items-center">
-                        <span className="text-ksc-gold text-sm font-medium">{relatedArticle.category}</span>
-                        <span className="text-sm text-gray-500">{relatedArticle.date}</span>
+                      <div className="aspect-video overflow-hidden">
+                        <img 
+                          src={relatedArticle.image}
+                          alt={relatedArticle.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <Badge className="bg-ksc-gold/10 text-ksc-gold border-ksc-gold/20 mb-3">
+                          {relatedArticle.category}
+                        </Badge>
+                        <h3 className="font-serif text-xl font-bold text-ksc-navy mb-3 group-hover:text-ksc-gold transition-colors line-clamp-2">
+                          {relatedArticle.title}
+                        </h3>
+                        <p className="text-ksc-darkgray mb-4 line-clamp-2 text-sm leading-relaxed">
+                          {relatedArticle.summary}
+                        </p>
+                        <div className="flex items-center justify-between text-xs text-gray-500">
+                          <span>{relatedArticle.author.split(',')[0]}</span>
+                          <span>{relatedArticle.date}</span>
+                        </div>
                       </div>
                     </Link>
                   ))}
               </div>
-              <Button 
-                asChild
-                className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-6 text-lg font-medium"
-              >
-                <Link to="/publications">View All Publications</Link>
-              </Button>
+              
+              <div className="text-center">
+                <Button 
+                  asChild
+                  size="lg"
+                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-3"
+                >
+                  <Link to="/publications">View All Publications</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
