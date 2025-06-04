@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
+import { Card, CardContent } from "@/components/ui/card";
 
 const teamMembers = [
   {
@@ -32,123 +33,136 @@ const teamMembers = [
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       <main>
-        {/* Hero */}
-        <section className="pt-24 pb-12 bg-ksc-lightgray">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 bg-gradient-to-b from-ksc-navy to-ksc-navy/95">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h6 className="text-ksc-gold font-medium mb-3">About Us</h6>
-              <h1 className="font-serif text-4xl md:text-5xl font-semibold text-ksc-navy mb-6">
-                Our Story & Mission
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-8">
+                <span className="text-ksc-gold font-medium text-sm">About Us</span>
+              </div>
+              <h1 className="font-serif text-5xl md:text-6xl font-semibold text-white mb-8 leading-tight">
+                Building Financial
+                <span className="block text-ksc-gold">Legacies</span>
               </h1>
-              <p className="text-ksc-darkgray text-lg">
-                A dedication to excellence, integrity, and client success since our founding.
+              <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto">
+                A dedication to excellence, integrity, and client success since our founding in 2008.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Our Story */}
-        <section className="py-16 bg-white">
+        {/* Stats Section */}
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-serif text-3xl font-semibold text-ksc-navy mb-6">
-                  Our Story
-                </h2>
-                <p className="text-ksc-darkgray mb-6">
-                  Founded in 2008 amid one of the most challenging financial crises in modern history, 
-                  King Stock Capital Management was established with a contrarian vision: that times 
-                  of market turmoil present the greatest opportunities for strategic investors.
-                </p>
-                <p className="text-ksc-darkgray mb-6">
-                  Jonathan King, our founder, assembled a team of experienced investment professionals 
-                  who shared his perspective on disciplined, research-driven investment approaches. 
-                  Together, they developed proprietary methodologies for identifying undervalued assets 
-                  and market inefficiencies.
-                </p>
-                <p className="text-ksc-darkgray">
-                  Today, we manage over $1.2 billion in assets for individuals, families, and 
-                  institutions, maintaining the same principles that guided our founding: thorough 
-                  research, disciplined execution, and unwavering client focus.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">$1.2B+</div>
+                <div className="text-ksc-darkgray">Assets Under Management</div>
               </div>
+              <div className="text-center">
+                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">500+</div>
+                <div className="text-ksc-darkgray">Satisfied Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">15+</div>
+                <div className="text-ksc-darkgray">Years of Excellence</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Story */}
+        <section className="py-24 bg-ksc-lightgray/30">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+              <div className="space-y-8">
+                <div>
+                  <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
+                    Our Story
+                  </h2>
+                  <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
+                </div>
+                
+                <div className="space-y-6">
+                  <p className="text-ksc-darkgray text-lg leading-relaxed">
+                    Founded in 2008 amid one of the most challenging financial crises in modern history, 
+                    King Stock Capital Management was established with a contrarian vision: that times 
+                    of market turmoil present the greatest opportunities for strategic investors.
+                  </p>
+                  <p className="text-ksc-darkgray text-lg leading-relaxed">
+                    Jonathan King, our founder, assembled a team of experienced investment professionals 
+                    who shared his perspective on disciplined, research-driven investment approaches.
+                  </p>
+                  <p className="text-ksc-darkgray text-lg leading-relaxed">
+                    Today, we manage over $1.2 billion in assets for individuals, families, and 
+                    institutions, maintaining the same principles that guided our founding.
+                  </p>
+                </div>
+              </div>
+              
               <div className="relative">
-                <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center rounded-lg shadow-lg"></div>
-                <div className="absolute -bottom-4 -left-4 h-24 w-1/2 bg-ksc-gold opacity-20 rounded-lg -z-10"></div>
+                <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center rounded-2xl shadow-2xl"></div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-ksc-gold/10 rounded-2xl -z-10"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Mission & Values */}
-        <section className="py-16 bg-ksc-lightgray">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="font-serif text-3xl font-semibold text-ksc-navy mb-6">
-                  Our Mission
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
+                  Mission & Values
                 </h2>
-                <p className="text-ksc-darkgray mb-8">
-                  At King Stock Capital Management, our mission is to help our clients achieve 
-                  their financial goals through prudent investment strategies, personalized advice, 
-                  and exceptional service. We believe in creating long-term value through disciplined 
-                  research, strategic asset allocation, and active risk management.
+                <div className="w-16 h-1 bg-ksc-gold mx-auto mb-8"></div>
+                <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+                  Our mission is to help clients achieve their financial goals through prudent 
+                  investment strategies, personalized advice, and exceptional service.
                 </p>
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-ksc-navy font-serif text-xl mb-4">Our Approach</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="text-ksc-gold mr-2">•</span>
-                      <span className="text-ksc-darkgray">Disciplined research and analysis</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-ksc-gold mr-2">•</span>
-                      <span className="text-ksc-darkgray">Strategic asset allocation</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-ksc-gold mr-2">•</span>
-                      <span className="text-ksc-darkgray">Active risk management</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-ksc-gold mr-2">•</span>
-                      <span className="text-ksc-darkgray">Transparent client communication</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
-              <div>
-                <h2 className="font-serif text-3xl font-semibold text-ksc-navy mb-6">
-                  Our Values
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-ksc-navy font-serif text-lg mb-3">Integrity</h3>
-                    <p className="text-ksc-darkgray text-sm">
-                      We adhere to the highest ethical standards and always place our clients' interests first.
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-ksc-navy font-serif text-lg mb-3">Excellence</h3>
-                    <p className="text-ksc-darkgray text-sm">
-                      We strive for excellence in all aspects of our work, from research to client service.
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-ksc-navy font-serif text-lg mb-3">Innovation</h3>
-                    <p className="text-ksc-darkgray text-sm">
-                      We continuously seek innovative solutions to complex financial challenges.
-                    </p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-ksc-navy font-serif text-lg mb-3">Transparency</h3>
-                    <p className="text-ksc-darkgray text-sm">
-                      We maintain open and honest communication with our clients at all times.
-                    </p>
-                  </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Mission */}
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <h3 className="font-serif text-2xl font-semibold text-ksc-navy mb-6">Our Approach</h3>
+                    <div className="space-y-4">
+                      {[
+                        "Disciplined research and analysis",
+                        "Strategic asset allocation",
+                        "Active risk management",
+                        "Transparent client communication"
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center">
+                          <div className="w-2 h-2 bg-ksc-gold rounded-full mr-4"></div>
+                          <span className="text-ksc-darkgray">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Values */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { title: "Integrity", desc: "We adhere to the highest ethical standards and always place our clients' interests first." },
+                    { title: "Excellence", desc: "We strive for excellence in all aspects of our work, from research to client service." },
+                    { title: "Innovation", desc: "We continuously seek innovative solutions to complex financial challenges." },
+                    { title: "Transparency", desc: "We maintain open and honest communication with our clients at all times." }
+                  ].map((value, index) => (
+                    <Card key={index} className="border-0 shadow-lg">
+                      <CardContent className="p-6">
+                        <h4 className="font-serif text-lg font-semibold text-ksc-navy mb-3">{value.title}</h4>
+                        <p className="text-ksc-darkgray text-sm leading-relaxed">{value.desc}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
               </div>
             </div>
@@ -156,36 +170,39 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-white">
+        <section className="py-24 bg-ksc-lightgray/30">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold text-ksc-navy mb-4">
-                Our Leadership Team
-              </h2>
-              <p className="text-ksc-darkgray max-w-2xl mx-auto">
-                Meet the experienced professionals behind King Stock Capital's investment strategies.
-              </p>
-            </div>
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
+                  Leadership Team
+                </h2>
+                <div className="w-16 h-1 bg-ksc-gold mx-auto mb-8"></div>
+                <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+                  Meet the experienced professionals behind King Stock Capital's investment strategies.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="bg-ksc-lightgray rounded-lg overflow-hidden shadow-sm">
-                  <div className="aspect-[4/5] relative overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-serif text-xl font-medium text-ksc-navy mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-ksc-gold text-sm mb-3">{member.position}</p>
-                    <p className="text-ksc-darkgray text-sm">{member.bio}</p>
-                  </div>
-                </div>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {teamMembers.map((member, index) => (
+                  <Card key={index} className="border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div className="aspect-[4/5] relative overflow-hidden">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-6">
+                      <h3 className="font-serif text-xl font-semibold text-ksc-navy mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-ksc-gold text-sm font-medium mb-4">{member.position}</p>
+                      <p className="text-ksc-darkgray text-sm leading-relaxed">{member.bio}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
