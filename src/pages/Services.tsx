@@ -115,7 +115,7 @@ const investmentProcess = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30">
+    <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30 font-sans">
       <Navbar />
       
       <main>
@@ -146,7 +146,7 @@ const Services = () => {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="bg-transparent border-white text-white hover:bg-white/10"
+                  className="bg-transparent border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-6 rounded-lg transition-all duration-300"
                 >
                   <a href="tel:+12125551234">Call (212) 555-1234</a>
                 </Button>
