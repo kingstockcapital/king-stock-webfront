@@ -119,7 +119,7 @@ const Services = () => {
       <Navbar />
       
       <main>
-        {/* Enhanced Hero Section */}
+        {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
           <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -127,7 +127,7 @@ const Services = () => {
               <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-6">
                 <span className="text-ksc-gold font-medium text-sm">Premium Investment Solutions</span>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
                 Comprehensive Investment
                 <span className="block text-ksc-gold">Excellence</span>
               </h1>
@@ -146,7 +146,7 @@ const Services = () => {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold text-lg px-8 py-6 rounded-lg backdrop-blur-sm"
+                  className="border-2 border-white/30 text-white hover:bg-white hover:text-ksc-navy font-semibold text-lg px-8 py-6 rounded-lg backdrop-blur-sm transition-all duration-300"
                 >
                   <a href="tel:+12125551234">Call (212) 555-1234</a>
                 </Button>
@@ -155,11 +155,11 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Enhanced Services Grid */}
+        {/* Services Grid */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
                 Our Investment Services
               </h2>
               <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
@@ -179,7 +179,7 @@ const Services = () => {
                         {String(index + 1).padStart(2, '0')}
                       </div>
                     </div>
-                    <CardTitle className="font-serif text-2xl font-bold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
+                    <CardTitle className="text-2xl font-bold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="text-ksc-darkgray leading-relaxed text-base">
@@ -213,11 +213,11 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Enhanced Process Section */}
+        {/* Process Section */}
         <section className="py-24 bg-gradient-to-b from-ksc-lightgray/50 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-ksc-navy mb-6">
                 Our Investment Process
               </h2>
               <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
@@ -237,7 +237,7 @@ const Services = () => {
                           </div>
                           <div className="w-24 h-1 bg-ksc-gold rounded-full"></div>
                         </div>
-                        <CardTitle className="font-serif text-2xl font-bold mb-4">
+                        <CardTitle className="text-2xl font-bold mb-4">
                           {step.title}
                         </CardTitle>
                         <CardDescription className="text-gray-300 leading-relaxed text-base">
