@@ -146,7 +146,7 @@ const Services = () => {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="border-2 border-white/30 text-white hover:bg-white hover:text-ksc-navy font-semibold text-lg px-8 py-6 rounded-lg backdrop-blur-sm transition-all duration-300"
+                  className="bg-transparent border-white text-white hover:bg-white/10"
                 >
                   <a href="tel:+12125551234">Call (212) 555-1234</a>
                 </Button>
