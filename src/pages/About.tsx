@@ -33,13 +33,14 @@ const teamMembers = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30">
       <Navbar />
       
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-gradient-to-b from-ksc-navy to-ksc-navy/95">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="pt-32 pb-20 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-8">
                 <span className="text-ksc-gold font-medium text-sm">About Us</span>
@@ -76,7 +77,7 @@ const About = () => {
         </section>
 
         {/* Our Story */}
-        <section className="py-24 bg-ksc-lightgray/30">
+        <section className="py-24 bg-gradient-to-b from-ksc-lightgray/50 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               <div className="space-y-8">
@@ -170,7 +171,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-24 bg-ksc-lightgray/30">
+        <section className="py-24 bg-gradient-to-b from-ksc-lightgray/30 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
