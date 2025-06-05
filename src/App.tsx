@@ -13,6 +13,9 @@ import ArticleDetail from "./pages/ArticleDetail";
 import Contact from "./pages/Contact";
 import ClientPortal from "./pages/ClientPortal";
 import ClientPortalLogin from "./pages/ClientPortalLogin";
+import LegalNotice from "./pages/LegalNotice";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 
@@ -37,6 +40,9 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/client-portal-login" element={<ClientPortalLogin />} />
             <Route path="/client-portal" element={<ClientPortal />} />
+            <Route path="/legal-notice" element={<LegalNotice />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

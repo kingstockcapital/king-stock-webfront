@@ -47,9 +47,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-ksc-gold transition-colors">
+                <Link to="/legal-notice" className="text-gray-300 hover:text-ksc-gold transition-colors">
                   Legal Notice
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -78,12 +78,12 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} King Stock Capital Management. All rights reserved.
           </p>
           <div className="flex space-x-6 text-xs text-gray-400">
-            <a href="#" className="hover:text-ksc-gold transition-colors">
+            <Link to="/privacy-policy" className="hover:text-ksc-gold transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-ksc-gold transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-ksc-gold transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
