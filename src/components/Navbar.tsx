@@ -75,6 +75,22 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
+                
+                {/* Separator */}
+                <div className="border-t border-gray-200 my-4"></div>
+                
+                {/* Admin Portal Link */}
+                <Link
+                  to="/admin-login"
+                  className={`text-lg font-medium transition-colors hover:text-ksc-gold ${
+                    location.pathname === "/admin-login"
+                      ? "text-ksc-gold border-l-4 border-ksc-gold pl-4"
+                      : "text-gray-600 pl-4"
+                  }`}
+                >
+                  Admin Portal
+                </Link>
+                
                 <Button 
                   size="lg" 
                   className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
