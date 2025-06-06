@@ -13,6 +13,8 @@ import ArticleDetail from "./pages/ArticleDetail";
 import Contact from "./pages/Contact";
 import ClientPortal from "./pages/ClientPortal";
 import ClientPortalLogin from "./pages/ClientPortalLogin";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -40,6 +42,8 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/client-portal-login" element={<ClientPortalLogin />} />
             <Route path="/client-portal" element={<ClientPortal />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
             <Route path="/legal-notice" element={<LegalNotice />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
