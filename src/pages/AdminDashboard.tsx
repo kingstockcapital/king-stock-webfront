@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     // Check admin authentication
     const adminAuth = localStorage.getItem("adminAuth");
     if (!adminAuth) {
-      toast.error("Vui lòng đăng nhập admin");
+      toast.error("Please login as admin");
       navigate("/admin-login");
       return;
     }
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("adminAuth");
-    toast.success("Đăng xuất thành công");
+    toast.success("Logged out successfully");
     navigate("/admin-login");
   };
 
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
         <main className="pt-24 pb-16 min-h-screen flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-ksc-gold border-t-transparent mx-auto mb-4"></div>
-            <p>Đang tải bảng điều khiển...</p>
+            <p>Loading dashboard...</p>
           </div>
         </main>
         <Footer />
@@ -78,10 +78,10 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <div>
                 <h1 className="text-2xl font-serif font-bold text-ksc-navy mb-2">
-                  Bảng Điều Khiển Admin
+                  Admin Dashboard
                 </h1>
                 <p className="text-gray-600">
-                  Chào mừng, <span className="font-medium">{user.username}</span>
+                  Welcome, <span className="font-medium">{user.username}</span>
                 </p>
               </div>
               <Button 
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
                 className="text-red-600 border-red-200 hover:bg-red-50"
               >
                 <LogOut className="h-4 w-4 mr-2" />
-                Đăng xuất
+                Logout
               </Button>
             </div>
           </div>

@@ -11,9 +11,9 @@ import { toast } from "sonner";
 
 const ArticleManagement = () => {
   const [articles, setArticles] = useState([
-    { id: 1, title: "Phân tích thị trường Q4 2024", author: "Admin", date: "2024-01-15", status: "Published", views: 1234 },
-    { id: 2, title: "Xu hướng đầu tư bền vững", author: "Admin", date: "2024-01-10", status: "Draft", views: 0 },
-    { id: 3, title: "Chiến lược đa dạng hóa danh mục", author: "Admin", date: "2024-01-05", status: "Published", views: 856 },
+    { id: 1, title: "Q4 2024 Market Analysis", author: "Admin", date: "2024-01-15", status: "Published", views: 1234 },
+    { id: 2, title: "Sustainable Investment Trends", author: "Admin", date: "2024-01-10", status: "Draft", views: 0 },
+    { id: 3, title: "Portfolio Diversification Strategy", author: "Admin", date: "2024-01-05", status: "Published", views: 856 },
   ]);
 
   const [newArticle, setNewArticle] = useState({
@@ -27,7 +27,7 @@ const ArticleManagement = () => {
 
   const handleAddArticle = () => {
     if (!newArticle.title || !newArticle.author) {
-      toast.error("Vui lòng điền đầy đủ thông tin");
+      toast.error("Please fill in all required fields");
       return;
     }
 
@@ -43,12 +43,12 @@ const ArticleManagement = () => {
     setArticles([...articles, article]);
     setNewArticle({ title: "", author: "", content: "" });
     setIsDialogOpen(false);
-    toast.success("Bài viết đã được thêm thành công!");
+    toast.success("Article added successfully!");
   };
 
   const handleDeleteArticle = (id: number) => {
     setArticles(articles.filter(article => article.id !== id));
-    toast.success("Bài viết đã được xóa!");
+    toast.success("Article deleted!");
   };
 
   const filteredArticles = articles.filter(article =>
@@ -61,10 +61,10 @@ const ArticleManagement = () => {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-2">
-            Quản lý bài viết
+            Article Management
           </h2>
           <p className="text-gray-600">
-            Quản lý tất cả bài viết nghiên cứu và insights
+            Manage all research articles and insights
           </p>
         </div>
 
@@ -72,38 +72,38 @@ const ArticleManagement = () => {
           <DialogTrigger asChild>
             <Button className="bg-ksc-navy hover:bg-ksc-navy/90">
               <Plus className="h-4 w-4 mr-2" />
-              Thêm bài viết
+              Add Article
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-md">
             <DialogHeader>
-              <DialogTitle>Thêm bài viết mới</DialogTitle>
+              <DialogTitle>Add New Article</DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="title">Tiêu đề</Label>
+                <Label htmlFor="title">Title</Label>
                 <Input
                   id="title"
                   value={newArticle.title}
                   onChange={(e) => setNewArticle({...newArticle, title: e.target.value})}
-                  placeholder="Nhập tiêu đề bài viết"
+                  placeholder="Enter article title"
                 />
               </div>
               <div>
-                <Label htmlFor="author">Tác giả</Label>
+                <Label htmlFor="author">Author</Label>
                 <Input
                   id="author"
                   value={newArticle.author}
                   onChange={(e) => setNewArticle({...newArticle, author: e.target.value})}
-                  placeholder="Nhập tên tác giả"
+                  placeholder="Enter author name"
                 />
               </div>
               <div className="flex justify-end space-x-2">
                 <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-                  Hủy
+                  Cancel
                 </Button>
                 <Button onClick={handleAddArticle} className="bg-ksc-navy hover:bg-ksc-navy/90">
-                  Thêm
+                  Add
                 </Button>
               </div>
             </div>
@@ -115,7 +115,7 @@ const ArticleManagement = () => {
       <div className="flex items-center space-x-2">
         <Search className="h-4 w-4 text-gray-400" />
         <Input
-          placeholder="Tìm kiếm bài viết..."
+          placeholder="Search articles..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="max-w-sm"
@@ -125,18 +125,18 @@ const ArticleManagement = () => {
       {/* Articles Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Danh sách bài viết ({filteredArticles.length})</CardTitle>
+          <CardTitle>Article List ({filteredArticles.length})</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Tiêu đề</TableHead>
-                <TableHead>Tác giả</TableHead>
-                <TableHead>Ngày tạo</TableHead>
-                <TableHead>Trạng thái</TableHead>
-                <TableHead>Lượt xem</TableHead>
-                <TableHead>Thao tác</TableHead>
+                <TableHead>Title</TableHead>
+                <TableHead>Author</TableHead>
+                <TableHead>Date Created</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Views</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

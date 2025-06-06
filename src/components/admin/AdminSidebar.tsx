@@ -9,10 +9,10 @@ interface AdminSidebarProps {
 
 const AdminSidebar = ({ activeTab, setActiveTab }: AdminSidebarProps) => {
   const menuItems = [
-    { id: "overview", label: "Tổng quan", icon: BarChart3 },
-    { id: "articles", label: "Quản lý bài viết", icon: FileText },
-    { id: "customers", label: "Quản lý khách hàng", icon: Users },
-    { id: "settings", label: "Cài đặt", icon: Settings },
+    { id: "overview", label: "Overview", icon: BarChart3 },
+    { id: "articles", label: "Article Management", icon: FileText },
+    { id: "customers", label: "Customer Management", icon: Users },
+    { id: "settings", label: "Settings", icon: Settings },
   ];
 
   return (

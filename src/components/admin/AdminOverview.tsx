@@ -5,30 +5,30 @@ import { Users, FileText, TrendingUp, Eye } from "lucide-react";
 const AdminOverview = () => {
   const stats = [
     {
-      title: "Tổng số bài viết",
+      title: "Total Articles",
       value: "24",
-      change: "+3 tháng này",
+      change: "+3 this month",
       icon: FileText,
       color: "text-blue-600"
     },
     {
-      title: "Tổng số khách hàng",
+      title: "Total Customers",
       value: "156",
-      change: "+12 tháng này",
+      change: "+12 this month",
       icon: Users,
       color: "text-green-600"
     },
     {
-      title: "Lượt xem trang",
+      title: "Page Views",
       value: "8,432",
-      change: "+18% so với tháng trước",
+      change: "+18% from last month",
       icon: Eye,
       color: "text-purple-600"
     },
     {
-      title: "Tăng trưởng",
+      title: "Growth Rate",
       value: "12.5%",
-      change: "So với quý trước",
+      change: "Compared to last quarter",
       icon: TrendingUp,
       color: "text-orange-600"
     }
@@ -38,10 +38,10 @@ const AdminOverview = () => {
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-2">
-          Tổng quan hệ thống
+          System Overview
         </h2>
         <p className="text-gray-600">
-          Thống kê tổng quan về hoạt động của hệ thống
+          Overall statistics about system activity
         </p>
       </div>
 
@@ -71,19 +71,19 @@ const AdminOverview = () => {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-serif text-ksc-navy">
-              Bài viết gần đây
+              Recent Articles
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               {[
-                "Phân tích thị trường Q4 2024",
-                "Xu hướng đầu tư bền vững",
-                "Chiến lược đa dạng hóa danh mục"
+                "Q4 2024 Market Analysis",
+                "Sustainable Investment Trends",
+                "Portfolio Diversification Strategy"
               ].map((article, index) => (
                 <div key={index} className="flex items-center justify-between py-2 border-b last:border-b-0">
                   <span className="text-sm text-gray-700">{article}</span>
-                  <span className="text-xs text-gray-500">2 ngày trước</span>
+                  <span className="text-xs text-gray-500">2 days ago</span>
                 </div>
               ))}
             </div>
@@ -93,22 +93,22 @@ const AdminOverview = () => {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-serif text-ksc-navy">
-              Khách hàng mới
+              New Customers
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               {[
-                { name: "Nguyễn Văn A", type: "Individual" },
-                { name: "Công ty ABC", type: "Institutional" },
-                { name: "Trần Thị B", type: "Individual" }
+                { name: "John Smith", type: "Individual" },
+                { name: "ABC Corporation", type: "Institutional" },
+                { name: "Sarah Johnson", type: "Individual" }
               ].map((customer, index) => (
                 <div key={index} className="flex items-center justify-between py-2 border-b last:border-b-0">
                   <div>
                     <span className="text-sm font-medium text-gray-700">{customer.name}</span>
                     <span className="block text-xs text-gray-500">{customer.type}</span>
                   </div>
-                  <span className="text-xs text-gray-500">Hôm nay</span>
+                  <span className="text-xs text-gray-500">Today</span>
                 </div>
               ))}
             </div>

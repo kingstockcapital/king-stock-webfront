@@ -11,8 +11,8 @@ const CustomerManagement = () => {
   const [customers, setCustomers] = useState([
     { 
       id: 1, 
-      name: "Nguyễn Văn A", 
-      email: "nguyenvana@email.com", 
+      name: "John Smith", 
+      email: "johnsmith@email.com", 
       phone: "0123456789", 
       type: "Individual", 
       status: "Active",
@@ -21,7 +21,7 @@ const CustomerManagement = () => {
     },
     { 
       id: 2, 
-      name: "Công ty ABC", 
+      name: "ABC Corporation", 
       email: "contact@abc.com", 
       phone: "0987654321", 
       type: "Institutional", 
@@ -31,8 +31,8 @@ const CustomerManagement = () => {
     },
     { 
       id: 3, 
-      name: "Trần Thị B", 
-      email: "tranthib@email.com", 
+      name: "Sarah Johnson", 
+      email: "sarah@email.com", 
       phone: "0555666777", 
       type: "Individual", 
       status: "Pending",
@@ -45,7 +45,7 @@ const CustomerManagement = () => {
 
   const handleDeleteCustomer = (id: number) => {
     setCustomers(customers.filter(customer => customer.id !== id));
-    toast.success("Khách hàng đã được xóa!");
+    toast.success("Customer deleted!");
   };
 
   const filteredCustomers = customers.filter(customer =>
@@ -58,10 +58,10 @@ const CustomerManagement = () => {
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-2">
-          Quản lý khách hàng
+          Customer Management
         </h2>
         <p className="text-gray-600">
-          Quản lý thông tin và danh mục đầu tư của khách hàng
+          Manage customer information and investment portfolios
         </p>
       </div>
 
@@ -71,7 +71,7 @@ const CustomerManagement = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Tổng khách hàng</p>
+                <p className="text-sm text-gray-600">Total Customers</p>
                 <p className="text-2xl font-bold text-ksc-navy">{customers.length}</p>
               </div>
               <div className="p-2 bg-blue-100 rounded-lg">
@@ -85,7 +85,7 @@ const CustomerManagement = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Khách hàng cá nhân</p>
+                <p className="text-sm text-gray-600">Individual Customers</p>
                 <p className="text-2xl font-bold text-ksc-navy">
                   {customers.filter(c => c.type === "Individual").length}
                 </p>
@@ -101,7 +101,7 @@ const CustomerManagement = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Khách hàng tổ chức</p>
+                <p className="text-sm text-gray-600">Institutional Customers</p>
                 <p className="text-2xl font-bold text-ksc-navy">
                   {customers.filter(c => c.type === "Institutional").length}
                 </p>
@@ -118,7 +118,7 @@ const CustomerManagement = () => {
       <div className="flex items-center space-x-2">
         <Search className="h-4 w-4 text-gray-400" />
         <Input
-          placeholder="Tìm kiếm khách hàng..."
+          placeholder="Search customers..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="max-w-sm"
@@ -128,19 +128,19 @@ const CustomerManagement = () => {
       {/* Customers Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Danh sách khách hàng ({filteredCustomers.length})</CardTitle>
+          <CardTitle>Customer List ({filteredCustomers.length})</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Tên khách hàng</TableHead>
-                <TableHead>Liên hệ</TableHead>
-                <TableHead>Loại</TableHead>
-                <TableHead>Trạng thái</TableHead>
-                <TableHead>Ngày tham gia</TableHead>
-                <TableHead>Giá trị danh mục</TableHead>
-                <TableHead>Thao tác</TableHead>
+                <TableHead>Customer Name</TableHead>
+                <TableHead>Contact</TableHead>
+                <TableHead>Type</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Join Date</TableHead>
+                <TableHead>Portfolio Value</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
