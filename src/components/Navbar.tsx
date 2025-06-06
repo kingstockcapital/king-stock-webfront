@@ -76,8 +76,13 @@ const Navbar = () => {
                   </Link>
                 ))}
                 
-                {/* Separator */}
-                <div className="border-t border-gray-200 my-4"></div>
+                <Button 
+                  size="lg" 
+                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
+                  asChild
+                >
+                  <Link to="/client-portal-login">Client Portal</Link>
+                </Button>
                 
                 {/* Admin Portal Link */}
                 <Link
@@ -90,14 +95,6 @@ const Navbar = () => {
                 >
                   Admin Portal
                 </Link>
-                
-                <Button 
-                  size="lg" 
-                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
-                  asChild
-                >
-                  <Link to="/client-portal-login">Client Portal</Link>
-                </Button>
               </div>
             </SheetContent>
           </Sheet>
