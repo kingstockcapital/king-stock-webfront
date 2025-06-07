@@ -12,7 +12,7 @@ import {
   Plus, Edit, Trash2, Search, Eye, Bold, Italic, List, Link, 
   Heading1, Heading2, Heading3, Quote, Code, ImageIcon, 
   AlignLeft, AlignCenter, AlignRight, Undo, Redo, FileText, 
-  Eye as PreviewIcon, Type, Strikethrough, ListOrdered, Paragraph
+  Eye as PreviewIcon, Type, Strikethrough, ListOrdered
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -293,7 +293,7 @@ const ArticleManagement = () => {
                           className="h-8 w-8 p-0 hover:bg-gray-200"
                           title="Paragraph"
                         >
-                          <Paragraph className="h-4 w-4" />
+                          <AlignLeft className="h-4 w-4" />
                         </Button>
                         <Button
                           type="button"
