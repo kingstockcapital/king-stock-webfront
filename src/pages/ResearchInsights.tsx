@@ -16,86 +16,18 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-// Sample research articles data
-const featuredArticles = [
-  {
-    id: 1,
-    title: "2025 Market Outlook: Navigating Economic Transitions",
-    summary: "A comprehensive analysis of market trends, economic indicators, and investment opportunities for the coming year.",
-    date: "May 10, 2025",
-    author: "Sarah Johnson, Chief Investment Officer",
-    category: "Market Analysis",
-    readTime: "8 min read",
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 2,
-    title: "The Rise of Sustainable Investing: Impact and Returns",
-    summary: "Exploring the growth of ESG investments and their performance compared to traditional investment approaches.",
-    date: "April 28, 2025",
-    author: "Michael Chen, Senior Investment Analyst",
-    category: "Sustainable Finance",
-    readTime: "6 min read",
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 3,
-    title: "Tech Sector Analysis: Innovations Driving Future Growth",
-    summary: "An in-depth look at emerging technologies and their potential impact on investment portfolios.",
-    date: "April 15, 2025",
-    author: "David Williams, Technology Sector Specialist",
-    category: "Sector Analysis",
-    readTime: "10 min read",
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  }
-];
-
-const recentPublications = [
-  {
-    id: 4,
-    title: "Quarterly Economic Review: Q1 2025",
-    date: "April 5, 2025",
-    category: "Economic Analysis",
-    readTime: "12 min read"
-  },
-  {
-    id: 5,
-    title: "Infrastructure Investments: Opportunities in Developing Markets",
-    date: "March 22, 2025",
-    category: "Global Markets",
-    readTime: "9 min read"
-  },
-  {
-    id: 6,
-    title: "Retirement Planning in an Inflationary Environment",
-    date: "March 15, 2025",
-    category: "Retirement Strategies",
-    readTime: "7 min read"
-  },
-  {
-    id: 7,
-    title: "Healthcare Sector: Post-Pandemic Investment Landscape",
-    date: "March 3, 2025",
-    category: "Sector Analysis",
-    readTime: "11 min read"
-  },
-  {
-    id: 8,
-    title: "Fixed Income Strategies for the Current Rate Environment",
-    date: "February 20, 2025",
-    category: "Fixed Income",
-    readTime: "8 min read"
-  }
-];
+import { getFeaturedArticles, getRecentPublications } from "@/data/articles";
 
 const ResearchInsights = () => {
+  // Get data from shared articles data
+  const featuredArticles = getFeaturedArticles();
+  const recentPublications = getRecentPublications();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30">
       <Navbar />

@@ -15,19 +15,19 @@ import {
   Eye as PreviewIcon, Type, Strikethrough, ListOrdered
 } from "lucide-react";
 import { toast } from "sonner";
+import { getAllArticles, addArticle, deleteArticle, updateArticle, type Article } from "@/data/articles";
 
 const ArticleManagement = () => {
   
-  const [articles, setArticles] = useState([
-    { id: 1, title: "Q4 2024 Market Analysis", author: "Admin", date: "2024-01-15", status: "Published", views: 1234 },
-    { id: 2, title: "Sustainable Investment Trends", author: "Admin", date: "2024-01-10", status: "Draft", views: 0 },
-    { id: 3, title: "Portfolio Diversification Strategy", author: "Admin", date: "2024-01-05", status: "Published", views: 856 },
-  ]);
+  const [articles, setArticles] = useState<Article[]>(getAllArticles());
 
   const [newArticle, setNewArticle] = useState({
     title: "",
     author: "",
-    content: ""
+    content: "",
+    summary: "",
+    category: "",
+    tags: [] as string[]
   });
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,24 +42,35 @@ const ArticleManagement = () => {
       return;
     }
 
-    const article = {
-      id: articles.length + 1,
+    const article = addArticle({
       title: newArticle.title,
       author: newArticle.author,
+      content: newArticle.content,
+      summary: newArticle.summary,
+      category: newArticle.category || "General",
       date: new Date().toISOString().split('T')[0],
       status: "Draft",
-      views: 0
-    };
+      tags: newArticle.tags,
+      views: 0,
+      readTime: `${Math.ceil(newArticle.content.split(' ').length / 200)} min read`
+    });
 
-    setArticles([...articles, article]);
-    setNewArticle({ title: "", author: "", content: "" });
+    setArticles(getAllArticles());
+    setNewArticle({ title: "", author: "", content: "", summary: "", category: "", tags: [] });
     setIsDialogOpen(false);
     toast.success("Article added successfully!");
   };
 
   const handleDeleteArticle = (id: number) => {
-    setArticles(articles.filter(article => article.id !== id));
+    deleteArticle(id);
+    setArticles(getAllArticles());
     toast.success("Article deleted!");
+  };
+
+  const handleUpdateStatus = (id: number, status: 'Published' | 'Draft') => {
+    updateArticle(id, { status });
+    setArticles(getAllArticles());
+    toast.success(`Article ${status.toLowerCase()} successfully!`);
   };
 
   const insertTextAtCursor = (textarea: HTMLTextAreaElement, text: string) => {
@@ -184,7 +195,7 @@ const ArticleManagement = () => {
             Article Management
           </h2>
           <p className="text-gray-600">
-            Manage all research articles and insights
+            Manage all research articles and insights ({articles.length} total)
           </p>
         </div>
 
@@ -220,6 +231,29 @@ const ArticleManagement = () => {
                     value={newArticle.author}
                     onChange={(e) => setNewArticle({...newArticle, author: e.target.value})}
                     placeholder="Enter author name"
+                    className="mt-1"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="category" className="text-sm font-medium">Category</Label>
+                  <Input
+                    id="category"
+                    value={newArticle.category}
+                    onChange={(e) => setNewArticle({...newArticle, category: e.target.value})}
+                    placeholder="e.g., Market Analysis"
+                    className="mt-1"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="summary" className="text-sm font-medium">Summary</Label>
+                  <Input
+                    id="summary"
+                    value={newArticle.summary}
+                    onChange={(e) => setNewArticle({...newArticle, summary: e.target.value})}
+                    placeholder="Brief article summary"
                     className="mt-1"
                   />
                 </div>
@@ -500,6 +534,7 @@ The toolbar above provides quick formatting options. Happy writing!"
               <TableRow>
                 <TableHead>Title</TableHead>
                 <TableHead>Author</TableHead>
+                <TableHead>Category</TableHead>
                 <TableHead>Date Created</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Views</TableHead>
@@ -510,7 +545,8 @@ The toolbar above provides quick formatting options. Happy writing!"
               {filteredArticles.map((article) => (
                 <TableRow key={article.id}>
                   <TableCell className="font-medium">{article.title}</TableCell>
-                  <TableCell>{article.author}</TableCell>
+                  <TableCell>{article.author.split(',')[0]}</TableCell>
+                  <TableCell>{article.category}</TableCell>
                   <TableCell>{article.date}</TableCell>
                   <TableCell>
                     <span className={`px-2 py-1 rounded-full text-xs ${
@@ -529,6 +565,25 @@ The toolbar above provides quick formatting options. Happy writing!"
                   </TableCell>
                   <TableCell>
                     <div className="flex space-x-2">
+                      {article.status === 'Draft' ? (
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleUpdateStatus(article.id, 'Published')}
+                          className="text-green-600 hover:text-green-700"
+                        >
+                          Publish
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleUpdateStatus(article.id, 'Draft')}
+                          className="text-yellow-600 hover:text-yellow-700"
+                        >
+                          Unpublish
+                        </Button>
+                      )}
                       <Button variant="outline" size="sm">
                         <Edit className="h-4 w-4" />
                       </Button>

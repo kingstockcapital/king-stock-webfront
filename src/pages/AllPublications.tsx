@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, Search, Tag } from "lucide-react";
+import { Calendar, Search, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -21,142 +20,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-
-// All publications data with more articles and tags
-const allPublications = [
-  {
-    id: 1,
-    title: "2025 Market Outlook: Navigating Economic Transitions",
-    summary: "A comprehensive analysis of market trends, economic indicators, and investment opportunities for the coming year.",
-    date: "May 10, 2025",
-    author: "Sarah Johnson, Chief Investment Officer",
-    category: "Market Analysis",
-    tags: ["Economy", "Investment", "Forecast"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 2,
-    title: "The Rise of Sustainable Investing: Impact and Returns",
-    summary: "Exploring the growth of ESG investments and their performance compared to traditional investment approaches.",
-    date: "April 28, 2025",
-    author: "Michael Chen, Senior Investment Analyst",
-    category: "Sustainable Finance",
-    tags: ["ESG", "Sustainability", "Investment"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 3,
-    title: "Tech Sector Analysis: Innovations Driving Future Growth",
-    summary: "An in-depth look at emerging technologies and their potential impact on investment portfolios.",
-    date: "April 15, 2025",
-    author: "David Williams, Technology Sector Specialist",
-    category: "Sector Analysis",
-    tags: ["Technology", "Innovation", "Growth"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 4,
-    title: "Quarterly Economic Review: Q1 2025",
-    summary: "A detailed analysis of global economic performance and projections for the coming quarters.",
-    date: "April 5, 2025",
-    author: "Jennifer Smith, Economic Analyst",
-    category: "Economic Analysis",
-    tags: ["Economy", "Quarterly", "Global"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 5,
-    title: "Infrastructure Investments: Opportunities in Developing Markets",
-    summary: "Examining investment prospects in infrastructure projects across emerging economies.",
-    date: "March 22, 2025",
-    author: "Robert Lee, Global Markets Strategist",
-    category: "Global Markets",
-    tags: ["Infrastructure", "Emerging Markets", "Investment"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 6,
-    title: "Retirement Planning in an Inflationary Environment",
-    summary: "Strategies for protecting retirement savings during periods of elevated inflation.",
-    date: "March 15, 2025",
-    author: "Lisa Thompson, Retirement Specialist",
-    category: "Retirement Strategies",
-    tags: ["Retirement", "Inflation", "Planning"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 7,
-    title: "Healthcare Sector: Post-Pandemic Investment Landscape",
-    summary: "Analysis of healthcare industry trends and investment opportunities following global health crises.",
-    date: "March 3, 2025",
-    author: "Emily Johnson, Healthcare Sector Analyst",
-    category: "Sector Analysis",
-    tags: ["Healthcare", "Investment", "Trends"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 8,
-    title: "Fixed Income Strategies for the Current Rate Environment",
-    summary: "Navigating the bond market and optimizing fixed income portfolios in changing interest rate conditions.",
-    date: "February 20, 2025",
-    author: "Daniel Brown, Fixed Income Specialist",
-    category: "Fixed Income",
-    tags: ["Bonds", "Interest Rates", "Strategy"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 9,
-    title: "Political Landscape and Market Implications for 2025",
-    summary: "Analyzing how changing political environments might affect investment markets globally.",
-    date: "February 15, 2025",
-    author: "Thomas Wright, Political Risk Analyst",
-    category: "Political Analysis",
-    tags: ["Politics", "Global Markets", "Risk"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 10,
-    title: "Political Changes in Southeast Asia: Investment Opportunities",
-    summary: "Examining how political shifts in Southeast Asian countries are creating new investment landscapes.",
-    date: "February 8, 2025",
-    author: "Alice Wong, Asia Pacific Strategist",
-    category: "Regional Analysis",
-    tags: ["Politics", "Southeast Asia", "Emerging Markets"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  },
-  {
-    id: 11,
-    title: "Digital Currency Developments and Regulatory Impacts",
-    summary: "Understanding the evolving landscape of digital currencies and potential effects on traditional markets.",
-    date: "January 30, 2025",
-    author: "Mark Johnson, Financial Technology Specialist",
-    category: "FinTech",
-    tags: ["Digital Currency", "Regulation", "Technology"],
-    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
-  },
-  {
-    id: 12,
-    title: "Climate Change Policies and Market Effects",
-    summary: "Analyzing how new environmental policies are reshaping investment landscapes across sectors.",
-    date: "January 18, 2025",
-    author: "Sophia Martinez, ESG Research Lead",
-    category: "Environmental Analysis",
-    tags: ["Climate", "Policy", "ESG"],
-    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
-  }
-];
-
-// All available tags extracted from publications
-const allTags = Array.from(
-  new Set(
-    allPublications.flatMap(pub => pub.tags)
-  )
-).sort();
+import { getPublishedArticles } from "@/data/articles";
 
 const AllPublications = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
+  // Get published articles from shared data
+  const allPublications = getPublishedArticles();
+
+  // Extract all unique tags
+  const allTags = Array.from(
+    new Set(
+      allPublications.flatMap(pub => pub.tags || [])
+    )
+  ).sort();
   
   // Extract all unique categories
   const categories = Array.from(
@@ -167,10 +46,10 @@ const AllPublications = () => {
   const filteredPublications = allPublications.filter(publication => {
     const matchesSearch = searchTerm === "" || 
       publication.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      publication.summary.toLowerCase().includes(searchTerm.toLowerCase());
+      (publication.summary && publication.summary.toLowerCase().includes(searchTerm.toLowerCase()));
     
     const matchesTags = selectedTags.length === 0 || 
-      selectedTags.some(tag => publication.tags.includes(tag));
+      selectedTags.some(tag => publication.tags?.includes(tag));
     
     const matchesCategory = !selectedCategory || 
       publication.category === selectedCategory;
@@ -321,7 +200,7 @@ const AllPublications = () => {
                   <CardContent>
                     <p className="text-ksc-darkgray line-clamp-3">{publication.summary}</p>
                     <div className="flex flex-wrap gap-2 mt-4">
-                      {publication.tags.map((tag) => (
+                      {publication.tags?.map((tag) => (
                         <Badge key={tag} variant="outline" className="bg-gray-50">
                           {tag}
                         </Badge>
