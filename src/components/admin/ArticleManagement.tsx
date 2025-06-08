@@ -247,32 +247,33 @@ const ArticleManagement = () => {
   );
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-4 sm:space-y-6">
+      {/* Header Section */}
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
         <div>
-          <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-2">
+          <h2 className="text-xl sm:text-2xl font-serif font-bold text-ksc-navy mb-2">
             Article Management
           </h2>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Manage all research articles and insights ({articles.length} active, {deletedArticles.length} in trash)
           </p>
         </div>
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-ksc-navy hover:bg-ksc-navy/90">
+            <Button className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
               <Plus className="h-4 w-4 mr-2" />
               Add Article
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-6xl max-h-[95vh] overflow-hidden">
+          <DialogContent className="max-w-[95vw] sm:max-w-6xl max-h-[95vh] overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="text-xl font-serif">Create New Article</DialogTitle>
+              <DialogTitle className="text-lg sm:text-xl font-serif">Create New Article</DialogTitle>
             </DialogHeader>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="title" className="text-sm font-medium">Title *</Label>
                   <Input
@@ -295,7 +296,7 @@ const ArticleManagement = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="category" className="text-sm font-medium">Category</Label>
                   <Input
@@ -320,16 +321,16 @@ const ArticleManagement = () => {
               
               
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <Label className="text-sm font-medium">Content *</Label>
                   <Tabs value={editorMode} onValueChange={(value) => setEditorMode(value as 'edit' | 'preview')}>
                     <TabsList className="grid w-fit grid-cols-2">
-                      <TabsTrigger value="edit" className="flex items-center gap-2">
-                        <Type className="h-4 w-4" />
+                      <TabsTrigger value="edit" className="flex items-center gap-2 text-xs sm:text-sm">
+                        <Type className="h-3 w-3 sm:h-4 sm:w-4" />
                         Editor
                       </TabsTrigger>
-                      <TabsTrigger value="preview" className="flex items-center gap-2">
-                        <Eye className="h-4 w-4" />
+                      <TabsTrigger value="preview" className="flex items-center gap-2 text-xs sm:text-sm">
+                        <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
                         Preview
                       </TabsTrigger>
                     </TabsList>
@@ -338,7 +339,7 @@ const ArticleManagement = () => {
 
                 <Card className="border-2">
                   
-                  <div className="border-b bg-gray-50/50 p-3">
+                  <div className="border-b bg-gray-50/50 p-2 sm:p-3">
                     <div className="flex flex-wrap items-center gap-1">
                       
                       <div className="flex items-center gap-1">
@@ -347,34 +348,34 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('bold')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Bold (Ctrl+B)"
                         >
-                          <Bold className="h-4 w-4" />
+                          <Bold className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('italic')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Italic (Ctrl+I)"
                         >
-                          <Italic className="h-4 w-4" />
+                          <Italic className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('strikethrough')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Strikethrough"
                         >
-                          <Strikethrough className="h-4 w-4" />
+                          <Strikethrough className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -383,44 +384,44 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('paragraph')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Paragraph"
                         >
-                          <AlignLeft className="h-4 w-4" />
+                          <AlignLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h1')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Heading 1"
                         >
-                          <Heading1 className="h-4 w-4" />
+                          <Heading1 className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h2')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Heading 2"
                         >
-                          <Heading2 className="h-4 w-4" />
+                          <Heading2 className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h3')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Heading 3"
                         >
-                          <Heading3 className="h-4 w-4" />
+                          <Heading3 className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -429,34 +430,34 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('unordered-list')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Bullet List"
                         >
-                          <List className="h-4 w-4" />
+                          <List className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('ordered-list')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Numbered List"
                         >
-                          <ListOrdered className="h-4 w-4" />
+                          <ListOrdered className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('quote')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Quote"
                         >
-                          <Quote className="h-4 w-4" />
+                          <Quote className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -465,52 +466,52 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('link')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Insert Link"
                         >
-                          <Link className="h-4 w-4" />
+                          <Link className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('image')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Insert Image"
                         >
-                          <ImageIcon className="h-4 w-4" />
+                          <ImageIcon className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('code')}
-                          className="h-8 w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                           title="Code"
                         >
-                          <Code className="h-4 w-4" />
+                          <Code className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
 
-                      <div className="ml-auto text-xs text-gray-500 hidden sm:block">
+                      <div className="ml-auto text-xs text-gray-500 hidden lg:block">
                         Markdown supported • Ctrl+B for bold • Ctrl+I for italic
                       </div>
                     </div>
                   </div>
                   
                   
-                  <div className="min-h-[500px]">
+                  <div className="min-h-[300px] sm:min-h-[500px]">
                     {editorMode === 'edit' ? (
                       <Textarea
                         id="content-editor"
                         value={newArticle.content}
                         onChange={(e) => setNewArticle({...newArticle, content: e.target.value})}
                         placeholder={"Start writing your article content here...\n\nYou can use markdown formatting:\n- **Bold text** or *italic text*\n- # Large headings or ## smaller headings\n- > Blockquotes for important notes\n- [Links](https://example.com) and ![Images](image-url)\n- `inline code` or code blocks\n- Lists with bullets or numbers\n\nThe toolbar above provides quick formatting options. Happy writing!"}
-                        className="min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
+                        className="min-h-[300px] sm:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
                         style={{ fontSize: '14px', lineHeight: '1.6' }}
                       />
                     ) : (
-                      <div className="p-6 min-h-[500px] prose prose-sm max-w-none">
+                      <div className="p-4 sm:p-6 min-h-[300px] sm:min-h-[500px] prose prose-sm max-w-none">
                         {newArticle.content ? (
                           <div 
                             className="text-sm leading-relaxed"
@@ -519,9 +520,9 @@ const ArticleManagement = () => {
                             }} 
                           />
                         ) : (
-                          <div className="text-gray-400 text-center mt-20">
-                            <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                            <p>Start writing in the editor to see preview here</p>
+                          <div className="text-gray-400 text-center mt-10 sm:mt-20">
+                            <FileText className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-4 opacity-50" />
+                            <p className="text-sm sm:text-base">Start writing in the editor to see preview here</p>
                           </div>
                         )}
                       </div>
@@ -529,7 +530,7 @@ const ArticleManagement = () => {
                   </div>
                 </Card>
                 
-                <div className="flex items-center justify-between text-xs text-gray-500">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-gray-500 gap-2">
                   <div className="flex items-center gap-4">
                     <span>Characters: {newArticle.content.length}</span>
                     <span>Words: {newArticle.content.split(/\s+/).filter(word => word.length > 0).length}</span>
@@ -539,8 +540,8 @@ const ArticleManagement = () => {
               </div>
               
               
-              <div className="flex justify-end space-x-3 pt-4 border-t">
-                <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+              <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 pt-4 border-t">
+                <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="w-full sm:w-auto">
                   Cancel
                 </Button>
                 <Button 
@@ -548,10 +549,11 @@ const ArticleManagement = () => {
                   onClick={() => {
                     toast.success("Article saved as draft!");
                   }}
+                  className="w-full sm:w-auto"
                 >
                   Save as Draft
                 </Button>
-                <Button onClick={handleAddArticle} className="bg-ksc-navy hover:bg-ksc-navy/90">
+                <Button onClick={handleAddArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
                   Publish Article
                 </Button>
               </div>
@@ -559,16 +561,16 @@ const ArticleManagement = () => {
           </DialogContent>
         </Dialog>
 
-        {/* Edit Article Dialog */}
+        {/* Edit Article Dialog - Similar structure with responsive improvements */}
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-          <DialogContent className="max-w-6xl max-h-[95vh] overflow-hidden">
+          <DialogContent className="max-w-[95vw] sm:max-w-6xl max-h-[95vh] overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="text-xl font-serif">Edit Article</DialogTitle>
+              <DialogTitle className="text-lg sm:text-xl font-serif">Edit Article</DialogTitle>
             </DialogHeader>
             
             {editingArticle && (
-              <div className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="edit-title" className="text-sm font-medium">Title *</Label>
                     <Input
@@ -591,7 +593,7 @@ const ArticleManagement = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="edit-category" className="text-sm font-medium">Category</Label>
                     <Input
@@ -616,16 +618,16 @@ const ArticleManagement = () => {
 
                 {/* Content Editor - Similar to create form but with edit data */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <Label className="text-sm font-medium">Content *</Label>
                     <Tabs value={editorMode} onValueChange={(value) => setEditorMode(value as 'edit' | 'preview')}>
                       <TabsList className="grid w-fit grid-cols-2">
-                        <TabsTrigger value="edit" className="flex items-center gap-2">
-                          <Type className="h-4 w-4" />
+                        <TabsTrigger value="edit" className="flex items-center gap-2 text-xs sm:text-sm">
+                          <Type className="h-3 w-3 sm:h-4 sm:w-4" />
                           Editor
                         </TabsTrigger>
-                        <TabsTrigger value="preview" className="flex items-center gap-2">
-                          <Eye className="h-4 w-4" />
+                        <TabsTrigger value="preview" className="flex items-center gap-2 text-xs sm:text-sm">
+                          <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
                           Preview
                         </TabsTrigger>
                       </TabsList>
@@ -634,7 +636,7 @@ const ArticleManagement = () => {
 
                   <Card className="border-2">
                     {/* Toolbar - same as create form */}
-                    <div className="border-b bg-gray-50/50 p-3">
+                    <div className="border-b bg-gray-50/50 p-2 sm:p-3">
                       <div className="flex flex-wrap items-center gap-1">
                         <div className="flex items-center gap-1">
                           <Button
@@ -642,34 +644,34 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('bold')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Bold (Ctrl+B)"
                           >
-                            <Bold className="h-4 w-4" />
+                            <Bold className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('italic')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Italic (Ctrl+I)"
                           >
-                            <Italic className="h-4 w-4" />
+                            <Italic className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('strikethrough')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Strikethrough"
                           >
-                            <Strikethrough className="h-4 w-4" />
+                            <Strikethrough className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -677,44 +679,44 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('paragraph')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Paragraph"
                           >
-                            <AlignLeft className="h-4 w-4" />
+                            <AlignLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h1')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Heading 1"
                           >
-                            <Heading1 className="h-4 w-4" />
+                            <Heading1 className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h2')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Heading 2"
                           >
-                            <Heading2 className="h-4 w-4" />
+                            <Heading2 className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h3')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Heading 3"
                           >
-                            <Heading3 className="h-4 w-4" />
+                            <Heading3 className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -722,34 +724,34 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('unordered-list')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Bullet List"
                           >
-                            <List className="h-4 w-4" />
+                            <List className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('ordered-list')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Numbered List"
                           >
-                            <ListOrdered className="h-4 w-4" />
+                            <ListOrdered className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('quote')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Quote"
                           >
-                            <Quote className="h-4 w-4" />
+                            <Quote className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -757,51 +759,51 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('link')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Insert Link"
                           >
-                            <Link className="h-4 w-4" />
+                            <Link className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('image')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Insert Image"
                           >
-                            <ImageIcon className="h-4 w-4" />
+                            <ImageIcon className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('code')}
-                            className="h-8 w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
                             title="Code"
                           >
-                            <Code className="h-4 w-4" />
+                            <Code className="h-3 w-3 sm:h-4 sm:w-4" />
                           </Button>
                         </div>
 
-                        <div className="ml-auto text-xs text-gray-500 hidden sm:block">
+                        <div className="ml-auto text-xs text-gray-500 hidden lg:block">
                           Markdown supported • Ctrl+B for bold • Ctrl+I for italic
                         </div>
                       </div>
                     </div>
                     
-                    <div className="min-h-[500px]">
+                    <div className="min-h-[300px] sm:min-h-[500px]">
                       {editorMode === 'edit' ? (
                         <Textarea
                           id="edit-content-editor"
                           value={editingArticle.content || ''}
                           onChange={(e) => setEditingArticle({...editingArticle, content: e.target.value})}
                           placeholder="Edit your article content here..."
-                          className="min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
+                          className="min-h-[300px] sm:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
                           style={{ fontSize: '14px', lineHeight: '1.6' }}
                         />
                       ) : (
-                        <div className="p-6 min-h-[500px] prose prose-sm max-w-none">
+                        <div className="p-4 sm:p-6 min-h-[300px] sm:min-h-[500px] prose prose-sm max-w-none">
                           {editingArticle.content ? (
                             <div 
                               className="text-sm leading-relaxed"
@@ -810,9 +812,9 @@ const ArticleManagement = () => {
                               }} 
                             />
                           ) : (
-                            <div className="text-gray-400 text-center mt-20">
-                              <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                              <p>No content to preview</p>
+                            <div className="text-gray-400 text-center mt-10 sm:mt-20">
+                              <FileText className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-4 opacity-50" />
+                              <p className="text-sm sm:text-base">No content to preview</p>
                             </div>
                           )}
                         </div>
@@ -821,11 +823,11 @@ const ArticleManagement = () => {
                   </Card>
                 </div>
                 
-                <div className="flex justify-end space-x-3 pt-4 border-t">
-                  <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
+                <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 pt-4 border-t">
+                  <Button variant="outline" onClick={() => setIsEditDialogOpen(false)} className="w-full sm:w-auto">
                     Cancel
                   </Button>
-                  <Button onClick={handleEditArticle} className="bg-ksc-navy hover:bg-ksc-navy/90">
+                  <Button onClick={handleEditArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
                     Update Article
                   </Button>
                 </div>
@@ -836,21 +838,25 @@ const ArticleManagement = () => {
       </div>
 
       {/* View Toggle and Search */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <Tabs value={activeView} onValueChange={(value) => setActiveView(value as 'active' | 'trash')}>
-          <TabsList>
-            <TabsTrigger value="active">Active Articles ({articles.length})</TabsTrigger>
-            <TabsTrigger value="trash">Trash ({deletedArticles.length})</TabsTrigger>
+          <TabsList className="w-full sm:w-auto">
+            <TabsTrigger value="active" className="flex-1 sm:flex-none text-xs sm:text-sm">
+              Active Articles ({articles.length})
+            </TabsTrigger>
+            <TabsTrigger value="trash" className="flex-1 sm:flex-none text-xs sm:text-sm">
+              Trash ({deletedArticles.length})
+            </TabsTrigger>
           </TabsList>
         </Tabs>
 
-        <div className="flex items-center space-x-2">
-          <Search className="h-4 w-4 text-gray-400" />
+        <div className="flex items-center space-x-2 w-full sm:w-auto">
+          <Search className="h-4 w-4 text-gray-400 flex-shrink-0" />
           <Input
             placeholder="Search articles..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="max-w-sm"
+            className="w-full sm:max-w-sm"
           />
         </div>
       </div>
@@ -858,110 +864,202 @@ const ArticleManagement = () => {
       {/* Articles Table */}
       <Card>
         <CardHeader>
-          <CardTitle>
+          <CardTitle className="text-lg sm:text-xl">
             {activeView === 'active' ? 'Active Articles' : 'Deleted Articles'} ({filteredArticles.length})
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Title</TableHead>
-                <TableHead>Author</TableHead>
-                <TableHead>Category</TableHead>
-                <TableHead>Date</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Views</TableHead>
-                <TableHead>Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredArticles.map((article) => (
-                <TableRow key={article.id}>
-                  <TableCell className="font-medium">{article.title}</TableCell>
-                  <TableCell>{article.author.split(',')[0]}</TableCell>
-                  <TableCell>{article.category}</TableCell>
-                  <TableCell>{activeView === 'trash' && article.deletedAt ? new Date(article.deletedAt).toLocaleDateString() : article.date}</TableCell>
-                  <TableCell>
-                    <span className={`px-2 py-1 rounded-full text-xs ${
-                      article.status === 'Published' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-yellow-100 text-yellow-800'
-                    }`}>
-                      {article.status}
-                    </span>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center">
-                      <Eye className="h-4 w-4 mr-1 text-gray-400" />
-                      {article.views}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex space-x-2">
-                      {activeView === 'active' ? (
-                        <>
-                          {article.status === 'Draft' ? (
+        <CardContent className="p-0 sm:p-6">
+          {/* Mobile Card View */}
+          <div className="block sm:hidden">
+            {filteredArticles.map((article) => (
+              <div key={article.id} className="border-b p-4 space-y-3">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-medium text-sm line-clamp-2">{article.title}</h3>
+                  <span className={`px-2 py-1 rounded-full text-xs flex-shrink-0 ml-2 ${
+                    article.status === 'Published' 
+                      ? 'bg-green-100 text-green-800' 
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}>
+                    {article.status}
+                  </span>
+                </div>
+                
+                <div className="text-sm text-gray-600 space-y-1">
+                  <div>Author: {article.author.split(',')[0]}</div>
+                  <div>Category: {article.category}</div>
+                  <div>Date: {activeView === 'trash' && article.deletedAt ? new Date(article.deletedAt).toLocaleDateString() : article.date}</div>
+                  <div className="flex items-center">
+                    <Eye className="h-3 w-3 mr-1 text-gray-400" />
+                    {article.views} views
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {activeView === 'active' ? (
+                    <>
+                      {article.status === 'Draft' ? (
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleUpdateStatus(article.id, 'Published')}
+                          className="text-green-600 hover:text-green-700 text-xs"
+                        >
+                          Publish
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleUpdateStatus(article.id, 'Draft')}
+                          className="text-yellow-600 hover:text-yellow-700 text-xs"
+                        >
+                          Unpublish
+                        </Button>
+                      )}
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => openEditDialog(article)}
+                        className="text-xs"
+                      >
+                        <Edit className="h-3 w-3" />
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleDeleteArticle(article.id)}
+                        className="text-red-600 hover:text-red-700 text-xs"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleRestoreArticle(article.id)}
+                        className="text-green-600 hover:text-green-700 text-xs"
+                      >
+                        <RotateCcw className="h-3 w-3" />
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handlePermanentDelete(article.id)}
+                        className="text-red-600 hover:text-red-700 text-xs"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </Button>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Desktop Table View */}
+          <div className="hidden sm:block overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Title</TableHead>
+                  <TableHead>Author</TableHead>
+                  <TableHead>Category</TableHead>
+                  <TableHead>Date</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Views</TableHead>
+                  <TableHead>Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredArticles.map((article) => (
+                  <TableRow key={article.id}>
+                    <TableCell className="font-medium max-w-xs truncate">{article.title}</TableCell>
+                    <TableCell className="max-w-xs truncate">{article.author.split(',')[0]}</TableCell>
+                    <TableCell>{article.category}</TableCell>
+                    <TableCell>{activeView === 'trash' && article.deletedAt ? new Date(article.deletedAt).toLocaleDateString() : article.date}</TableCell>
+                    <TableCell>
+                      <span className={`px-2 py-1 rounded-full text-xs ${
+                        article.status === 'Published' 
+                          ? 'bg-green-100 text-green-800' 
+                          : 'bg-yellow-100 text-yellow-800'
+                      }`}>
+                        {article.status}
+                      </span>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center">
+                        <Eye className="h-4 w-4 mr-1 text-gray-400" />
+                        {article.views}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex space-x-2">
+                        {activeView === 'active' ? (
+                          <>
+                            {article.status === 'Draft' ? (
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={() => handleUpdateStatus(article.id, 'Published')}
+                                className="text-green-600 hover:text-green-700"
+                              >
+                                Publish
+                              </Button>
+                            ) : (
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={() => handleUpdateStatus(article.id, 'Draft')}
+                                className="text-yellow-600 hover:text-yellow-700"
+                              >
+                                Unpublish
+                              </Button>
+                            )}
                             <Button 
                               variant="outline" 
                               size="sm"
-                              onClick={() => handleUpdateStatus(article.id, 'Published')}
+                              onClick={() => openEditDialog(article)}
+                            >
+                              <Edit className="h-4 w-4" />
+                            </Button>
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() => handleDeleteArticle(article.id)}
+                              className="text-red-600 hover:text-red-700"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </>
+                        ) : (
+                          <>
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              onClick={() => handleRestoreArticle(article.id)}
                               className="text-green-600 hover:text-green-700"
                             >
-                              Publish
+                              <RotateCcw className="h-4 w-4" />
                             </Button>
-                          ) : (
                             <Button 
                               variant="outline" 
                               size="sm"
-                              onClick={() => handleUpdateStatus(article.id, 'Draft')}
-                              className="text-yellow-600 hover:text-yellow-700"
+                              onClick={() => handlePermanentDelete(article.id)}
+                              className="text-red-600 hover:text-red-700"
                             >
-                              Unpublish
+                              <Trash2 className="h-4 w-4" />
                             </Button>
-                          )}
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => openEditDialog(article)}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => handleDeleteArticle(article.id)}
-                            className="text-red-600 hover:text-red-700"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </>
-                      ) : (
-                        <>
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => handleRestoreArticle(article.id)}
-                            className="text-green-600 hover:text-green-700"
-                          >
-                            <RotateCcw className="h-4 w-4" />
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm"
-                            onClick={() => handlePermanentDelete(article.id)}
-                            className="text-red-600 hover:text-red-700"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </>
-                      )}
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+                          </>
+                        )}
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>
