@@ -76,25 +76,23 @@ const Navbar = () => {
                   </Link>
                 ))}
                 
+                {/* Admin Portal Button */}
                 <Button 
                   size="lg" 
-                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none mt-4"
+                  variant="outline"
+                  className="border-ksc-gold text-ksc-gold hover:bg-ksc-gold hover:text-white transition-colors mt-4"
+                  asChild
+                >
+                  <Link to="/admin-login">Admin Portal</Link>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white border-none"
                   asChild
                 >
                   <Link to="/client-portal-login">Client Portal</Link>
                 </Button>
-                
-                {/* Admin Portal Link */}
-                <Link
-                  to="/admin-login"
-                  className={`text-lg font-medium transition-colors hover:text-ksc-gold ${
-                    location.pathname === "/admin-login"
-                      ? "text-ksc-gold border-l-4 border-ksc-gold pl-4"
-                      : "text-gray-600 pl-4"
-                  }`}
-                >
-                  Admin Portal
-                </Link>
               </div>
             </SheetContent>
           </Sheet>
