@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { 
   Plus, Edit, Trash2, Search, Eye, Bold, Italic, List, Link, 
   Heading1, Heading2, Heading3, Quote, Code, ImageIcon, 
-  AlignLeft, Type, Strikethrough, ListOrdered, RotateCcw, FileText, Preview as PreviewIcon
+  AlignLeft, Type, Strikethrough, ListOrdered, RotateCcw, FileText
 } from "lucide-react";
 import { toast } from "sonner";
 import { 
@@ -329,7 +329,7 @@ const ArticleManagement = () => {
                         Editor
                       </TabsTrigger>
                       <TabsTrigger value="preview" className="flex items-center gap-2">
-                        <PreviewIcon className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                         Preview
                       </TabsTrigger>
                     </TabsList>
@@ -625,7 +625,7 @@ const ArticleManagement = () => {
                           Editor
                         </TabsTrigger>
                         <TabsTrigger value="preview" className="flex items-center gap-2">
-                          <PreviewIcon className="h-4 w-4" />
+                          <Eye className="h-4 w-4" />
                           Preview
                         </TabsTrigger>
                       </TabsList>
