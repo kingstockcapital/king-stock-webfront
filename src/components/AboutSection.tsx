@@ -9,9 +9,9 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center rounded-lg shadow-lg"></div>
+              <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfDB8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center rounded-lg shadow-lg"></div>
               <div className="absolute -bottom-10 -right-10 bg-ksc-navy text-white p-5 rounded-lg shadow-lg hidden md:block">
-                <p className="text-4xl font-serif font-bold">15+</p>
+                <p className="text-4xl font-serif font-bold">3+</p>
                 <p className="text-sm">Years of Excellence</p>
               </div>
             </div>
@@ -20,7 +20,7 @@ const AboutSection = () => {
           <div>
             <h6 className="text-ksc-gold font-medium mb-2">About Us</h6>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-ksc-navy mb-6 leading-tight">
-              Building Financial Legacies Since 2008
+              Building Financial Legacies Since 2021
             </h2>
             
             <p className="text-ksc-darkgray mb-6">

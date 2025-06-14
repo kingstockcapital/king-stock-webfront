@@ -50,7 +50,7 @@ const About = () => {
                 <span className="block text-ksc-gold">Legacies</span>
               </h1>
               <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto">
-                A dedication to excellence, integrity, and client success since our founding in 2008.
+                A dedication to excellence, integrity, and client success since our founding in 2021.
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ const About = () => {
                 <div className="text-ksc-darkgray">Satisfied Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">15+</div>
+                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">3+</div>
                 <div className="text-ksc-darkgray">Years of Excellence</div>
               </div>
             </div>
@@ -90,7 +90,7 @@ const About = () => {
                 
                 <div className="space-y-6">
                   <p className="text-ksc-darkgray text-lg leading-relaxed">
-                    Founded in 2008 amid one of the most challenging financial crises in modern history, 
+                    Founded in 2021 amid a challenging period for global markets,
                     King Stock Capital Management was established with a contrarian vision: that times 
                     of market turmoil present the greatest opportunities for strategic investors.
                   </p>
