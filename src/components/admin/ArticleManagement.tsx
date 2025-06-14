@@ -247,14 +247,14 @@ const ArticleManagement = () => {
   );
 
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="space-y-4 md:space-y-6 xl:space-y-10">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 xl:gap-10">
         <div>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-ksc-navy mb-2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-serif font-bold text-ksc-navy mb-2">
             Article Management
           </h2>
-          <p className="text-sm md:text-base text-gray-600">
+          <p className="text-sm md:text-base xl:text-lg text-gray-600">
             Manage all research articles and insights ({articles.length} active, {deletedArticles.length} in trash)
           </p>
         </div>
@@ -838,25 +838,25 @@ const ArticleManagement = () => {
       </div>
 
       {/* View Toggle and Search */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 xl:gap-10">
         <Tabs value={activeView} onValueChange={(value) => setActiveView(value as 'active' | 'trash')}>
           <TabsList className="w-full md:w-auto">
-            <TabsTrigger value="active" className="flex-1 md:flex-none text-xs md:text-sm">
+            <TabsTrigger value="active" className="flex-1 md:flex-none text-xs md:text-sm xl:text-base">
               Active Articles ({articles.length})
             </TabsTrigger>
-            <TabsTrigger value="trash" className="flex-1 md:flex-none text-xs md:text-sm">
+            <TabsTrigger value="trash" className="flex-1 md:flex-none text-xs md:text-sm xl:text-base">
               Trash ({deletedArticles.length})
             </TabsTrigger>
           </TabsList>
         </Tabs>
 
-        <div className="flex items-center space-x-2 w-full md:w-auto">
+        <div className="flex items-center space-x-2 w-full md:w-auto xl:space-x-4">
           <Search className="h-4 w-4 text-gray-400 flex-shrink-0" />
           <Input
             placeholder="Search articles..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full md:max-w-sm"
+            className="w-full md:max-w-sm xl:max-w-md"
           />
         </div>
       </div>
@@ -864,11 +864,11 @@ const ArticleManagement = () => {
       {/* Articles Table */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg md:text-xl">
+          <CardTitle className="text-lg md:text-xl xl:text-2xl">
             {activeView === 'active' ? 'Active Articles' : 'Deleted Articles'} ({filteredArticles.length})
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0 md:p-6">
+        <CardContent className="p-0 md:p-6 xl:p-10">
           {/* Mobile/Tablet Card View */}
           <div className="block lg:hidden">
             {filteredArticles.map((article) => (
@@ -960,130 +960,132 @@ const ArticleManagement = () => {
           
           {/* Desktop Table View */}
           <div className="hidden lg:block overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[25%]">Title</TableHead>
-                  <TableHead className="w-[15%]">Author</TableHead>
-                  <TableHead className="w-[15%]">Category</TableHead>
-                  <TableHead className="w-[10%]">Date</TableHead>
-                  <TableHead className="w-[10%]">Status</TableHead>
-                  <TableHead className="w-[10%]">Views</TableHead>
-                  <TableHead className="w-[15%]">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredArticles.map((article) => (
-                  <TableRow key={article.id}>
-                    <TableCell className="font-medium">
-                      <div className="max-w-xs truncate" title={article.title}>
-                        {article.title}
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="max-w-xs truncate" title={article.author}>
-                        {article.author.split(',')[0]}
-                      </div>
-                    </TableCell>
-                    <TableCell>{article.category}</TableCell>
-                    <TableCell className="text-sm">
-                      {activeView === 'trash' && article.deletedAt 
-                        ? new Date(article.deletedAt).toLocaleDateString() 
-                        : article.date}
-                    </TableCell>
-                    <TableCell>
-                      <span className={`px-2 py-1 rounded-full text-xs whitespace-nowrap ${
-                        article.status === 'Published' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {article.status}
-                      </span>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center">
-                        <Eye className="h-4 w-4 mr-1 text-gray-400" />
-                        <span className="text-sm">{article.views}</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex space-x-1">
-                        {activeView === 'active' ? (
-                          <>
-                            {article.status === 'Draft' ? (
+            <div className="min-w-[900px] xl:min-w-[1100px]">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-[25%] xl:text-base">Title</TableHead>
+                    <TableHead className="w-[15%] xl:text-base">Author</TableHead>
+                    <TableHead className="w-[15%] xl:text-base">Category</TableHead>
+                    <TableHead className="w-[10%] xl:text-base">Date</TableHead>
+                    <TableHead className="w-[10%] xl:text-base">Status</TableHead>
+                    <TableHead className="w-[10%] xl:text-base">Views</TableHead>
+                    <TableHead className="w-[15%] xl:text-base">Actions</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredArticles.map((article) => (
+                    <TableRow key={article.id} className="hover:bg-ksc-gold/10 transition-colors">
+                      <TableCell className="font-medium max-w-xs truncate xl:max-w-sm">
+                        <div className="truncate" title={article.title}>
+                          {article.title}
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="max-w-xs truncate xl:max-w-sm" title={article.author}>
+                          {article.author.split(',')[0]}
+                        </div>
+                      </TableCell>
+                      <TableCell>{article.category}</TableCell>
+                      <TableCell className="text-sm xl:text-base">
+                        {activeView === 'trash' && article.deletedAt 
+                          ? new Date(article.deletedAt).toLocaleDateString() 
+                          : article.date}
+                      </TableCell>
+                      <TableCell>
+                        <span className={`px-2 py-1 rounded-full text-xs xl:text-sm whitespace-nowrap ${
+                          article.status === 'Published' 
+                            ? 'bg-green-100 text-green-800' 
+                            : 'bg-yellow-100 text-yellow-800'
+                        }`}>
+                          {article.status}
+                        </span>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex items-center">
+                          <Eye className="h-4 w-4 mr-1 text-gray-400" />
+                          <span className="text-sm xl:text-base">{article.views}</span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex space-x-1 xl:space-x-2">
+                          {activeView === 'active' ? (
+                            <>
+                              {article.status === 'Draft' ? (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => handleUpdateStatus(article.id, 'Published')}
+                                  className="text-green-600 hover:text-green-700 text-xs px-2"
+                                >
+                                  Publish
+                                </Button>
+                              ) : (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm"
+                                  onClick={() => handleUpdateStatus(article.id, 'Draft')}
+                                  className="text-yellow-600 hover:text-yellow-700 text-xs px-2"
+                                >
+                                  Draft
+                                </Button>
+                              )}
                               <Button 
                                 variant="outline" 
                                 size="sm"
-                                onClick={() => handleUpdateStatus(article.id, 'Published')}
+                                onClick={() => openEditDialog(article)}
+                                className="px-2"
+                              >
+                                <Edit className="h-4 w-4" />
+                              </Button>
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={() => handleDeleteArticle(article.id)}
+                                className="text-red-600 hover:text-red-700 px-2"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </>
+                          ) : (
+                            <>
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={() => handleRestoreArticle(article.id)}
                                 className="text-green-600 hover:text-green-700 text-xs px-2"
                               >
-                                Publish
+                                <RotateCcw className="h-4 w-4 mr-1" />
+                                Restore
                               </Button>
-                            ) : (
                               <Button 
                                 variant="outline" 
                                 size="sm"
-                                onClick={() => handleUpdateStatus(article.id, 'Draft')}
-                                className="text-yellow-600 hover:text-yellow-700 text-xs px-2"
+                                onClick={() => handlePermanentDelete(article.id)}
+                                className="text-red-600 hover:text-red-700 text-xs px-2"
                               >
-                                Draft
+                                <Trash2 className="h-4 w-4 mr-1" />
+                                Delete
                               </Button>
-                            )}
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              onClick={() => openEditDialog(article)}
-                              className="px-2"
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Button>
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              onClick={() => handleDeleteArticle(article.id)}
-                              className="text-red-600 hover:text-red-700 px-2"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </Button>
-                          </>
-                        ) : (
-                          <>
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              onClick={() => handleRestoreArticle(article.id)}
-                              className="text-green-600 hover:text-green-700 text-xs px-2"
-                            >
-                              <RotateCcw className="h-4 w-4 mr-1" />
-                              Restore
-                            </Button>
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              onClick={() => handlePermanentDelete(article.id)}
-                              className="text-red-600 hover:text-red-700 text-xs px-2"
-                            >
-                              <Trash2 className="h-4 w-4 mr-1" />
-                              Delete
-                            </Button>
-                          </>
-                        )}
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                            </>
+                          )}
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </div>
           
           {/* Empty State */}
           {filteredArticles.length === 0 && (
-            <div className="text-center py-12">
+            <div className="text-center py-12 xl:py-16">
               <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg xl:text-2xl font-medium text-gray-900 mb-2">
                 {searchTerm ? 'No articles found' : `No ${activeView} articles`}
               </h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 xl:text-lg">
                 {searchTerm 
                   ? 'Try adjusting your search terms'
                   : `There are no ${activeView} articles at the moment.`
