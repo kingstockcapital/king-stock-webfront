@@ -16,7 +16,6 @@ const HeroSection = () => {
             Strategic Investments for <span className="text-ksc-gold">Long-Term Growth</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
-            Strategic investments for long-term growth.<br />
             At <span className="font-semibold text-ksc-gold">King Stock Capital Management</span>, we create tailored investment strategies that align with your financial goals and risk tolerance to optimize growth and security.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
