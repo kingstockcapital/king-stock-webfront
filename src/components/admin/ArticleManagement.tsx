@@ -247,33 +247,33 @@ const ArticleManagement = () => {
   );
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header Section */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4">
         <div>
-          <h2 className="text-xl sm:text-2xl font-serif font-bold text-ksc-navy mb-2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-ksc-navy mb-2">
             Article Management
           </h2>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="text-sm md:text-base text-gray-600">
             Manage all research articles and insights ({articles.length} active, {deletedArticles.length} in trash)
           </p>
         </div>
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
+            <Button className="bg-ksc-navy hover:bg-ksc-navy/90 w-full lg:w-auto">
               <Plus className="h-4 w-4 mr-2" />
               Add Article
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-[95vw] sm:max-w-6xl max-h-[95vh] overflow-hidden">
+          <DialogContent className="max-w-[95vw] md:max-w-[90vw] lg:max-w-6xl max-h-[95vh] overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="text-lg sm:text-xl font-serif">Create New Article</DialogTitle>
+              <DialogTitle className="text-lg md:text-xl font-serif">Create New Article</DialogTitle>
             </DialogHeader>
             
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4 md:space-y-6">
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="title" className="text-sm font-medium">Title *</Label>
                   <Input
@@ -296,7 +296,7 @@ const ArticleManagement = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="category" className="text-sm font-medium">Category</Label>
                   <Input
@@ -321,16 +321,16 @@ const ArticleManagement = () => {
               
               
               <div className="space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <Label className="text-sm font-medium">Content *</Label>
                   <Tabs value={editorMode} onValueChange={(value) => setEditorMode(value as 'edit' | 'preview')}>
                     <TabsList className="grid w-fit grid-cols-2">
-                      <TabsTrigger value="edit" className="flex items-center gap-2 text-xs sm:text-sm">
-                        <Type className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <TabsTrigger value="edit" className="flex items-center gap-2 text-xs md:text-sm">
+                        <Type className="h-3 w-3 md:h-4 md:w-4" />
                         Editor
                       </TabsTrigger>
-                      <TabsTrigger value="preview" className="flex items-center gap-2 text-xs sm:text-sm">
-                        <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <TabsTrigger value="preview" className="flex items-center gap-2 text-xs md:text-sm">
+                        <Eye className="h-3 w-3 md:h-4 md:w-4" />
                         Preview
                       </TabsTrigger>
                     </TabsList>
@@ -339,7 +339,7 @@ const ArticleManagement = () => {
 
                 <Card className="border-2">
                   
-                  <div className="border-b bg-gray-50/50 p-2 sm:p-3">
+                  <div className="border-b bg-gray-50/50 p-2 md:p-3">
                     <div className="flex flex-wrap items-center gap-1">
                       
                       <div className="flex items-center gap-1">
@@ -348,34 +348,34 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('bold')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Bold (Ctrl+B)"
                         >
-                          <Bold className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Bold className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('italic')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Italic (Ctrl+I)"
                         >
-                          <Italic className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Italic className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('strikethrough')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Strikethrough"
                         >
-                          <Strikethrough className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Strikethrough className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -384,44 +384,44 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('paragraph')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Paragraph"
                         >
-                          <AlignLeft className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <AlignLeft className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h1')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Heading 1"
                         >
-                          <Heading1 className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Heading1 className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h2')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Heading 2"
                         >
-                          <Heading2 className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Heading2 className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('h3')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Heading 3"
                         >
-                          <Heading3 className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Heading3 className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -430,34 +430,34 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('unordered-list')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Bullet List"
                         >
-                          <List className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <List className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('ordered-list')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Numbered List"
                         >
-                          <ListOrdered className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <ListOrdered className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('quote')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Quote"
                         >
-                          <Quote className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Quote className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                       </div>
 
-                      <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                      <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                       
                       <div className="flex items-center gap-1">
@@ -466,52 +466,52 @@ const ArticleManagement = () => {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('link')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Insert Link"
                         >
-                          <Link className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Link className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('image')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Insert Image"
                         >
-                          <ImageIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <ImageIcon className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                         <Button
                           type="button"
                           variant="ghost"
                           size="sm"
                           onClick={() => handleFormatting('code')}
-                          className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                          className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                           title="Code"
                         >
-                          <Code className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <Code className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
                       </div>
 
-                      <div className="ml-auto text-xs text-gray-500 hidden lg:block">
+                      <div className="ml-auto text-xs text-gray-500 hidden xl:block">
                         Markdown supported • Ctrl+B for bold • Ctrl+I for italic
                       </div>
                     </div>
                   </div>
                   
                   
-                  <div className="min-h-[300px] sm:min-h-[500px]">
+                  <div className="min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
                     {editorMode === 'edit' ? (
                       <Textarea
                         id="content-editor"
                         value={newArticle.content}
                         onChange={(e) => setNewArticle({...newArticle, content: e.target.value})}
                         placeholder={"Start writing your article content here...\n\nYou can use markdown formatting:\n- **Bold text** or *italic text*\n- # Large headings or ## smaller headings\n- > Blockquotes for important notes\n- [Links](https://example.com) and ![Images](image-url)\n- `inline code` or code blocks\n- Lists with bullets or numbers\n\nThe toolbar above provides quick formatting options. Happy writing!"}
-                        className="min-h-[300px] sm:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
+                        className="min-h-[300px] md:min-h-[400px] lg:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
                         style={{ fontSize: '14px', lineHeight: '1.6' }}
                       />
                     ) : (
-                      <div className="p-4 sm:p-6 min-h-[300px] sm:min-h-[500px] prose prose-sm max-w-none">
+                      <div className="p-4 md:p-6 min-h-[300px] md:min-h-[400px] lg:min-h-[500px] prose prose-sm max-w-none">
                         {newArticle.content ? (
                           <div 
                             className="text-sm leading-relaxed"
@@ -520,9 +520,9 @@ const ArticleManagement = () => {
                             }} 
                           />
                         ) : (
-                          <div className="text-gray-400 text-center mt-10 sm:mt-20">
-                            <FileText className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-4 opacity-50" />
-                            <p className="text-sm sm:text-base">Start writing in the editor to see preview here</p>
+                          <div className="text-gray-400 text-center mt-10 md:mt-20">
+                            <FileText className="h-8 w-8 md:h-12 md:w-12 mx-auto mb-4 opacity-50" />
+                            <p className="text-sm md:text-base">Start writing in the editor to see preview here</p>
                           </div>
                         )}
                       </div>
@@ -530,7 +530,7 @@ const ArticleManagement = () => {
                   </div>
                 </Card>
                 
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-gray-500 gap-2">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between text-xs text-gray-500 gap-2">
                   <div className="flex items-center gap-4">
                     <span>Characters: {newArticle.content.length}</span>
                     <span>Words: {newArticle.content.split(/\s+/).filter(word => word.length > 0).length}</span>
@@ -540,8 +540,8 @@ const ArticleManagement = () => {
               </div>
               
               
-              <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 pt-4 border-t">
-                <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="w-full sm:w-auto">
+              <div className="flex flex-col md:flex-row justify-end space-y-2 md:space-y-0 md:space-x-3 pt-4 border-t">
+                <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="w-full md:w-auto">
                   Cancel
                 </Button>
                 <Button 
@@ -549,11 +549,11 @@ const ArticleManagement = () => {
                   onClick={() => {
                     toast.success("Article saved as draft!");
                   }}
-                  className="w-full sm:w-auto"
+                  className="w-full md:w-auto"
                 >
                   Save as Draft
                 </Button>
-                <Button onClick={handleAddArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
+                <Button onClick={handleAddArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full md:w-auto">
                   Publish Article
                 </Button>
               </div>
@@ -563,14 +563,14 @@ const ArticleManagement = () => {
 
         {/* Edit Article Dialog - Similar structure with responsive improvements */}
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-          <DialogContent className="max-w-[95vw] sm:max-w-6xl max-h-[95vh] overflow-hidden">
+          <DialogContent className="max-w-[95vw] md:max-w-[90vw] lg:max-w-6xl max-h-[95vh] overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="text-lg sm:text-xl font-serif">Edit Article</DialogTitle>
+              <DialogTitle className="text-lg md:text-xl font-serif">Edit Article</DialogTitle>
             </DialogHeader>
             
             {editingArticle && (
-              <div className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-4 md:space-y-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="edit-title" className="text-sm font-medium">Title *</Label>
                     <Input
@@ -593,7 +593,7 @@ const ArticleManagement = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="edit-category" className="text-sm font-medium">Category</Label>
                     <Input
@@ -618,16 +618,16 @@ const ArticleManagement = () => {
 
                 {/* Content Editor - Similar to create form but with edit data */}
                 <div className="space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                     <Label className="text-sm font-medium">Content *</Label>
                     <Tabs value={editorMode} onValueChange={(value) => setEditorMode(value as 'edit' | 'preview')}>
                       <TabsList className="grid w-fit grid-cols-2">
-                        <TabsTrigger value="edit" className="flex items-center gap-2 text-xs sm:text-sm">
-                          <Type className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <TabsTrigger value="edit" className="flex items-center gap-2 text-xs md:text-sm">
+                          <Type className="h-3 w-3 md:h-4 md:w-4" />
                           Editor
                         </TabsTrigger>
-                        <TabsTrigger value="preview" className="flex items-center gap-2 text-xs sm:text-sm">
-                          <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <TabsTrigger value="preview" className="flex items-center gap-2 text-xs md:text-sm">
+                          <Eye className="h-3 w-3 md:h-4 md:w-4" />
                           Preview
                         </TabsTrigger>
                       </TabsList>
@@ -636,7 +636,7 @@ const ArticleManagement = () => {
 
                   <Card className="border-2">
                     {/* Toolbar - same as create form */}
-                    <div className="border-b bg-gray-50/50 p-2 sm:p-3">
+                    <div className="border-b bg-gray-50/50 p-2 md:p-3">
                       <div className="flex flex-wrap items-center gap-1">
                         <div className="flex items-center gap-1">
                           <Button
@@ -644,34 +644,34 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('bold')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Bold (Ctrl+B)"
                           >
-                            <Bold className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Bold className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('italic')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Italic (Ctrl+I)"
                           >
-                            <Italic className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Italic className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('strikethrough')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Strikethrough"
                           >
-                            <Strikethrough className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Strikethrough className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -679,44 +679,44 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('paragraph')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Paragraph"
                           >
-                            <AlignLeft className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <AlignLeft className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h1')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Heading 1"
                           >
-                            <Heading1 className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Heading1 className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h2')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Heading 2"
                           >
-                            <Heading2 className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Heading2 className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('h3')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Heading 3"
                           >
-                            <Heading3 className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Heading3 className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -724,34 +724,34 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('unordered-list')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Bullet List"
                           >
-                            <List className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <List className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('ordered-list')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Numbered List"
                           >
-                            <ListOrdered className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <ListOrdered className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('quote')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Quote"
                           >
-                            <Quote className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Quote className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                         </div>
 
-                        <Separator orientation="vertical" className="h-4 sm:h-6 mx-1" />
+                        <Separator orientation="vertical" className="h-4 md:h-6 mx-1" />
 
                         <div className="flex items-center gap-1">
                           <Button
@@ -759,51 +759,51 @@ const ArticleManagement = () => {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('link')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Insert Link"
                           >
-                            <Link className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Link className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('image')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Insert Image"
                           >
-                            <ImageIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <ImageIcon className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                           <Button
                             type="button"
                             variant="ghost"
                             size="sm"
                             onClick={() => handleFormatting('code')}
-                            className="h-6 w-6 sm:h-8 sm:w-8 p-0 hover:bg-gray-200"
+                            className="h-6 w-6 md:h-8 md:w-8 p-0 hover:bg-gray-200"
                             title="Code"
                           >
-                            <Code className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <Code className="h-3 w-3 md:h-4 md:w-4" />
                           </Button>
                         </div>
 
-                        <div className="ml-auto text-xs text-gray-500 hidden lg:block">
+                        <div className="ml-auto text-xs text-gray-500 hidden xl:block">
                           Markdown supported • Ctrl+B for bold • Ctrl+I for italic
                         </div>
                       </div>
                     </div>
                     
-                    <div className="min-h-[300px] sm:min-h-[500px]">
+                    <div className="min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
                       {editorMode === 'edit' ? (
                         <Textarea
                           id="edit-content-editor"
                           value={editingArticle.content || ''}
                           onChange={(e) => setEditingArticle({...editingArticle, content: e.target.value})}
                           placeholder="Edit your article content here..."
-                          className="min-h-[300px] sm:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
+                          className="min-h-[300px] md:min-h-[400px] lg:min-h-[500px] border-0 rounded-none resize-none focus-visible:ring-0 text-sm leading-relaxed font-mono"
                           style={{ fontSize: '14px', lineHeight: '1.6' }}
                         />
                       ) : (
-                        <div className="p-4 sm:p-6 min-h-[300px] sm:min-h-[500px] prose prose-sm max-w-none">
+                        <div className="p-4 md:p-6 min-h-[300px] md:min-h-[400px] lg:min-h-[500px] prose prose-sm max-w-none">
                           {editingArticle.content ? (
                             <div 
                               className="text-sm leading-relaxed"
@@ -812,9 +812,9 @@ const ArticleManagement = () => {
                               }} 
                             />
                           ) : (
-                            <div className="text-gray-400 text-center mt-10 sm:mt-20">
-                              <FileText className="h-8 w-8 sm:h-12 sm:w-12 mx-auto mb-4 opacity-50" />
-                              <p className="text-sm sm:text-base">No content to preview</p>
+                            <div className="text-gray-400 text-center mt-10 md:mt-20">
+                              <FileText className="h-8 w-8 md:h-12 md:w-12 mx-auto mb-4 opacity-50" />
+                              <p className="text-sm md:text-base">No content to preview</p>
                             </div>
                           )}
                         </div>
@@ -823,11 +823,11 @@ const ArticleManagement = () => {
                   </Card>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3 pt-4 border-t">
-                  <Button variant="outline" onClick={() => setIsEditDialogOpen(false)} className="w-full sm:w-auto">
+                <div className="flex flex-col md:flex-row justify-end space-y-2 md:space-y-0 md:space-x-3 pt-4 border-t">
+                  <Button variant="outline" onClick={() => setIsEditDialogOpen(false)} className="w-full md:w-auto">
                     Cancel
                   </Button>
-                  <Button onClick={handleEditArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full sm:w-auto">
+                  <Button onClick={handleEditArticle} className="bg-ksc-navy hover:bg-ksc-navy/90 w-full md:w-auto">
                     Update Article
                   </Button>
                 </div>
@@ -838,25 +838,25 @@ const ArticleManagement = () => {
       </div>
 
       {/* View Toggle and Search */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <Tabs value={activeView} onValueChange={(value) => setActiveView(value as 'active' | 'trash')}>
-          <TabsList className="w-full sm:w-auto">
-            <TabsTrigger value="active" className="flex-1 sm:flex-none text-xs sm:text-sm">
+          <TabsList className="w-full md:w-auto">
+            <TabsTrigger value="active" className="flex-1 md:flex-none text-xs md:text-sm">
               Active Articles ({articles.length})
             </TabsTrigger>
-            <TabsTrigger value="trash" className="flex-1 sm:flex-none text-xs sm:text-sm">
+            <TabsTrigger value="trash" className="flex-1 md:flex-none text-xs md:text-sm">
               Trash ({deletedArticles.length})
             </TabsTrigger>
           </TabsList>
         </Tabs>
 
-        <div className="flex items-center space-x-2 w-full sm:w-auto">
+        <div className="flex items-center space-x-2 w-full md:w-auto">
           <Search className="h-4 w-4 text-gray-400 flex-shrink-0" />
           <Input
             placeholder="Search articles..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:max-w-sm"
+            className="w-full md:max-w-sm"
           />
         </div>
       </div>
@@ -864,18 +864,18 @@ const ArticleManagement = () => {
       {/* Articles Table */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg sm:text-xl">
+          <CardTitle className="text-lg md:text-xl">
             {activeView === 'active' ? 'Active Articles' : 'Deleted Articles'} ({filteredArticles.length})
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0 sm:p-6">
-          {/* Mobile Card View */}
-          <div className="block sm:hidden">
+        <CardContent className="p-0 md:p-6">
+          {/* Mobile/Tablet Card View */}
+          <div className="block lg:hidden">
             {filteredArticles.map((article) => (
-              <div key={article.id} className="border-b p-4 space-y-3">
+              <div key={article.id} className="border-b p-4 md:p-6 space-y-3">
                 <div className="flex justify-between items-start">
-                  <h3 className="font-medium text-sm line-clamp-2">{article.title}</h3>
-                  <span className={`px-2 py-1 rounded-full text-xs flex-shrink-0 ml-2 ${
+                  <h3 className="font-medium text-sm md:text-base line-clamp-2 pr-2">{article.title}</h3>
+                  <span className={`px-2 py-1 rounded-full text-xs flex-shrink-0 ${
                     article.status === 'Published' 
                       ? 'bg-green-100 text-green-800' 
                       : 'bg-yellow-100 text-yellow-800'
@@ -959,28 +959,40 @@ const ArticleManagement = () => {
           </div>
           
           {/* Desktop Table View */}
-          <div className="hidden sm:block overflow-x-auto">
+          <div className="hidden lg:block overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Title</TableHead>
-                  <TableHead>Author</TableHead>
-                  <TableHead>Category</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Views</TableHead>
-                  <TableHead>Actions</TableHead>
+                  <TableHead className="w-[25%]">Title</TableHead>
+                  <TableHead className="w-[15%]">Author</TableHead>
+                  <TableHead className="w-[15%]">Category</TableHead>
+                  <TableHead className="w-[10%]">Date</TableHead>
+                  <TableHead className="w-[10%]">Status</TableHead>
+                  <TableHead className="w-[10%]">Views</TableHead>
+                  <TableHead className="w-[15%]">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredArticles.map((article) => (
                   <TableRow key={article.id}>
-                    <TableCell className="font-medium max-w-xs truncate">{article.title}</TableCell>
-                    <TableCell className="max-w-xs truncate">{article.author.split(',')[0]}</TableCell>
-                    <TableCell>{article.category}</TableCell>
-                    <TableCell>{activeView === 'trash' && article.deletedAt ? new Date(article.deletedAt).toLocaleDateString() : article.date}</TableCell>
+                    <TableCell className="font-medium">
+                      <div className="max-w-xs truncate" title={article.title}>
+                        {article.title}
+                      </div>
+                    </TableCell>
                     <TableCell>
-                      <span className={`px-2 py-1 rounded-full text-xs ${
+                      <div className="max-w-xs truncate" title={article.author}>
+                        {article.author.split(',')[0]}
+                      </div>
+                    </TableCell>
+                    <TableCell>{article.category}</TableCell>
+                    <TableCell className="text-sm">
+                      {activeView === 'trash' && article.deletedAt 
+                        ? new Date(article.deletedAt).toLocaleDateString() 
+                        : article.date}
+                    </TableCell>
+                    <TableCell>
+                      <span className={`px-2 py-1 rounded-full text-xs whitespace-nowrap ${
                         article.status === 'Published' 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-yellow-100 text-yellow-800'
@@ -991,11 +1003,11 @@ const ArticleManagement = () => {
                     <TableCell>
                       <div className="flex items-center">
                         <Eye className="h-4 w-4 mr-1 text-gray-400" />
-                        {article.views}
+                        <span className="text-sm">{article.views}</span>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex space-x-2">
+                      <div className="flex space-x-1">
                         {activeView === 'active' ? (
                           <>
                             {article.status === 'Draft' ? (
@@ -1003,7 +1015,7 @@ const ArticleManagement = () => {
                                 variant="outline" 
                                 size="sm"
                                 onClick={() => handleUpdateStatus(article.id, 'Published')}
-                                className="text-green-600 hover:text-green-700"
+                                className="text-green-600 hover:text-green-700 text-xs px-2"
                               >
                                 Publish
                               </Button>
@@ -1012,15 +1024,16 @@ const ArticleManagement = () => {
                                 variant="outline" 
                                 size="sm"
                                 onClick={() => handleUpdateStatus(article.id, 'Draft')}
-                                className="text-yellow-600 hover:text-yellow-700"
+                                className="text-yellow-600 hover:text-yellow-700 text-xs px-2"
                               >
-                                Unpublish
+                                Draft
                               </Button>
                             )}
                             <Button 
                               variant="outline" 
                               size="sm"
                               onClick={() => openEditDialog(article)}
+                              className="px-2"
                             >
                               <Edit className="h-4 w-4" />
                             </Button>
@@ -1028,7 +1041,7 @@ const ArticleManagement = () => {
                               variant="outline" 
                               size="sm"
                               onClick={() => handleDeleteArticle(article.id)}
-                              className="text-red-600 hover:text-red-700"
+                              className="text-red-600 hover:text-red-700 px-2"
                             >
                               <Trash2 className="h-4 w-4" />
                             </Button>
@@ -1039,17 +1052,19 @@ const ArticleManagement = () => {
                               variant="outline" 
                               size="sm"
                               onClick={() => handleRestoreArticle(article.id)}
-                              className="text-green-600 hover:text-green-700"
+                              className="text-green-600 hover:text-green-700 text-xs px-2"
                             >
-                              <RotateCcw className="h-4 w-4" />
+                              <RotateCcw className="h-4 w-4 mr-1" />
+                              Restore
                             </Button>
                             <Button 
                               variant="outline" 
                               size="sm"
                               onClick={() => handlePermanentDelete(article.id)}
-                              className="text-red-600 hover:text-red-700"
+                              className="text-red-600 hover:text-red-700 text-xs px-2"
                             >
-                              <Trash2 className="h-4 w-4" />
+                              <Trash2 className="h-4 w-4 mr-1" />
+                              Delete
                             </Button>
                           </>
                         )}
@@ -1060,6 +1075,22 @@ const ArticleManagement = () => {
               </TableBody>
             </Table>
           </div>
+          
+          {/* Empty State */}
+          {filteredArticles.length === 0 && (
+            <div className="text-center py-12">
+              <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                {searchTerm ? 'No articles found' : `No ${activeView} articles`}
+              </h3>
+              <p className="text-gray-500">
+                {searchTerm 
+                  ? 'Try adjusting your search terms'
+                  : `There are no ${activeView} articles at the moment.`
+                }
+              </p>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
