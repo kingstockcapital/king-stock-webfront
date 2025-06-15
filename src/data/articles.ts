@@ -28,51 +28,18 @@ export const articlesData: Article[] = [
     readTime: "8 min read",
     views: 1234,
     content: `
-      <h2>Introduction</h2>
-      <p>As we look ahead to 2025, the global economy stands at a significant crossroads. Following a period of unprecedented monetary policy adjustments and supply chain realignments, markets are now navigating a landscape characterized by technological innovation, shifting geopolitical alliances, and evolving demographic patterns.</p>
-      <p>This comprehensive outlook examines key trends expected to shape investment markets in the coming year and provides strategic insights for investors seeking to position their portfolios effectively.</p>
-
-      <h2>Economic Growth Projections</h2>
-      <p>Our analysis suggests global GDP growth will stabilize at approximately 3.2% in 2025, with notable regional variations:</p>
+      <h2>Overview</h2>
+      <p>2025 hứa hẹn là năm có nhiều chuyển biến về kinh tế và đầu tư trên toàn cầu. Báo cáo này phân tích các xu hướng lớn, chỉ số kinh tế nổi bật và những cơ hội đầu tư quan trọng.</p>
+      <h2>Key Trends</h2>
       <ul>
-        <li><strong>North America:</strong> 2.5-2.8% growth, supported by technology sector expansion and infrastructure spending.</li>
-        <li><strong>Europe:</strong> 1.7-2.0% growth, constrained by demographic challenges but bolstered by green technology investments.</li>
-        <li><strong>Asia-Pacific:</strong> 4.5-5.0% growth, led by continued expansion in India and Southeast Asian markets.</li>
-        <li><strong>Latin America:</strong> 2.8-3.2% growth, with improvements in fiscal positions supporting economic stability.</li>
+        <li>Tăng trưởng toàn cầu ở mức ổn định: ~3.2%</li>
+        <li>Đổi mới công nghệ là động lực chính</li>
+        <li>Chính sách tiền tệ được kiểm soát tốt</li>
       </ul>
-      <p>Inflation is projected to remain within central bank target ranges for most developed economies, though upside risks exist particularly in labor-constrained markets.</p>
-
-      <h2>Sector Outlook</h2>
-      <p>Several sectors present compelling opportunities as we enter 2025:</p>
-      <h3>Technology</h3>
-      <p>The technology sector continues to demonstrate strong growth potential, particularly in areas of artificial intelligence, quantum computing, and cybersecurity. Companies with established intellectual property in these domains are well-positioned to deliver above-market returns.</p>
-      <h3>Healthcare</h3>
-      <p>Demographics and innovation are dual tailwinds for the healthcare sector. Advancements in personalized medicine, bioinformatics, and medical devices present significant investment opportunities in both established companies and emerging innovators.</p>
-      <h3>Green Infrastructure</h3>
-      <p>Government commitments to carbon reduction targets are driving substantial infrastructure spending globally. Companies involved in renewable energy generation, storage solutions, and grid modernization are expected to benefit from this multi-year trend.</p>
-
-      <h2>Risk Factors to Monitor</h2>
-      <p>While our base case remains constructive, several key risks warrant close attention:</p>
-      <ul>
-        <li>Geopolitical tensions in key regions could disrupt trade flows and energy markets.</li>
-        <li>Potential for monetary policy divergence between major central banks.</li>
-        <li>Ongoing climate-related disruptions affecting agricultural production and supply chains.</li>
-        <li>Debt sustainability concerns in certain emerging markets.</li>
-      </ul>
-
-      <h2>Investment Strategy Recommendations</h2>
-      <p>Given this outlook, we recommend the following strategic positioning:</p>
-      <ol>
-        <li>Maintain a balanced allocation between growth and value exposures.</li>
-        <li>Increase allocation to quality companies with strong balance sheets and pricing power.</li>
-        <li>Consider strategic exposure to emerging markets, particularly in Asia.</li>
-        <li>Integrate environmental, social and governance (ESG) factors into security selection.</li>
-        <li>Maintain appropriate fixed income duration to manage interest rate sensitivity.</li>
-      </ol>
-      <p>Our analysis suggests that carefully selected active management will likely deliver value in the coming market environment, particularly in less efficient market segments.</p>
-
-      <h2>Conclusion</h2>
-      <p>The 2025 investment landscape offers significant opportunities amid a changing economic backdrop. By focusing on quality, innovation, and careful risk management, investors can navigate this transition effectively and position for long-term success.</p>
+      <h3>Cơ hội đầu tư nổi bật</h3>
+      <p>Công nghệ, hạ tầng xanh và chăm sóc sức khỏe là ba lĩnh vực được dự báo hưởng lợi lớn từ các chính sách mới cũng như nhu cầu thị trường.</p>
+      <h2>Kết luận</h2>
+      <p>Để tận dụng tối đa xu hướng 2025, nhà đầu tư nên giữ cân bằng giữa tăng trưởng và an toàn, chủ động theo dõi các yếu tố vĩ mô để điều chỉnh chiến lược phù hợp.</p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -88,53 +55,16 @@ export const articlesData: Article[] = [
     readTime: "6 min read",
     views: 856,
     content: `
-      <h2>Introduction</h2>
-      <p>
-        Sustainable investing has transformed from a niche strategy to a mainstream investment approach. This report examines the evolution of ESG (Environmental, Social, and Governance) investing and evaluates its performance relative to conventional investment methods.
-      </p>
-      <h2>The Growth of ESG Assets</h2>
-      <p>
-        Global ESG assets are projected to exceed $50 trillion by 2025, representing more than a third of total assets under management worldwide. This remarkable growth reflects increasing investor demand, regulatory developments, and recognition of material financial impacts associated with sustainability factors.
-      </p>
-      <h2>Performance Analysis</h2>
-      <p>Our analysis of ESG fund performance over the past five years reveals:</p>
+      <h2>Tổng quan</h2>
+      <p>Đầu tư bền vững (ESG) đang dần trở thành xu hướng chủ đạo trên thế giới với mức tăng trưởng vượt bậc và hiệu quả cạnh tranh so với đầu tư truyền thống.</p>
+      <h2>Các tác động nổi bật</h2>
       <ul>
-        <li>ESG-integrated equity funds have shown comparable risk-adjusted returns to conventional peers.</li>
-        <li>Climate-focused funds have outperformed broader market indices during periods of environmental policy advancement.</li>
-        <li>Funds with strong social and governance criteria have demonstrated greater resilience during market downturns.</li>
+        <li>Hiệu quả giảm rủi ro nhờ yếu tố môi trường và xã hội</li>
+        <li>Lợi nhuận không thua kém các quỹ thông thường</li>
+        <li>Dòng vốn tăng mạnh vào các ngành xanh, bền vững</li>
       </ul>
-      <p>
-        When controlling for sector allocation and style factors, ESG integration has contributed positively to risk management without sacrificing returns in most market environments.
-      </p>
-      <h2>Key Trends and Future Directions</h2>
-      <p>Several important trends are shaping the future of sustainable investing:</p>
-      <h3>Data Quality Improvements</h3>
-      <p>
-        Enhanced disclosure requirements and standardization efforts are improving the quality and comparability of ESG data, enabling more sophisticated analysis and integration techniques.
-      </p>
-      <h3>Impact Measurement</h3>
-      <p>
-        Investors are increasingly focusing on measurable real-world outcomes alongside financial returns, driving innovation in impact measurement methodologies.
-      </p>
-      <h3>Climate Transition Focus</h3>
-      <p>
-        Investment strategies are evolving to not only assess current sustainability profiles but also to evaluate companies' transition plans and alignment with climate goals.
-      </p>
-      <h2>Investment Implications</h2>
-      <p>
-        Based on our research, we recommend the following approaches for investors seeking to incorporate sustainability considerations:
-      </p>
-      <ol>
-        <li>Develop a clear philosophy regarding the role of ESG factors in investment processes.</li>
-        <li>Consider both risk mitigation and opportunity identification aspects of sustainability.</li>
-        <li>Evaluate the credibility of transition plans for companies in carbon-intensive sectors.</li>
-        <li>Look beyond ratings to underlying data and methodologies when assessing ESG credentials.</li>
-        <li>Engage actively with portfolio companies to encourage improved practices and disclosures.</li>
-      </ol>
-      <h2>Conclusion</h2>
-      <p>
-        Sustainable investing continues to evolve rapidly, with growing evidence that thoughtful integration of material ESG factors can contribute positively to investment outcomes. As data quality improves and methodologies mature, we expect sustainability considerations to become increasingly central to mainstream investment processes.
-      </p>
+      <h3>Khuyến nghị đầu tư</h3>
+      <p>Đối với nhà đầu tư mới, cần xác định rõ tiêu chí ESG, đồng thời giám sát minh bạch về báo cáo các công ty để tăng hiệu quả đầu tư bền vững.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   },
@@ -150,57 +80,20 @@ export const articlesData: Article[] = [
     readTime: "10 min read",
     views: 923,
     content: `
-      <h2>Overview</h2>
-      <p>
-        The technology sector remains at the forefront of innovation, disruption, and growth in the global economy.
-        This article highlights the most important trends, the technologies driving the future, and key takeaways for investors looking to capitalize on the sector’s opportunities.
-      </p>
-      
-      <h2>Key Trends Shaping the Tech Sector</h2>
-      <h3>1. Artificial Intelligence (AI)</h3>
-      <p>
-        <strong>AI</strong> has moved beyond the hype and become an essential part of products and services. From predictive analytics to automation and generative models, businesses are embedding AI to improve decision-making and drive efficiency.
-      </p>
+      <h2>Phân tích ngành công nghệ</h2>
+      <p>Ngành công nghệ liên tục thúc đẩy đổi mới và tăng trưởng cho nền kinh tế toàn cầu. Dưới đây là các xu hướng nổi bật thúc đẩy làn sóng đầu tư mới.</p>
+      <h3>Xu hướng chính</h3>
       <ul>
-        <li>AI adoption enables new business models</li>
-        <li>Demand grows for AI infrastructure, talent, and data privacy solutions</li>
+        <li><strong>AI & Trí tuệ nhân tạo:</strong> Ứng dụng sâu rộng vào sản phẩm, phân tích dữ liệu & tự động hóa.</li>
+        <li><strong>Điện toán lượng tử:</strong> Mở ra các lĩnh vực mới như dược, tài chính và an ninh dữ liệu.</li>
+        <li><strong>Công nghệ sinh học:</strong> Tăng tốc nghiên cứu y sinh, chăm sóc sức khỏe cá nhân hóa.</li>
       </ul>
-      
-      <h3>2. Quantum Computing</h3>
-      <p>
-        Quantum computing has transitioned from theoretical labs to real-world experiments. While still in its early phases, quantum technology is expected to impact:
-      </p>
+      <h2>Chiến lược đầu tư</h2>
+      <p>Cần đa dạng hóa giữa các mảng như phần mềm, phần cứng, sinh học số. Ưu tiên doanh nghiệp có năng lực sáng tạo và sở hữu trí tuệ vững chắc.</p>
       <ul>
-        <li>Drug discovery and materials science</li>
-        <li>Optimization problems in logistics and finance</li>
-        <li>Cryptography and secure communications</li>
+        <li>Đa dạng hóa danh mục</li>
+        <li>Thường xuyên review yếu tố pháp lý và xu hướng toàn cầu</li>
       </ul>
-      
-      <h3>3. Biotechnology & Digital Health</h3>
-      <p>
-        The convergence of tech and biotech has accelerated medical research and healthcare delivery. Examples include:
-      </p>
-      <ul>
-        <li>Advanced computational methods for drug design</li>
-        <li>Telemedicine and remote monitoring devices</li>
-        <li>Synthetic biology and genetic engineering</li>
-      </ul>
-      
-      <h2>Investment Implications</h2>
-      <p>
-        Investors should consider exposure to both leading innovators and companies enabling the tech ecosystem. Key points:
-      </p>
-      <ol>
-        <li>Diversify across sub-sectors: software, hardware, biotech, and digital health</li>
-        <li>Prioritize companies with defensible intellectual property</li>
-        <li>Monitor regulatory changes, especially in AI ethics, privacy, and bioethics</li>
-        <li>Track global supply chain and geopolitics for tech hardware</li>
-      </ol>
-
-      <h2>Conclusion</h2>
-      <p>
-        Technology’s impact on the economy will only accelerate in coming years. By focusing on the major trends, maintaining diversified exposure, and assessing innovation pipelines, investors can position themselves to capture the next wave of tech-driven growth.
-      </p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -216,9 +109,14 @@ export const articlesData: Article[] = [
     readTime: "12 min read",
     views: 745,
     content: `
-      <h2>Quarterly Economic Review: Q1 2025</h2>
-
-      <p>The first quarter of 2025 showed mixed economic signals...</p>
+      <h2>Báo cáo kinh tế quý I/2025</h2>
+      <p>Quý 1 năm 2025 cho thấy nhiều tín hiệu đan xen giữa các vùng kinh tế. Tăng trưởng Mỹ và châu Á khả quan nhờ tiêu dùng nội địa mạnh, châu Âu và các thị trường mới nổi vẫn gặp khó khăn.</p>
+      <h3>Dự báo quý tiếp theo</h3>
+      <ul>
+        <li>Tăng trưởng duy trì ở mức trung bình 2-3%</li>
+        <li>Lạm phát cơ bản kiểm soát tốt</li>
+        <li>Nhiều chính sách kích thích kinh tế dự kiến được duy trì</li>
+      </ul>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   },
@@ -234,9 +132,15 @@ export const articlesData: Article[] = [
     readTime: "9 min read",
     views: 612,
     content: `
-      <h2>Infrastructure Investments in Developing Markets</h2>
-
-      <p>Developing markets present unique opportunities...</p>
+      <h2>Đầu tư hạ tầng tại các thị trường mới nổi</h2>
+      <p>Cơ sở hạ tầng là yếu tố then chốt để thúc đẩy tăng trưởng dài hạn ở các nền kinh tế đang phát triển.</p>
+      <h3>Cơ hội tiêu biểu</h3>
+      <ul>
+        <li>Phát triển năng lượng tái tạo</li>
+        <li>Đầu tư hệ thống giao thông và logistics</li>
+        <li>Ứng dụng công nghệ mới vào xây dựng/kiểm soát chất lượng công trình</li>
+      </ul>
+      <p>Dòng vốn nước ngoài đang tập trung mạnh vào các dự án mang lại hiệu quả bền vững, đóng góp tích cực cho cộng đồng.</p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -252,9 +156,14 @@ export const articlesData: Article[] = [
     readTime: "7 min read",
     views: 534,
     content: `
-      <h2>Retirement Planning in Inflationary Times</h2>
-
-      <p>Inflation poses unique challenges to retirement planning...</p>
+      <h2>Lập kế hoạch hưu trí khi lạm phát tăng cao</h2>
+      <p>Lạm phát kéo dài ảnh hưởng lớn đến nguồn tiết kiệm và kế hoạch hưu trí của mỗi cá nhân. Những giải pháp dưới đây giúp bảo vệ tài sản và duy trì chất lượng cuộc sống về già.</p>
+      <ul>
+        <li>Đa dạng hóa khoản đầu tư</li>
+        <li>Tăng tỷ trọng tài sản phòng thủ (vàng, bất động sản, trái phiếu lạm phát)</li>
+        <li>Xem xét điều chỉnh chi tiêu và mục tiêu tài chính theo thời gian</li>
+      </ul>
+      <p>Luôn chủ động cập nhật thông tin và điều chỉnh kế hoạch sẽ giúp bạn giữ vững an toàn tài chính khi nghỉ hưu.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   },
@@ -270,9 +179,15 @@ export const articlesData: Article[] = [
     readTime: "11 min read",
     views: 423,
     content: `
-      <h2>Healthcare Sector Analysis</h2>
-
-      <p>The post-pandemic healthcare landscape has transformed...</p>
+      <h2>Đầu tư vào ngành y tế hậu đại dịch</h2>
+      <p>Đại dịch đã thay đổi đáng kể cách thức đầu tư và phát triển lĩnh vực chăm sóc sức khỏe. Các doanh nghiệp đón đầu đổi mới sáng tạo sẽ có ưu thế lớn trong giai đoạn tới.</p>
+      <ul>
+        <li>Tiếp tục bùng nổ nền tảng y tế số và công nghệ chăm sóc sức khỏe từ xa</li>
+        <li>Nâng cao hiệu quả sản xuất, tồn trữ và phân phối vacxin</li>
+        <li>Quản trị rủi ro chuỗi cung ứng y tế</li>
+      </ul>
+      <h3>Khuyến nghị đầu tư</h3>
+      <p>Lựa chọn các công ty dẫn đầu về đổi mới, <strong>ưu tiên hệ sinh thái y tế số</strong> và phân tán rủi ro bằng cách đa dạng hóa lĩnh vực phụ trợ.</p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -288,9 +203,15 @@ export const articlesData: Article[] = [
     readTime: "8 min read",
     views: 356,
     content: `
-      <h2>Fixed Income Strategies</h2>
-
-      <p>The current rate environment requires careful navigation...</p>
+      <h2>Chiến lược thu nhập cố định trong thời kỳ biến động lãi suất</h2>
+      <p>Lãi suất thay đổi liên tục đặt ra thách thức nhưng cũng mở ra cơ hội cho nhà đầu tư trái phiếu.</p>
+      <h3>Một số chiến lược gợi ý</h3>
+      <ul>
+        <li>Kéo dài thời hạn danh mục nếu dự báo lãi suất giảm</li>
+        <li>Phối hợp các loại trái phiếu (chính phủ, doanh nghiệp, lạm phát)</li>
+        <li>Giám sát kỹ chất lượng tín dụng của tổ chức phát hành</li>
+      </ul>
+      <p>Linh hoạt điều chỉnh sẽ tối ưu hóa lợi suất và kiểm soát rủi ro hiệu quả.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   },
@@ -306,9 +227,14 @@ export const articlesData: Article[] = [
     readTime: "9 min read",
     views: 0,
     content: `
-      <h2>Political Landscape and Market Implications</h2>
-
-      <p>Political changes create market volatility...</p>
+      <h2>Chính trị năm 2025 và tác động tới thị trường</h2>
+      <p>Biến động chính trị và các sự kiện lớn có thể tạo ra nhiều rủi ro cũng như cơ hội trên thị trường tài chính toàn cầu.</p>
+      <ul>
+        <li>Rủi ro từ xung đột địa chính trị</li>
+        <li>Những thay đổi về chính sách thương mại và đầu tư</li>
+        <li>Tăng cường hoạt động giám sát, siết chặt quy định với lĩnh vực nhạy cảm</li>
+      </ul>
+      <p>Chủ động nắm bắt thông tin chính trị là lợi thế lớn cho nhà đầu tư để phòng ngừa rủi ro.</p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -324,9 +250,14 @@ export const articlesData: Article[] = [
     readTime: "10 min read",
     views: 0,
     content: `
-      <h2>Political Changes in Southeast Asia</h2>
-
-      <p>Southeast Asia's political landscape is evolving...</p>
+      <h2>Chuyển động chính trị Đông Nam Á và cơ hội đầu tư mới</h2>
+      <p>Những thay đổi chính trị ở Đông Nam Á tạo nên làn gió mới về chính sách và tiềm năng tăng trưởng cho nhà đầu tư quốc tế.</p>
+      <ul>
+        <li>Sự tăng trưởng của nền dân chủ và cải cách pháp lý</li>
+        <li>Thu hút vốn đầu tư vào các ngành chiến lược (công nghệ, nông nghiệp…)</li>
+        <li>Tăng cường hợp tác khu vực về logistics, thương mại tự do</li>
+      </ul>
+      <p>Cần theo sát cải cách và chủ động tiếp cận thị trường mới nổi trong khu vực.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   },
@@ -342,9 +273,14 @@ export const articlesData: Article[] = [
     readTime: "8 min read",
     views: 289,
     content: `
-      <h2>Digital Currency Developments</h2>
-
-      <p>The regulatory landscape for digital currencies continues to evolve...</p>
+      <h2>Sự phát triển của tiền số và tác động tới thị trường</h2>
+      <p>Tiền kỹ thuật số mang đến nhiều cơ hội mới nhưng cũng đi kèm thách thức lớn về quản lý, kiểm soát cũng như an ninh tài chính toàn cầu.</p>
+      <ul>
+        <li>Chính sách quản lý liên tục thay đổi</li>
+        <li>Ứng dụng blockchain trong ngân hàng, tài chính</li>
+        <li>Bảo mật, an ninh và phòng chống rửa tiền là chủ đề nóng</li>
+      </ul>
+      <p>Doanh nghiệp, nhà đầu tư cần chủ động cập nhật, đánh giá kỹ rủi ro và cơ hội khi tham gia lĩnh vực Tiền số.</p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
@@ -360,9 +296,15 @@ export const articlesData: Article[] = [
     readTime: "7 min read",
     views: 198,
     content: `
-      <h2>Climate Change Policies and Markets</h2>
-
-      <p>Environmental policies are driving significant market changes...</p>
+      <h2>Chính sách môi trường & tác động lên các ngành</h2>
+      <p>Chính sách chống biến đổi khí hậu đang tái định hình bức tranh đầu tư tại nhiều lĩnh vực then chốt.</p>
+      <h3>Các xu hướng chính:</h3>
+      <ul>
+        <li>Tăng vốn cho ngành năng lượng tái tạo</li>
+        <li>Hỗ trợ đổi mới cơ sở hạ tầng xanh</li>
+        <li>Chiến lược đầu tư tích hợp ESG ngày một phổ biến</li>
+      </ul>
+      <p>Biến đổi khí hậu là yếu tố không thể thiếu trong quyết định đầu tư dài hạn, đòi hỏi doanh nghiệp liên tục thích nghi và đổi mới.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   }
