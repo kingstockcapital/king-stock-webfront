@@ -28,22 +28,25 @@ export const articlesData: Article[] = [
     readTime: "8 min read",
     views: 0,
     content: `
-      <h2>What Is Sustainable Investing?</h2>
-      <p>Sustainable investing integrates environmental, social, and governance (ESG) criteria into investment strategies and portfolio management. This approach not only aims for financial return, but also positive long-term impact on society and the environment.</p>
-      <h2>Why Is It Important?</h2>
+      <h2>What is Sustainable Investing?</h2>
+      <p>Sustainable investing means integrating environmental, social, and governance (ESG) criteria into investment decisions. This is about more than just seeking financial gains — it’s about making a positive long-term impact.</p>
+      
+      <h2>Why is Sustainable Investing Important?</h2>
       <ul>
-        <li><strong>Societal Impact:</strong> Your capital contributes to companies prioritizing ethical practices.</li>
-        <li><strong>Risk Mitigation:</strong> ESG-compliant companies show greater resilience and lower long-term risk.</li>
-        <li><strong>Performance:</strong> Studies suggest sustainable portfolios can perform as well as, or better than, traditional ones.</li>
+        <li><strong>Societal Impact:</strong> Your investments help businesses that care about ethics and communities.</li>
+        <li><strong>Risk Mitigation:</strong> Companies with strong ESG policies are often more resilient and have lower risk over the long term.</li>
+        <li><strong>Performance:</strong> Research suggests that ESG-focused portfolios can perform as well as or better than conventional portfolios.</li>
       </ul>
-      <h3>How To Get Started</h3>
+      
+      <h3>How To Start Investing Sustainably</h3>
       <ol>
-        <li>Research available ESG funds or ETFs.</li>
-        <li>Review the sustainability practices of companies in your portfolio.</li>
-        <li>Consult financial advisers who specialize in sustainable strategies.</li>
+        <li>Research ESG funds and sustainable ETFs that align with your values.</li>
+        <li>Analyze the sustainability practices of companies you’re interested in.</li>
+        <li>Seek advice from professionals who understand sustainable strategies.</li>
       </ol>
+      
       <h2>Conclusion</h2>
-      <p>As global awareness of climate change and social justice grows, integrating sustainable practices in investing isn’t just responsible—it’s smart. Start building a more sustainable future with your investments today.</p>
+      <p>As concerns for the planet and social responsibility grow, sustainable investing is no longer a trend — it’s a necessity. By making mindful choices today, you’re helping build a better future through your investments.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   }
