@@ -22,7 +22,7 @@ const LegalNotice = () => {
                 <span className="text-ksc-gold block">Notice</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Important legal information about King Stock Capital Management and our services.
+                Legal information, copyright and disclaimer for King Stock Capital Management.
               </p>
             </div>
           </div>
@@ -33,74 +33,95 @@ const LegalNotice = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg max-w-none space-y-8">
-                {/* Section: Company Details */}
+
+                {/* Section: Company Information */}
                 <div className="bg-ksc-lightgray/50 p-8 rounded-xl">
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-4">Company Details</h2>
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-4">Company Information</h2>
                   <ul className="text-ksc-darkgray text-sm space-y-1">
-                    <li><strong>Legal Name:</strong> King Stock Capital Management LLC</li>
-                    <li><strong>Address:</strong> 123 Finance Street, New York, NY 10001</li>
+                    <li><strong>King Stock Capital Management LLC</strong></li>
+                    <li>123 Finance Street</li>
+                    <li>New York, NY 10001</li>
+                    <li>United States</li>
                     <li><strong>Email:</strong> info@kingstockcapital.com</li>
                     <li><strong>Phone:</strong> +1 (212) 555-1234</li>
-                    <li><strong>Website:</strong> kingstockcapital.com</li>
-                    <li><strong>Managing Director:</strong> David King</li>
-                    <li><strong>Business Registration:</strong> New York, United States</li>
+                    <li><strong>Website:</strong> <a href="https://kingstockcapital.com" className="text-ksc-gold hover:underline">kingstockcapital.com</a></li>
                   </ul>
                 </div>
 
-                {/* Section: Regulatory Status */}
+                {/* Section: Representative */}
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Regulatory Status</h2>
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Represented by:</h2>
                   <p className="text-ksc-darkgray text-base">
-                    King Stock Capital Management LLC is registered as an investment adviser with the U.S. Securities and Exchange Commission (SEC).
-                    Registration does not imply a certain level of skill or training.
+                    David King, Managing Director
                   </p>
                 </div>
 
-                {/* Section: Responsible Authority */}
+                {/* Section: Registration */}
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Responsible Authority</h2>
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Business Registration</h2>
                   <p className="text-ksc-darkgray text-base">
-                    The responsible authority for supervisory and regulatory purposes is:
+                    Registered in New York, United States
+                  </p>
+                  <p className="text-ksc-darkgray text-base">
+                    King Stock Capital Management LLC is registered as an investment adviser with the U.S. Securities and Exchange Commission (SEC). Registration does not imply a certain level of skill or training.
+                  </p>
+                </div>
+
+                {/* Section: Regulatory Authority */}
+                <div>
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Regulatory Authority</h2>
+                  <p className="text-ksc-darkgray text-base">
+                    The responsible authority for supervision and regulation is:
                   </p>
                   <ul className="text-ksc-darkgray text-sm mt-2 space-y-1">
                     <li>U.S. Securities and Exchange Commission (SEC)</li>
-                    <li>100 F Street, NE, Washington, DC 20549</li>
-                    <li>www.sec.gov</li>
+                    <li>100 F Street, NE</li>
+                    <li>Washington, DC 20549</li>
+                    <li><a href="https://www.sec.gov" className="text-ksc-gold hover:underline">www.sec.gov</a></li>
                   </ul>
                 </div>
 
-                {/* Section: Disclaimer */}
+                {/* Section: Legal Notice and Disclaimer */}
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Disclaimer</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    All content on this website is for informational purposes only and does not constitute investment advice, legal advice, or an offer to buy or sell any securities, financial instruments, or investment products. 
-                    The information presented is believed to be accurate at the time of publication but is subject to change without notice. King Stock Capital Management LLC makes no representations or warranties regarding the accuracy or completeness of any information provided herein.
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Legal Notice & Disclaimer</h2>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    The content of our website has been created with the utmost care. However, we cannot guarantee the contents’ accuracy, completeness or topicality.
                   </p>
-                </div>
-
-                {/* Section: Risk Disclosure */}
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-xl">
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-2">Risk Disclosure</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    Investing involves risks, including the potential loss of principal. Past performance is not indicative of future results. 
-                    You should carefully consider your investment objectives, risk tolerance, and time horizon before making investment decisions.
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    The information provided on this website is for general informational purposes only and does not constitute legal, investment, tax or any other advice. Visitors are encouraged to consult with qualified professionals for individual advice tailored to their situation.
+                  </p>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    All offers are non-binding and without obligation. Parts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by the author without separate announcement.
                   </p>
                 </div>
 
                 {/* Section: Copyright */}
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Copyright & Trademark</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    Unless otherwise stated, all content, logos, and trademarks on this website are the property of King Stock Capital Management LLC. 
-                    Reproduction, distribution, or transmission of any part of this website without prior written consent is strictly prohibited.
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Copyright</h2>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    All content and works published on this website are governed by copyright laws. Duplication, processing, distribution, or any form of commercialization of such material beyond the scope of the copyright law shall require the prior written consent of King Stock Capital Management LLC.
+                  </p>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected.
                   </p>
                 </div>
 
+                {/* Section: Liability for Links */}
+                <div>
+                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Liability for Links</h2>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    Our website contains links to external websites of third parties. We have no influence on the contents of those websites; therefore, we do not assume any liability for these external contents.
+                  </p>
+                  <p className="text-ksc-darkgray text-base mb-2">
+                    The respective provider or operator of the sites is always responsible for the contents of the linked pages.
+                  </p>
+                </div>
+                
                 {/* Section: Contact */}
                 <div>
                   <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Contact</h2>
                   <p className="text-ksc-darkgray text-base mb-1">
-                    For legal inquiries or requests regarding this notice, please contact:
+                    For questions about this legal notice, please contact us:
                   </p>
                   <ul className="text-ksc-darkgray text-sm">
                     <li><strong>Email:</strong> info@kingstockcapital.com</li>
@@ -113,7 +134,7 @@ const LegalNotice = () => {
                 <div className="bg-ksc-navy/5 p-6 rounded-xl">
                   <p className="text-sm text-ksc-darkgray">
                     <strong>Last Updated:</strong> {new Date().toLocaleDateString()}<br />
-                    This legal notice may be updated periodically. Please review regularly for changes.
+                    Please check this page regularly for possible changes.
                   </p>
                 </div>
               </div>
