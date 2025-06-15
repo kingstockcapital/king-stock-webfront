@@ -143,37 +143,37 @@ const ArticleDetail = () => {
               </div>
               
               {/* Article Content with better typography */}
-              <div className="bg-white rounded-lg shadow-sm border p-8 lg:p-12">
-                <article
-                  className="prose prose-lg max-w-none 
-                    prose-headings:font-serif 
-                    prose-headings:text-ksc-navy 
-                    prose-headings:font-bold 
-                    prose-h2:text-3xl 
-                    prose-h2:mt-12 
-                    prose-h2:mb-6 
-                    prose-h2:pb-3
-                    prose-h2:border-b-2
-                    prose-h2:border-ksc-gold/20
-                    prose-h3:text-2xl 
-                    prose-h3:mt-10 
-                    prose-h3:mb-4
-                    prose-h3:text-ksc-navy/90
-                    prose-p:text-gray-700 
-                    prose-p:text-lg
-                    prose-p:leading-relaxed 
-                    prose-p:my-6
-                    prose-ul:my-8
-                    prose-ol:my-8
-                    prose-li:text-lg
-                    prose-li:text-gray-700 
-                    prose-li:mb-3
-                    prose-li:leading-relaxed
-                    prose-strong:text-ksc-navy
-                    prose-strong:font-semibold"
-                  dangerouslySetInnerHTML={{ __html: article.content || "" }}
-                />
-              </div>
+              {/* Đảm bảo prose đứng đầu, thêm prose-slate để đậm nét heading, tăng khoảng cách các đoạn */}
+              <article
+                className="prose prose-slate prose-lg max-w-none
+                  prose-headings:font-serif 
+                  prose-headings:text-ksc-navy 
+                  prose-headings:font-bold 
+                  prose-h2:text-3xl 
+                  prose-h2:mt-12 
+                  prose-h2:mb-6 
+                  prose-h2:pb-3
+                  prose-h2:border-b-2
+                  prose-h2:border-ksc-gold/20
+                  prose-h3:text-2xl 
+                  prose-h3:mt-8
+                  prose-h3:mb-4
+                  prose-h3:text-ksc-navy/90
+                  prose-p:text-gray-700 
+                  prose-p:text-lg
+                  prose-p:leading-relaxed 
+                  prose-p:my-6
+                  prose-ul:my-8
+                  prose-ol:my-8
+                  prose-li:text-lg
+                  prose-li:text-gray-700 
+                  prose-li:mb-3
+                  prose-li:leading-relaxed
+                  prose-strong:text-ksc-navy
+                  prose-strong:font-semibold
+                  bg-white rounded-lg shadow-sm border p-8 lg:p-12"
+                dangerouslySetInnerHTML={{ __html: article.content || "" }}
+              />
             </div>
           </div>
         </section>
