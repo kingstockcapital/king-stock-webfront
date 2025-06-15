@@ -88,7 +88,7 @@ export const articlesData: Article[] = [
       <h3>Main Trends</h3>
       <ul>
         <li>
-          <strong>AI & Artificial Intelligence:</strong>
+          <strong>AI &amp; Artificial Intelligence:</strong>
           Broad adoption in products, data analysis, and automation.
         </li>
         <li>
@@ -103,12 +103,18 @@ export const articlesData: Article[] = [
       <h2>Investment Strategies</h2>
       <p>
         To capture technology-driven growth, investors should diversify across software, hardware, and digital biotech.
+      </p>
+      <p>
         Organizations with strong innovation capabilities and robust intellectual property are most likely to succeed.
       </p>
       <ul>
         <li>Diversify your portfolio</li>
         <li>Frequently review regulatory factors and global trends</li>
       </ul>
+      <h2>Conclusion</h2>
+      <p>
+        The pace of technology change will only accelerate. Smart, diversified investment in innovative sectors can help position portfolios for sustainable long-term growth.
+      </p>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   },
