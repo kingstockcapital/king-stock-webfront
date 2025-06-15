@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
@@ -45,15 +44,15 @@ const services = [
     ],
   },
   {
-    icon: <DollarSign className="h-12 w-12 text-ksc-gold" />,
-    title: "Tax Optimization",
+    icon: <TrendingUp className="h-12 w-12 text-ksc-gold" />,
+    title: "Cryptocurrency Investment",
     description:
-      "Our tax optimization strategies aim to minimize your tax liability while maximizing your investment returns. We coordinate with your tax professionals to ensure your investment strategy is aligned with your overall tax situation.",
+      "Our cryptocurrency investment services help you access opportunities in the digital asset space. We guide you through portfolio diversification, secure custody, and ongoing strategy adjustments to help you maximize your potential returns while managing risk.",
     benefits: [
-      "Tax-efficient investment strategies",
-      "Capital gains management",
-      "Tax-loss harvesting",
-      "Charitable giving strategies",
+      "Access to leading cryptocurrencies",
+      "Portfolio diversification with digital assets",
+      "Secure custody and best practices",
+      "Market trend analysis and ongoing strategy",
     ],
   },
   {
@@ -270,4 +269,3 @@ const Services = () => {
 };
 
 export default Services;
-
