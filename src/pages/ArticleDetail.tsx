@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -54,11 +53,11 @@ const ArticleDetail = () => {
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-5xl mx-auto">
               <Link 
-                to="/publications" 
+                to="/research" 
                 className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors group"
               >
                 <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                Back to Publications
+                Back to Research
               </Link>
               
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -155,9 +154,6 @@ const ArticleDetail = () => {
                   prose-h2:text-3xl 
                   prose-h2:mt-8 
                   prose-h2:mb-6 
-                  prose-h2:pb-3
-                  prose-h2:border-b-2
-                  prose-h2:border-ksc-gold/20
                   prose-h3:text-2xl 
                   prose-h3:mt-8
                   prose-h3:mb-4
@@ -236,7 +232,7 @@ const ArticleDetail = () => {
                   size="lg"
                   className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-3"
                 >
-                  <Link to="/publications">View All Publications</Link>
+                  <Link to="/research">View All Research</Link>
                 </Button>
               </div>
             </div>
