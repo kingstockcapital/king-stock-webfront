@@ -1,44 +1,81 @@
 
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2 } from "lucide-react";
+import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2, Rocket, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+// Định nghĩa lại danh sách service cho khớp với trang Services
 const services = [
   {
-    icon: <BriefcaseIcon className="h-8 w-8 text-ksc-gold" />,
+    icon: <BriefcaseIcon className="h-12 w-12 text-ksc-gold" />,
     title: "Portfolio Management",
     description:
-      "Expert management of investment portfolios tailored to your specific financial goals and risk tolerance.",
+      "Our portfolio management services are tailored to your specific investment objectives, risk tolerance, and time horizon. We develop and implement customized investment strategies using a diversified approach to help you achieve your financial goals.",
+    benefits: [
+      "Customized investment strategies",
+      "Disciplined portfolio construction",
+      "Regular portfolio rebalancing",
+      "Ongoing monitoring and adjustments",
+    ],
   },
   {
-    icon: <TrendingUp className="h-8 w-8 text-ksc-gold" />,
+    icon: <TrendingUp className="h-12 w-12 text-ksc-gold" />,
     title: "Wealth Management",
     description:
-      "Comprehensive wealth management strategies designed to preserve and grow your assets over time.",
+      "Our comprehensive wealth management services take a holistic approach to your financial life. We integrate investment management with tax planning, estate planning, and retirement strategies to create a coordinated plan that supports your long-term financial well-being.",
+    benefits: [
+      "Comprehensive financial planning",
+      "Strategic tax optimization",
+      "Estate planning coordination",
+      "Wealth preservation strategies",
+    ],
   },
   {
-    icon: <Wallet className="h-8 w-8 text-ksc-gold" />,
+    icon: <Wallet className="h-12 w-12 text-ksc-gold" />,
     title: "Retirement Planning",
     description:
-      "Strategic retirement planning to ensure financial security and prosperity in your retirement years.",
+      "Our retirement planning services help you prepare for a secure and comfortable retirement. We assess your current financial situation, define your retirement goals, and develop a strategic plan to help you achieve the retirement lifestyle you envision.",
+    benefits: [
+      "Retirement income planning",
+      "Social Security optimization",
+      "401(k) and IRA strategies",
+      "Pension analysis and planning",
+    ],
   },
   {
-    icon: <DollarSign className="h-8 w-8 text-ksc-gold" />,
-    title: "Tax Optimization",
+    icon: <TrendingUp className="h-12 w-12 text-ksc-gold" />,
+    title: "Cryptocurrency Investment",
     description:
-      "Sophisticated tax strategies to minimize liabilities and maximize investment returns.",
+      "Our cryptocurrency investment services help you access opportunities in the digital asset space. We guide you through portfolio diversification, secure custody, and ongoing strategy adjustments to help you maximize your potential returns while managing risk.",
+    benefits: [
+      "Access to leading cryptocurrencies",
+      "Portfolio diversification with digital assets",
+      "Secure custody and best practices",
+      "Market trend analysis and ongoing strategy",
+    ],
   },
   {
-    icon: <Coins className="h-8 w-8 text-ksc-gold" />,
-    title: "Estate Planning",
+    icon: <Coins className="h-12 w-12 text-ksc-gold" />,
+    title: "Investment Strategy",
     description:
-      "Comprehensive estate planning services to preserve your wealth and legacy for future generations.",
+      "Our investment strategy services help you design, implement, and manage sophisticated portfolios that align with your financial ambitions. We focus on asset allocation, research-driven insights, and disciplined processes to optimize returns and manage risk.",
+    benefits: [
+      "Strategic asset allocation",
+      "Research-driven decision making",
+      "Dynamic portfolio adjustments",
+      "Emphasis on consistent performance",
+    ],
   },
   {
-    icon: <Building2 className="h-8 w-8 text-ksc-gold" />,
-    title: "Corporate Advisory",
+    icon: <Rocket className="h-12 w-12 text-ksc-gold" />,
+    title: "Start-up Investment",
     description:
-      "Strategic financial advisory services for corporations and institutional clients.",
+      "Our start-up investment services connect visionary entrepreneurs with the resources and expertise they need to scale. We provide early-stage capital, mentorship, and strategic support to help founders turn innovative ideas into thriving businesses.",
+    benefits: [
+      "Early-stage capital funding",
+      "Access to experienced mentors",
+      "Growth strategy and operational guidance",
+      "Networking with industry leaders",
+    ],
   },
 ];
 
@@ -59,35 +96,55 @@ const ServicesOverview = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-ksc-lightgray p-8 rounded-lg transition-all duration-300 hover:shadow-md hover:translate-y-[-5px]"
+              className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden flex flex-col h-full group"
             >
-              <div className="mb-5">{service.icon}</div>
-              <h3 className="font-serif text-xl font-medium text-ksc-navy mb-3">
-                {service.title}
-              </h3>
-              <p className="text-ksc-darkgray text-sm mb-5">
-                {service.description}
-              </p>
-              <Link
-                to="/services"
-                className="text-ksc-navy font-medium text-sm hover:text-ksc-gold transition-colors inline-flex items-center"
-              >
-                Learn more
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div className="bg-gradient-to-br from-ksc-lightgray to-white p-8 flex-1 flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="bg-white p-4 rounded-2xl shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    {service.icon}
+                  </div>
+                  <div className="text-4xl font-bold text-ksc-lightgray/50">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-ksc-darkgray leading-relaxed text-sm mb-4 flex-1">
+                  {service.description}
+                </p>
+                <div className="bg-gradient-to-r from-ksc-lightgray/50 to-ksc-lightgray/30 p-5 rounded-xl mb-6">
+                  <h4 className="text-ksc-navy font-semibold mb-3 text-base">Key Benefits</h4>
+                  <ul className="space-y-2">
+                    {service.benefits.map((benefit, i) => (
+                      <li key={i} className="flex items-start text-xs">
+                        <CheckCircle className="h-4 w-4 text-ksc-gold mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-ksc-darkgray font-medium">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link
+                  to="/services"
+                  className="text-ksc-navy font-medium text-sm hover:text-ksc-gold transition-colors inline-flex items-center"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
+                  Learn more
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
