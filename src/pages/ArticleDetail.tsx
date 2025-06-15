@@ -153,10 +153,14 @@ const ArticleDetail = () => {
                   prose-headings:text-ksc-navy 
                   prose-headings:font-bold 
                   prose-h2:text-4xl 
+                  prose-h2:mt-12
+                  prose-h2:mb-6
                   prose-h2:border-b 
                   prose-h2:border-ksc-gold/30 
-                  prose-h2:pb-3
+                  prose-h2:pb-4
                   prose-h3:text-2xl 
+                  prose-h3:mt-8
+                  prose-h3:mb-4
                   prose-p:text-gray-700 
                   prose-strong:text-ksc-navy"
                 dangerouslySetInnerHTML={{ __html: article.content || "" }}

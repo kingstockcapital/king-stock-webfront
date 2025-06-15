@@ -31,6 +31,7 @@ export const articlesData: Article[] = [
     readTime: "12 min read",
     views: 0,
     content: `
+      <h2>An Introduction to Sustainable Investing</h2>
       <p>Sustainable investing, which integrates environmental, social, and governance (ESG) criteria into investment decisions, is rapidly shifting from a niche strategy to a mainstream imperative. This article explores why sustainable investing is critical for modern portfolios and how you can get started.</p>
 
       <h2>The Core Principles of Sustainable Investing</h2>
