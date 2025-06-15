@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,6 +15,9 @@ const ArticleDetail = () => {
 
   // Lấy bài viết theo id từ đúng nguồn dữ liệu
   const article = getArticleById(Number(articleId));
+
+  // Debug logging
+  console.log('Article content:', article?.content);
 
   // Lấy tất cả bài viết để hiện Related Articles, loại bỏ bài hiện tại và lấy 3 bài khác đầu tiên
   const relatedArticles = getAllArticles().filter(
@@ -143,14 +147,13 @@ const ArticleDetail = () => {
               </div>
               
               {/* Article Content with better typography */}
-              {/* Đảm bảo prose đứng đầu, thêm prose-slate để đậm nét heading, tăng khoảng cách các đoạn */}
               <article
                 className="prose prose-slate prose-lg max-w-none
                   prose-headings:font-serif 
                   prose-headings:text-ksc-navy 
                   prose-headings:font-bold 
                   prose-h2:text-3xl 
-                  prose-h2:mt-12 
+                  prose-h2:mt-8 
                   prose-h2:mb-6 
                   prose-h2:pb-3
                   prose-h2:border-b-2
@@ -162,12 +165,12 @@ const ArticleDetail = () => {
                   prose-p:text-gray-700 
                   prose-p:text-lg
                   prose-p:leading-relaxed 
-                  prose-p:my-6
-                  prose-ul:my-8
-                  prose-ol:my-8
+                  prose-p:mb-4
+                  prose-ul:my-6
+                  prose-ol:my-6
                   prose-li:text-lg
                   prose-li:text-gray-700 
-                  prose-li:mb-3
+                  prose-li:mb-2
                   prose-li:leading-relaxed
                   prose-strong:text-ksc-navy
                   prose-strong:font-semibold
