@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2, CheckCircle } from "lucide-react";
+import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2, CheckCircle, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -68,15 +68,15 @@ const services = [
     ],
   },
   {
-    icon: <Building2 className="h-12 w-12 text-ksc-gold" />,
-    title: "Corporate Advisory",
+    icon: <Rocket className="h-12 w-12 text-ksc-gold" />,
+    title: "Start-up Investment",
     description:
-      "We provide strategic financial advisory services for corporations and institutional clients. Our team helps businesses optimize their capital structure, manage treasury functions, and develop comprehensive financial strategies.",
+      "Our start-up investment services connect visionary entrepreneurs with the resources and expertise they need to scale. We provide early-stage capital, mentorship, and strategic support to help founders turn innovative ideas into thriving businesses.",
     benefits: [
-      "Corporate treasury management",
-      "Capital structure optimization",
-      "Risk management strategies",
-      "Financial restructuring",
+      "Early-stage capital funding",
+      "Access to experienced mentors",
+      "Growth strategy and operational guidance",
+      "Networking with industry leaders",
     ],
   },
 ];
