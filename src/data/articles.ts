@@ -341,6 +341,50 @@ export const articlesData: Article[] = [
       <p>Embracing digital transformation is essential for any financial organization that wishes to remain relevant. Leaders should promote a culture of innovation and continuously monitor emerging technologies to sustain growth.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
+  },
+  {
+    id: 14,
+    title: "Tech Sector Analysis: Innovations Driving Global Growth",
+    summary: "Insights into how technology is driving innovation and growth across the global economy, with key trends and investment strategies.",
+    author: "David Williams, Technology Sector Specialist",
+    date: "June 16, 2025",
+    category: "Sector Analysis",
+    status: "Published",
+    tags: ["Technology", "Innovation", "Investment"],
+    readTime: "10 min read",
+    views: 0,
+    content: `
+      <h2>Tech Sector Overview</h2>
+      <p>
+        The technology sector is a constant engine for innovation and a key driver of global economic growth.
+        Below are the leading trends that are propelling a new wave of investment opportunities.
+      </p>
+      <h3>Key Trends</h3>
+      <ul>
+        <li>
+          <strong>AI & Artificial Intelligence:</strong>
+          Widespread application in products, data analysis, and automation across industries.
+        </li>
+        <li>
+          <strong>Quantum Computing:</strong>
+          Unlocking new possibilities in pharmaceuticals, finance, and data security.
+        </li>
+        <li>
+          <strong>Biotechnology:</strong>
+          Accelerating biomedical research and personalized healthcare.
+        </li>
+      </ul>
+      <h2>Investment Strategies</h2>
+      <p>
+        To capture technology-driven growth, investors should diversify across software, hardware, and digital biotech.
+        Organizations with strong innovation capabilities and robust intellectual property are most likely to succeed.
+      </p>
+      <ul>
+        <li>Diversify across portfolios and segments</li>
+        <li>Regularly review regulations and emerging global trends</li>
+      </ul>
+    `,
+    image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
   }
 ];
 
