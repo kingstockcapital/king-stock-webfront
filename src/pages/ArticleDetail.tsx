@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -145,7 +144,8 @@ const ArticleDetail = () => {
               
               {/* Article Content with better typography */}
               <div className="bg-white rounded-lg shadow-sm border p-8 lg:p-12">
-                <article className="prose prose-lg max-w-none 
+                <article
+                  className="prose prose-lg max-w-none 
                     prose-headings:font-serif 
                     prose-headings:text-ksc-navy 
                     prose-headings:font-bold 
@@ -170,10 +170,9 @@ const ArticleDetail = () => {
                     prose-li:mb-3
                     prose-li:leading-relaxed
                     prose-strong:text-ksc-navy
-                    prose-strong:font-semibold">
-                  {/* Hiển thị content an toàn cho HTML được xây dựng ở data */}
-                  <div dangerouslySetInnerHTML={{ __html: article.content || "" }} />
-                </article>
+                    prose-strong:font-semibold"
+                  dangerouslySetInnerHTML={{ __html: article.content || "" }}
+                />
               </div>
             </div>
           </div>
