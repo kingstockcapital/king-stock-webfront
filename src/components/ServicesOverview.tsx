@@ -1,9 +1,9 @@
 
-import { BriefcaseIcon, Coins, DollarSign, TrendingUp, Wallet, Building2, Rocket, CheckCircle } from "lucide-react";
+import { BriefcaseIcon, TrendingUp, Wallet, Coins, Rocket, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-// Định nghĩa lại danh sách service cho khớp với trang Services
+// Danh sách dịch vụ giống trang Services, đúng thứ tự, đặc biệt 3 cái cuối cùng
 const services = [
   {
     icon: <BriefcaseIcon className="h-12 w-12 text-ksc-gold" />,
@@ -41,18 +41,7 @@ const services = [
       "Pension analysis and planning",
     ],
   },
-  {
-    icon: <TrendingUp className="h-12 w-12 text-ksc-gold" />,
-    title: "Cryptocurrency Investment",
-    description:
-      "Our cryptocurrency investment services help you access opportunities in the digital asset space. We guide you through portfolio diversification, secure custody, and ongoing strategy adjustments to help you maximize your potential returns while managing risk.",
-    benefits: [
-      "Access to leading cryptocurrencies",
-      "Portfolio diversification with digital assets",
-      "Secure custody and best practices",
-      "Market trend analysis and ongoing strategy",
-    ],
-  },
+  // 3 dịch vụ cuối giống với trang Services
   {
     icon: <Coins className="h-12 w-12 text-ksc-gold" />,
     title: "Investment Strategy",
@@ -77,6 +66,18 @@ const services = [
       "Networking with industry leaders",
     ],
   },
+  {
+    icon: <TrendingUp className="h-12 w-12 text-ksc-gold" />,
+    title: "Cryptocurrency Investment",
+    description:
+      "Our cryptocurrency investment services help you access opportunities in the digital asset space. We guide you through portfolio diversification, secure custody, and ongoing strategy adjustments to help you maximize your potential returns while managing risk.",
+    benefits: [
+      "Access to leading cryptocurrencies",
+      "Portfolio diversification with digital assets",
+      "Secure custody and best practices",
+      "Market trend analysis and ongoing strategy",
+    ],
+  },
 ];
 
 const ServicesOverview = () => {
@@ -91,7 +92,6 @@ const ServicesOverview = () => {
             We offer six comprehensive service areas designed to help you achieve your financial objectives.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
@@ -148,7 +148,6 @@ const ServicesOverview = () => {
             </div>
           ))}
         </div>
-
         <div className="mt-12 text-center">
           <Button
             asChild
