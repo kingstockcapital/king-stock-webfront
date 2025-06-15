@@ -83,7 +83,7 @@ export const articlesData: Article[] = [
       <h2>Tech Sector Analysis</h2>
       <p>
         The technology sector continuously drives innovation and global economic growth.
-        Here are the major trends shaping new waves of investment.
+        Below are the major trends shaping new waves of investment.
       </p>
       <h3>Main Trends</h3>
       <ul>
@@ -102,8 +102,8 @@ export const articlesData: Article[] = [
       </ul>
       <h2>Investment Strategies</h2>
       <p>
-        Diversify across areas including software, hardware, and digital biology.
-        Prioritize companies with strong innovation capabilities and robust intellectual property ownership.
+        To capture technology-driven growth, investors should diversify across software, hardware, and digital biotech.
+        Organizations with strong innovation capabilities and robust intellectual property are most likely to succeed.
       </p>
       <ul>
         <li>Diversify your portfolio</li>
