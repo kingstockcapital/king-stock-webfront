@@ -2,218 +2,220 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
-import { Card, CardContent } from "@/components/ui/card";
-
-const teamMembers = [
-  {
-    name: "Jonathan King",
-    position: "Founder & CEO",
-    bio: "With over 25 years of experience in finance and investment, Jonathan founded King Stock Capital with a vision to provide institutional-grade investment strategies to individual investors.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-  },
-  {
-    name: "Elizabeth Wells",
-    position: "Chief Investment Officer",
-    bio: "Elizabeth brings extensive expertise in portfolio management and market analysis, with previous roles at top-tier investment banks and a Ph.D. in Financial Economics.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
-  },
-  {
-    name: "Richard Chen",
-    position: "Head of Research",
-    bio: "Richard leads our research team with a focus on identifying emerging market trends and investment opportunities, leveraging his background in quantitative analysis.",
-    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1148&q=80"
-  },
-  {
-    name: "Sophia Martinez",
-    position: "Director of Client Relations",
-    bio: "Sophia ensures our clients receive exceptional service and personalized attention, with a deep understanding of their unique financial needs and goals.",
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-  },
-];
 
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-ksc-lightgray/30">
       <Navbar />
-      
+
       <main>
-        {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-8">
-                <span className="text-ksc-gold font-medium text-sm">About Us</span>
-              </div>
               <h1 className="font-serif text-5xl md:text-6xl font-semibold text-white mb-8 leading-tight">
-                Building Financial
-                <span className="block text-ksc-gold">Legacies</span>
+                King Stock Capital Management (KSCM)
               </h1>
               <p className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto">
-                A dedication to excellence, integrity, and client success since our founding in 2021.
+                At King Stock Capital Management (KSCM), we are dedicated to providing comprehensive investment research and analysis services. Our team combines deep market knowledge with cutting-edge analytical tools to deliver actionable insights for our clients.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">$1.2B+</div>
-                <div className="text-ksc-darkgray">Assets Under Management</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">500+</div>
-                <div className="text-ksc-darkgray">Satisfied Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-serif font-bold text-ksc-navy mb-2">3+</div>
-                <div className="text-ksc-darkgray">Years of Excellence</div>
-              </div>
-            </div>
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl font-serif font-semibold text-ksc-navy mb-6">Who We Are</h2>
+            <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
+            <p className="text-lg text-ksc-darkgray mb-5">
+              King Stock Capital Management (KSCM) is a private investment research and strategy firm specializing in delivering high-quality market insights, portfolio management strategies, and risk analyses. Our expertise spans traditional stock markets, cryptocurrencies, and emerging Web3 opportunities, with a forward-thinking approach to identifying long-term investment trends.
+            </p>
+            <h3 className="text-2xl font-semibold text-ksc-navy mt-12 mb-4">Our Mission</h3>
+            <p className="text-lg text-ksc-darkgray mb-5">
+              Our mission is to provide deep, data-driven investment research and strategic insights that empower investors to navigate complex financial landscapes. We believe in precision, foresight, and disciplined investment approaches that effectively balance risk and reward.
+            </p>
+            <h3 className="text-2xl font-semibold text-ksc-navy mt-12 mb-4">What We Do</h3>
+            <p className="text-lg text-ksc-darkgray mb-4">
+              KSCM operates as a closed, invitation-only entity, offering exclusive research and investment insights. While we do not publicly solicit investments, we focus on:
+            </p>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-5 space-y-1">
+              <li>Market Research & Analysis: Identifying opportunities in stocks, cryptocurrencies, and innovative sectors.</li>
+              <li>Portfolio & Risk Management: Structuring strategic investment approaches.</li>
+              <li>Investment Strategy Development: Crafting long-term investment theses based on macroeconomic trends.</li>
+            </ul>
           </div>
         </section>
 
-        {/* Our Story */}
-        <section className="py-24 bg-gradient-to-b from-ksc-lightgray/50 to-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-              <div className="space-y-8">
-                <div>
-                  <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
-                    Our Story
-                  </h2>
-                  <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
-                </div>
-                
-                <div className="space-y-6">
-                  <p className="text-ksc-darkgray text-lg leading-relaxed">
-                    Founded in 2021 amid a challenging period for global markets,
-                    King Stock Capital Management was established with a contrarian vision: that times 
-                    of market turmoil present the greatest opportunities for strategic investors.
-                  </p>
-                  <p className="text-ksc-darkgray text-lg leading-relaxed">
-                    Jonathan King, our founder, assembled a team of experienced investment professionals 
-                    who shared his perspective on disciplined, research-driven investment approaches.
-                  </p>
-                  <p className="text-ksc-darkgray text-lg leading-relaxed">
-                    Today, we manage over $1.2 billion in assets for individuals, families, and 
-                    institutions, maintaining the same principles that guided our founding.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80')] bg-cover bg-center rounded-2xl shadow-2xl"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-ksc-gold/10 rounded-2xl -z-10"></div>
-              </div>
-            </div>
+        <section className="py-16 bg-ksc-lightgray/60">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl font-serif font-semibold text-ksc-navy mb-6">Our Vision for the Future</h2>
+            <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
+            <p className="text-lg text-ksc-darkgray mb-8">
+              As financial markets evolve, KSCM remains committed to staying ahead of technological advancements, economic shifts, and market cycles. While we currently operate as a private entity, we are exploring the possibility of transitioning into a public investment fund in the future. This transition will depend on meeting all necessary legal, regulatory, and compliance requirements. Any such change will be announced officially when we are fully prepared and compliant with applicable laws.
+            </p>
+            <h3 className="text-2xl font-semibold text-ksc-navy mt-8 mb-4">Long-Term Vision: Shaping the Future of Finance and Economy</h3>
+            <p className="text-md text-ksc-darkgray mb-5">
+              We see the future of finance as being shaped by the convergence of technology, innovation, and sustainable economic models. The financial sector must adapt to challenges and opportunities from technological advancements, global dynamics, and shifting investor preferences.
+            </p>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">1. The Evolution of Finance: A New Era</h4>
+            <p className="mb-3 text-ksc-darkgray">Decentralized finance (DeFi), blockchain technology, and AI-powered services are revolutionizing how money is managed and invested. KSCM is committed to staying ahead and positioning our clients for success in this digitally-native financial world.</p>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">2. The Future of the Global Economy</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray space-y-1 mb-4">
+              <li><b>Increased Automation and AI Integration:</b> Advancements in AI and automation will drastically impact industries. Leaders will be those who harness AI to innovate.</li>
+              <li><b>Sustainability and Green Finance:</b> Sustainability will be a central theme, with growth for companies leading in clean energy, carbon credits, and eco-innovation.</li>
+              <li><b>Rise of the Digital Economy:</b> The digital economy will expand through blockchain, Web3, NFTs, and DeFi, offering more inclusion and innovation.</li>
+              <li><b>Geopolitical Shifts and Economic Decoupling:</b> New alliances and decoupling could reshape global finance and supply chains.</li>
+            </ul>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">3. How Companies Will Shape the Future</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-4 space-y-1">
+              <li>Tech-Driven Innovators</li>
+              <li>Purpose-Driven Enterprises</li>
+              <li>Agile and Adaptive</li>
+              <li>Global and Inclusive</li>
+            </ul>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">4. Identifying Companies with Potential for Long-Term Growth</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-4 space-y-1">
+              <li>Innovation and technological advancement</li>
+              <li>Sustainability commitment</li>
+              <li>Resilience and strong fundamentals</li>
+              <li>Scalability of business model</li>
+              <li>Visionary leadership</li>
+            </ul>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">5. KSCM's Role in Shaping the Future</h4>
+            <p className="mb-3 text-ksc-darkgray">
+              KSCM's long-term vision is to help clients navigate the evolving financial landscape and identify investment opportunities that align with the future economy, focusing on technology-driven, sustainable, and resilient companies.
+            </p>
+
+            <h4 className="text-xl font-semibold text-ksc-navy mb-3 mt-6">Conclusion</h4>
+            <p className="mb-2 text-ksc-darkgray">
+              The future of finance and the global economy is full of opportunities. By focusing on innovation, sustainability, and adaptability, we're committed to helping clients invest in the businesses shaping tomorrow.
+            </p>
           </div>
         </section>
 
-        {/* Mission & Values */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
-                  Mission & Values
-                </h2>
-                <div className="w-16 h-1 bg-ksc-gold mx-auto mb-8"></div>
-                <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
-                  Our mission is to help clients achieve their financial goals through prudent 
-                  investment strategies, personalized advice, and exceptional service.
-                </p>
-              </div>
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl font-serif font-semibold text-ksc-navy mb-6">KSCM Research & Analysis: A Data-Driven Approach to Investing</h2>
+            <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
+            <h3 className="text-xl font-semibold text-ksc-navy mt-8 mb-4">Introduction</h3>
+            <p className="text-md text-ksc-darkgray mb-4">
+              At King Stock Capital Management (KSCM), research is the cornerstone of our investment strategy. We combine data-driven analysis, market insights, and a disciplined approach to identify high-potential opportunities while managing risk.
+            </p>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Mission */}
-                <Card className="border-0 shadow-lg">
-                  <CardContent className="p-8">
-                    <h3 className="font-serif text-2xl font-semibold text-ksc-navy mb-6">Our Approach</h3>
-                    <div className="space-y-4">
-                      {[
-                        "Disciplined research and analysis",
-                        "Strategic asset allocation",
-                        "Active risk management",
-                        "Transparent client communication"
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center">
-                          <div className="w-2 h-2 bg-ksc-gold rounded-full mr-4"></div>
-                          <span className="text-ksc-darkgray">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+            <h4 className="text-lg font-semibold text-ksc-navy mb-3 mt-5">1. Research Philosophy</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-4 space-y-1">
+              <li>Long-term value creation</li>
+              <li>Risk-adjusted returns</li>
+              <li>Multi-layered analysis</li>
+            </ul>
 
-                {/* Values */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    { title: "Integrity", desc: "We adhere to the highest ethical standards and always place our clients' interests first." },
-                    { title: "Excellence", desc: "We strive for excellence in all aspects of our work, from research to client service." },
-                    { title: "Innovation", desc: "We continuously seek innovative solutions to complex financial challenges." },
-                    { title: "Transparency", desc: "We maintain open and honest communication with our clients at all times." }
-                  ].map((value, index) => (
-                    <Card key={index} className="border-0 shadow-lg">
-                      <CardContent className="p-6">
-                        <h4 className="font-serif text-lg font-semibold text-ksc-navy mb-3">{value.title}</h4>
-                        <p className="text-ksc-darkgray text-sm leading-relaxed">{value.desc}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <h4 className="text-lg font-semibold text-ksc-navy mb-3 mt-5">2. Research Methodologies</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-2 space-y-1">
+              <li>
+                <b>Fundamental Analysis:</b> Financial health, industry landscape, macro trends.
+              </li>
+              <li>
+                <b>Technical Analysis:</b> Indicators and price action for entry/exit decisions.
+              </li>
+              <li>
+                <b>Macroeconomic Analysis:</b> Interest rates, inflation, geopolitics.
+              </li>
+              <li>
+                <b>Sentiment & On-Chain Analysis:</b> (For crypto) On-chain data, social sentiment.
+              </li>
+            </ul>
+
+            <h4 className="text-lg font-semibold text-ksc-navy mb-3 mt-5">3. Areas of Focus</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-2 space-y-1">
+              <li>
+                <b>Stock Market Research:</b> Equities across sectors, both growth & value.
+              </li>
+              <li>
+                <b>Cryptocurrency & Web3 Startups:</b> Blockchain, DeFi, Real World Asset tokens, early Web3.
+              </li>
+              <li>
+                <b>Alternative Investments:</b> Private equity, venture, real estate, commodities.
+              </li>
+            </ul>
+            <h4 className="text-lg font-semibold text-ksc-navy mb-3 mt-5">4. Data Sources & Research Tools</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-2 space-y-1">
+              <li>Bloomberg, Reuters, TradingView</li>
+              <li>Glassnode, Dune Analytics</li>
+              <li>Company earnings, SEC filings</li>
+            </ul>
+            <h4 className="text-lg font-semibold text-ksc-navy mb-3 mt-5">5. Research Reports & Publications</h4>
+            <ul className="list-disc ml-8 text-ksc-darkgray mb-2 space-y-1">
+              <li>Deep analysis of high-potential stocks & crypto assets</li>
+              <li>Quarterly macroeconomic outlooks & trend forecasts</li>
+              <li>Case studies on strategies and portfolio allocation</li>
+            </ul>
+            <p className="mb-2 text-ksc-darkgray">
+              KSCM's research delivers rigorous insights, risk management, and long-term thinking.
+            </p>
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-24 bg-gradient-to-b from-ksc-lightgray/30 to-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="font-serif text-4xl font-semibold text-ksc-navy mb-6">
-                  Leadership Team
-                </h2>
-                <div className="w-16 h-1 bg-ksc-gold mx-auto mb-8"></div>
-                <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
-                  Meet the experienced professionals behind King Stock Capital's investment strategies.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {teamMembers.map((member, index) => (
-                  <Card key={index} className="border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-                    <div className="aspect-[4/5] relative overflow-hidden">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="font-serif text-xl font-semibold text-ksc-navy mb-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-ksc-gold text-sm font-medium mb-4">{member.position}</p>
-                      <p className="text-ksc-darkgray text-sm leading-relaxed">{member.bio}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+        <section className="py-16 bg-ksc-lightgray/60">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl font-serif font-semibold text-ksc-navy mb-6">Why Choose King Stock Capital Management (KSCM)?</h2>
+            <div className="w-16 h-1 bg-ksc-gold mb-8"></div>
+            <p className="text-lg text-ksc-darkgray mb-4">
+              Our focus is on providing insightful financial research, personalized investment strategies, and in-depth market analysis to support our clients in making confident financial decisions.
+            </p>
+            <h3 className="text-xl font-semibold text-ksc-navy mt-8 mb-4">What We Provide:</h3>
+            <ul className="list-disc ml-8 text-ksc-darkgray space-y-1 pb-6">
+              <li>
+                <b>Research & Market Insights:</b> Comprehensive reports on stocks, crypto, and more.
+                <ul className="mt-0.5 mb-2 ml-8 list-disc text-ksc-darkgray space-y-1">
+                  <li>Quarterly Research Reports on latest trends</li>
+                  <li>Custom Reports tailored to client interests</li>
+                </ul>
+              </li>
+              <li>
+                <b>Personalized Portfolio Management:</b> Customized strategies aligned with each client.
+                <ul className="mt-0.5 mb-2 ml-8 list-disc text-ksc-darkgray space-y-1">
+                  <li>Risk tolerance assessments</li>
+                  <li>Goal & timeline review</li>
+                  <li>Diversified, long-term portfolios</li>
+                </ul>
+              </li>
+              <li>
+                <b>Risk Management Strategies:</b> Tailored reviews and hedging techniques.
+              </li>
+              <li>
+                <b>Investment Strategy Development:</b> Long-term and tactical guidance based on real-time market conditions.</li>
+              <li>
+                <b>Transparent Communication:</b> Quarterly Reports and regular consultations.</li>
+              <li>
+                <b>Confidentiality & Security:</b> Strict privacy, secure processing, and data protection protocols.</li>
+              <li>
+                <b>Commitment to Transparency:</b> Full disclosure and regular performance reviews.</li>
+            </ul>
+            <div className="pt-4">
+              <p className="text-sm text-ksc-darkgray mb-2">
+                <b>Disclaimer:</b> KSCM is currently a private investment research entity and does not operate as a public investment fund. Public solicitation of investments is not practiced.
+              </p>
+              <p className="text-sm text-ksc-darkgray mb-2">
+                Future transition to a public fund is conditional on all legal and regulatory compliance, with any change officially announced. Any contrary claims are inaccurate.
+              </p>
+              <p className="text-sm text-ksc-darkgray">
+                For inquiries or collaboration, please reach out via our <b>Contact</b> page.
+              </p>
             </div>
           </div>
         </section>
 
         <CtaSection />
       </main>
-      
       <Footer />
     </div>
   );
 };
 
 export default About;
+
