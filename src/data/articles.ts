@@ -29,39 +29,28 @@ export const articlesData: Article[] = [
     views: 1234,
     content: `
       <h2>Introduction</h2>
-      <p>
-        As we look ahead to 2025, the global economy stands at a significant crossroads. Following a period of unprecedented monetary policy adjustments and supply chain realignments, markets are now navigating a landscape characterized by technological innovation, shifting geopolitical alliances, and evolving demographic patterns.
-      </p>
-      <p>
-        This comprehensive outlook examines key trends expected to shape investment markets in the coming year and provides strategic insights for investors seeking to position their portfolios effectively.
-      </p>
+      <p>As we look ahead to 2025, the global economy stands at a significant crossroads. Following a period of unprecedented monetary policy adjustments and supply chain realignments, markets are now navigating a landscape characterized by technological innovation, shifting geopolitical alliances, and evolving demographic patterns.</p>
+      <p>This comprehensive outlook examines key trends expected to shape investment markets in the coming year and provides strategic insights for investors seeking to position their portfolios effectively.</p>
+
       <h2>Economic Growth Projections</h2>
-      <p>
-        Our analysis suggests global GDP growth will stabilize at approximately 3.2% in 2025, with notable regional variations:
-      </p>
+      <p>Our analysis suggests global GDP growth will stabilize at approximately 3.2% in 2025, with notable regional variations:</p>
       <ul>
-        <li>North America: 2.5-2.8% growth, supported by technology sector expansion and infrastructure spending.</li>
-        <li>Europe: 1.7-2.0% growth, constrained by demographic challenges but bolstered by green technology investments.</li>
-        <li>Asia-Pacific: 4.5-5.0% growth, led by continued expansion in India and Southeast Asian markets.</li>
-        <li>Latin America: 2.8-3.2% growth, with improvements in fiscal positions supporting economic stability.</li>
+        <li><strong>North America:</strong> 2.5-2.8% growth, supported by technology sector expansion and infrastructure spending.</li>
+        <li><strong>Europe:</strong> 1.7-2.0% growth, constrained by demographic challenges but bolstered by green technology investments.</li>
+        <li><strong>Asia-Pacific:</strong> 4.5-5.0% growth, led by continued expansion in India and Southeast Asian markets.</li>
+        <li><strong>Latin America:</strong> 2.8-3.2% growth, with improvements in fiscal positions supporting economic stability.</li>
       </ul>
-      <p>
-        Inflation is projected to remain within central bank target ranges for most developed economies, though upside risks exist particularly in labor-constrained markets.
-      </p>
+      <p>Inflation is projected to remain within central bank target ranges for most developed economies, though upside risks exist particularly in labor-constrained markets.</p>
+
       <h2>Sector Outlook</h2>
       <p>Several sectors present compelling opportunities as we enter 2025:</p>
       <h3>Technology</h3>
-      <p>
-        The technology sector continues to demonstrate strong growth potential, particularly in areas of artificial intelligence, quantum computing, and cybersecurity. Companies with established intellectual property in these domains are well-positioned to deliver above-market returns.
-      </p>
+      <p>The technology sector continues to demonstrate strong growth potential, particularly in areas of artificial intelligence, quantum computing, and cybersecurity. Companies with established intellectual property in these domains are well-positioned to deliver above-market returns.</p>
       <h3>Healthcare</h3>
-      <p>
-        Demographics and innovation are dual tailwinds for the healthcare sector. Advancements in personalized medicine, bioinformatics, and medical devices present significant investment opportunities in both established companies and emerging innovators.
-      </p>
+      <p>Demographics and innovation are dual tailwinds for the healthcare sector. Advancements in personalized medicine, bioinformatics, and medical devices present significant investment opportunities in both established companies and emerging innovators.</p>
       <h3>Green Infrastructure</h3>
-      <p>
-        Government commitments to carbon reduction targets are driving substantial infrastructure spending globally. Companies involved in renewable energy generation, storage solutions, and grid modernization are expected to benefit from this multi-year trend.
-      </p>
+      <p>Government commitments to carbon reduction targets are driving substantial infrastructure spending globally. Companies involved in renewable energy generation, storage solutions, and grid modernization are expected to benefit from this multi-year trend.</p>
+
       <h2>Risk Factors to Monitor</h2>
       <p>While our base case remains constructive, several key risks warrant close attention:</p>
       <ul>
@@ -70,6 +59,7 @@ export const articlesData: Article[] = [
         <li>Ongoing climate-related disruptions affecting agricultural production and supply chains.</li>
         <li>Debt sustainability concerns in certain emerging markets.</li>
       </ul>
+
       <h2>Investment Strategy Recommendations</h2>
       <p>Given this outlook, we recommend the following strategic positioning:</p>
       <ol>
@@ -79,9 +69,8 @@ export const articlesData: Article[] = [
         <li>Integrate environmental, social and governance (ESG) factors into security selection.</li>
         <li>Maintain appropriate fixed income duration to manage interest rate sensitivity.</li>
       </ol>
-      <p>
-        Our analysis suggests that carefully selected active management will likely deliver value in the coming market environment, particularly in less efficient market segments.
-      </p>
+      <p>Our analysis suggests that carefully selected active management will likely deliver value in the coming market environment, particularly in less efficient market segments.</p>
+
       <h2>Conclusion</h2>
       <p>The 2025 investment landscape offers significant opportunities amid a changing economic backdrop. By focusing on quality, innovation, and careful risk management, investors can navigate this transition effectively and position for long-term success.</p>
     `,
