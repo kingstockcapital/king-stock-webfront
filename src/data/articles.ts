@@ -80,19 +80,34 @@ export const articlesData: Article[] = [
     readTime: "10 min read",
     views: 923,
     content: `
-      <h2>Phân tích ngành công nghệ</h2>
-      <p>Ngành công nghệ liên tục thúc đẩy đổi mới và tăng trưởng cho nền kinh tế toàn cầu. Dưới đây là các xu hướng nổi bật thúc đẩy làn sóng đầu tư mới.</p>
-      <h3>Xu hướng chính</h3>
+      <h2>Tech Sector Analysis</h2>
+      <p>
+        The technology sector continuously drives innovation and global economic growth.
+        Here are the major trends shaping new waves of investment.
+      </p>
+      <h3>Main Trends</h3>
       <ul>
-        <li><strong>AI & Trí tuệ nhân tạo:</strong> Ứng dụng sâu rộng vào sản phẩm, phân tích dữ liệu & tự động hóa.</li>
-        <li><strong>Điện toán lượng tử:</strong> Mở ra các lĩnh vực mới như dược, tài chính và an ninh dữ liệu.</li>
-        <li><strong>Công nghệ sinh học:</strong> Tăng tốc nghiên cứu y sinh, chăm sóc sức khỏe cá nhân hóa.</li>
+        <li>
+          <strong>AI & Artificial Intelligence:</strong>
+          Broad adoption in products, data analysis, and automation.
+        </li>
+        <li>
+          <strong>Quantum Computing:</strong>
+          Unlocks new possibilities in pharmaceuticals, finance, and data security.
+        </li>
+        <li>
+          <strong>Biotechnology:</strong>
+          Accelerates biomedical research and personalized healthcare.
+        </li>
       </ul>
-      <h2>Chiến lược đầu tư</h2>
-      <p>Cần đa dạng hóa giữa các mảng như phần mềm, phần cứng, sinh học số. Ưu tiên doanh nghiệp có năng lực sáng tạo và sở hữu trí tuệ vững chắc.</p>
+      <h2>Investment Strategies</h2>
+      <p>
+        Diversify across areas including software, hardware, and digital biology.
+        Prioritize companies with strong innovation capabilities and robust intellectual property ownership.
+      </p>
       <ul>
-        <li>Đa dạng hóa danh mục</li>
-        <li>Thường xuyên review yếu tố pháp lý và xu hướng toàn cầu</li>
+        <li>Diversify your portfolio</li>
+        <li>Frequently review regulatory factors and global trends</li>
       </ul>
     `,
     image: "/lovable-uploads/e1a74e54-9d54-49d0-958e-9e9319d3a66c.png"
