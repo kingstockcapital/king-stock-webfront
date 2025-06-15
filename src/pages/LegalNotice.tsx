@@ -3,26 +3,134 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Scale } from "lucide-react";
 
+const sections = [
+  {
+    title: "1. General Information",
+    content: (
+      <>
+        <p>
+          King Stock Capital Management (hereinafter referred to as &quot;KSCM&quot;) is a private investment research entity that operates exclusively for private clients. KSCM is not a public investment fund, hedge fund, or registered financial institution. It does not publicly solicit investments, accept funds from the general public, or manage assets on behalf of external investors. The information provided on this website and through any communication channels is strictly for educational and informational purposes only.
+        </p>
+        <p>
+          KSCM is structured as a private investment initiative, meaning that all financial activities, research, and investment decisions are conducted internally for a closed group of private clients. There is no open invitation for participation, and KSCM does not seek to attract outside investors or manage third-party funds.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "2. No Investment Solicitation or Public Offering",
+    content: (
+      <>
+        <p>
+          Nothing on this website or in any KSCM communication constitutes an offer, solicitation, or recommendation to buy, sell, or invest in securities, cryptocurrencies, or any financial instruments. KSCM does not provide investment advisory services to the public, nor does it act as a licensed financial advisor or broker.
+        </p>
+        <p>
+          Any information published by KSCM, including market research, analysis, and investment strategies, is solely for private educational purposes and does not constitute financial, legal, or tax advice. Investors should conduct their own due diligence and consult professional advisors before making any investment decisions.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "3. Private Clients and Confidentiality",
+    content: (
+      <>
+        <p>
+          KSCM operates on a private-client basis, meaning that only pre-approved individuals with existing private arrangements may access detailed investment strategies or participate in any discussions related to capital deployment. KSCM does not publicly disclose its private clients, investment strategies, or internal fund allocations.
+        </p>
+        <p>
+          Confidentiality is a key principle of KSCM&apos;s operations, and all internal communications, documents, and research remain restricted to private members. Any unauthorized disclosure, reproduction, or distribution of KSCM materials is strictly prohibited.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "4. Investment Risks and Disclaimer",
+    content: (
+      <>
+        <p>
+          All investments involve risk, including the possible loss of capital. Past performance is not a guarantee of future results. KSCM does not provide any guarantees on returns, nor does it accept liability for financial losses arising from investment decisions made based on its research.
+        </p>
+        <p>
+          KSCM does not trade, hold, or invest funds on behalf of third parties. Any investments discussed in research papers or articles are purely for analytical and educational purposes and should not be interpreted as endorsements or financial advice.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "5. Future Plans and Legal Compliance",
+    content: (
+      <>
+        <p>
+          KSCM is currently a private investment research entity and does not operate as a public investment fund. We do not publicly solicit investments or offer financial services to the general public.
+        </p>
+        <p>
+          However, in the future, if KSCM meets all necessary legal, regulatory, and compliance requirements, it may transition into an open fund. This transition will only occur if and when KSCM officially announces such a change. Until then, KSCM remains a private and invitation-only entity. Any claims suggesting otherwise are inaccurate.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "6. No Financial Advice",
+    content: (
+      <>
+        <p>
+          All content provided by KSCM, including research articles, market analyses, and investment insights, is for informational and educational purposes only. Nothing published by KSCM should be interpreted as financial, legal, or investment advice. Investors should conduct their own due diligence and consult with professional advisors before making any financial decisions.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "7. Limitation of Liability",
+    content: (
+      <>
+        <p>
+          KSCM and its contributors do not assume liability for any financial losses, investment decisions, or market outcomes based on information provided on this website or in any related publications. Market conditions are inherently volatile, and past performance does not guarantee future results.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "8. Intellectual Property Rights",
+    content: (
+      <>
+        <p>
+          All content, including but not limited to research articles, analysis reports, and proprietary methodologies, is the intellectual property of KSCM. Unauthorized reproduction, distribution, or modification of our content without explicit written consent is strictly prohibited.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "9. Amendments and Updates",
+    content: (
+      <>
+        <p>
+          KSCM reserves the right to modify or update this Legal Notice at any time without prior notice. Changes will be reflected on this page, and it is the responsibility of users to stay informed of any revisions. Continued use of the website implies acceptance of any updated terms.
+        </p>
+      </>
+    ),
+  },
+];
+
 const LegalNotice = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         {/* Hero */}
-        <section className="pt-24 pb-16 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
+        <section className="pt-24 pb-12 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1920&h=1080&fit=crop')] bg-cover bg-center opacity-10"></div>
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center px-4 py-2 bg-ksc-gold/10 border border-ksc-gold/20 rounded-full mb-6">
                 <Scale className="h-4 w-4 text-ksc-gold mr-2" />
-                <span className="text-ksc-gold font-medium text-sm">Legal Information</span>
+                <span className="text-ksc-gold font-medium text-sm">Legal Notice</span>
               </div>
               <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6">
                 Legal
                 <span className="text-ksc-gold block">Notice</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Legal information, copyright and disclaimer for King Stock Capital Management.
+                Please read this Legal Notice carefully before using this website.
               </p>
             </div>
           </div>
@@ -33,110 +141,19 @@ const LegalNotice = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg max-w-none space-y-8">
-
-                {/* Section: Company Information */}
-                <div className="bg-ksc-lightgray/50 p-8 rounded-xl">
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-4">Company Information</h2>
-                  <ul className="text-ksc-darkgray text-sm space-y-1">
-                    <li><strong>King Stock Capital Management LLC</strong></li>
-                    <li>123 Finance Street</li>
-                    <li>New York, NY 10001</li>
-                    <li>United States</li>
-                    <li><strong>Email:</strong> info@kingstockcapital.com</li>
-                    <li><strong>Phone:</strong> +1 (212) 555-1234</li>
-                    <li><strong>Website:</strong> <a href="https://kingstockcapital.com" className="text-ksc-gold hover:underline">kingstockcapital.com</a></li>
-                  </ul>
-                </div>
-
-                {/* Section: Representative */}
                 <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Represented by:</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    David King, Managing Director
+                  <p className="text-sm text-ksc-darkgray mb-2">
+                    <strong>Last Updated:</strong> {new Date().toLocaleDateString()}
                   </p>
                 </div>
-
-                {/* Section: Registration */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Business Registration</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    Registered in New York, United States
-                  </p>
-                  <p className="text-ksc-darkgray text-base">
-                    King Stock Capital Management LLC is registered as an investment adviser with the U.S. Securities and Exchange Commission (SEC). Registration does not imply a certain level of skill or training.
-                  </p>
-                </div>
-
-                {/* Section: Regulatory Authority */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Regulatory Authority</h2>
-                  <p className="text-ksc-darkgray text-base">
-                    The responsible authority for supervision and regulation is:
-                  </p>
-                  <ul className="text-ksc-darkgray text-sm mt-2 space-y-1">
-                    <li>U.S. Securities and Exchange Commission (SEC)</li>
-                    <li>100 F Street, NE</li>
-                    <li>Washington, DC 20549</li>
-                    <li><a href="https://www.sec.gov" className="text-ksc-gold hover:underline">www.sec.gov</a></li>
-                  </ul>
-                </div>
-
-                {/* Section: Legal Notice and Disclaimer */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Legal Notice & Disclaimer</h2>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    The content of our website has been created with the utmost care. However, we cannot guarantee the contents’ accuracy, completeness or topicality.
-                  </p>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    The information provided on this website is for general informational purposes only and does not constitute legal, investment, tax or any other advice. Visitors are encouraged to consult with qualified professionals for individual advice tailored to their situation.
-                  </p>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    All offers are non-binding and without obligation. Parts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by the author without separate announcement.
-                  </p>
-                </div>
-
-                {/* Section: Copyright */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Copyright</h2>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    All content and works published on this website are governed by copyright laws. Duplication, processing, distribution, or any form of commercialization of such material beyond the scope of the copyright law shall require the prior written consent of King Stock Capital Management LLC.
-                  </p>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected.
-                  </p>
-                </div>
-
-                {/* Section: Liability for Links */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Liability for Links</h2>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    Our website contains links to external websites of third parties. We have no influence on the contents of those websites; therefore, we do not assume any liability for these external contents.
-                  </p>
-                  <p className="text-ksc-darkgray text-base mb-2">
-                    The respective provider or operator of the sites is always responsible for the contents of the linked pages.
-                  </p>
-                </div>
-                
-                {/* Section: Contact */}
-                <div>
-                  <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">Contact</h2>
-                  <p className="text-ksc-darkgray text-base mb-1">
-                    For questions about this legal notice, please contact us:
-                  </p>
-                  <ul className="text-ksc-darkgray text-sm">
-                    <li><strong>Email:</strong> info@kingstockcapital.com</li>
-                    <li><strong>Phone:</strong> +1 (212) 555-1234</li>
-                    <li><strong>Address:</strong> 123 Finance Street, New York, NY 10001</li>
-                  </ul>
-                </div>
-
-                {/* Section: Last updated */}
-                <div className="bg-ksc-navy/5 p-6 rounded-xl">
-                  <p className="text-sm text-ksc-darkgray">
-                    <strong>Last Updated:</strong> {new Date().toLocaleDateString()}<br />
-                    Please check this page regularly for possible changes.
-                  </p>
-                </div>
+                {sections.map((section, idx) => (
+                  <div key={idx}>
+                    <h2 className="text-2xl font-serif font-bold text-ksc-navy mb-3">{section.title}</h2>
+                    <div className="text-ksc-darkgray text-base flex flex-col gap-3">
+                      {section.content}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
