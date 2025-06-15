@@ -125,20 +125,20 @@ const Services = () => {
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center bg-ksc-gold/10 border border-ksc-gold/20 rounded-full px-6 py-2 mb-6">
-                <span className="text-ksc-gold font-medium text-sm">Premium Investment Solutions</span>
+                <span className="text-ksc-gold font-medium text-xs md:text-sm font-sans">Premium Investment Solutions</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-white mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white mb-8 leading-tight">
                 Comprehensive Investment
                 <span className="block text-ksc-gold">Excellence</span>
               </h1>
-              <p className="text-gray-300 text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed max-w-3xl mx-auto font-sans">
                 Six specialized service areas designed to meet all your financial planning and investment management needs with institutional-grade expertise.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   asChild
-                  className="bg-ksc-gold hover:bg-ksc-gold/90 text-ksc-navy font-semibold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-ksc-gold hover:bg-ksc-gold/90 text-ksc-navy font-semibold text-base md:text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Link to="/contact">Schedule Consultation</Link>
                 </Button>
@@ -146,7 +146,7 @@ const Services = () => {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="bg-transparent border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-6 rounded-lg transition-all duration-300"
+                  className="bg-transparent border-white text-white hover:bg-white/10 font-semibold text-base md:text-lg px-8 py-6 rounded-lg transition-all duration-300"
                 >
                   <a href="tel:+12125551234">Call (212) 555-1234</a>
                 </Button>
@@ -159,10 +159,10 @@ const Services = () => {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-semibold text-ksc-navy mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-ksc-navy mb-6">
                 Our Investment Services
               </h2>
-              <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+              <p className="text-ksc-darkgray text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
                 Each service is designed with institutional-grade standards and personalized attention to deliver exceptional results for our clients.
               </p>
             </div>
@@ -175,26 +175,26 @@ const Services = () => {
                       <div className="bg-white p-4 rounded-2xl shadow-md group-hover:shadow-lg transition-shadow duration-300">
                         {service.icon}
                       </div>
-                      <div className="text-6xl font-bold text-ksc-lightgray/50">
+                      <div className="text-5xl md:text-6xl font-bold text-ksc-lightgray/50">
                         {String(index + 1).padStart(2, '0')}
                       </div>
                     </div>
-                    <CardTitle className="text-2xl font-serif font-semibold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
+                    <CardTitle className="text-xl md:text-2xl font-serif font-semibold text-ksc-navy mb-4 group-hover:text-ksc-gold transition-colors duration-300">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-ksc-darkgray leading-relaxed text-base">
+                    <CardDescription className="text-ksc-darkgray leading-relaxed text-sm md:text-base font-sans">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
                   
                   <CardContent className="p-8">
-                    <div className="bg-gradient-to-r from-ksc-lightgray/50 to-ksc-lightgray/30 p-6 rounded-xl mb-6">
-                      <h4 className="text-ksc-navy font-semibold mb-4 text-lg">Key Benefits</h4>
+                    <div className="bg-gradient-to-r from-ksc-lightgray/50 to-ksc-lightgray/30 p-5 md:p-6 rounded-xl mb-6">
+                      <h4 className="text-ksc-navy font-semibold mb-4 text-base md:text-lg font-sans">Key Benefits</h4>
                       <ul className="space-y-3">
                         {service.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start text-sm">
-                            <CheckCircle className="h-5 w-5 text-ksc-gold mr-3 mt-0.5 flex-shrink-0" />
-                            <span className="text-ksc-darkgray font-medium">{benefit}</span>
+                          <li key={i} className="flex items-start text-xs md:text-sm">
+                            <CheckCircle className="h-4 w-4 text-ksc-gold mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-ksc-darkgray font-medium font-sans">{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -202,7 +202,7 @@ const Services = () => {
                     
                     <Button 
                       asChild
-                      className="w-full bg-ksc-navy hover:bg-ksc-navy/90 text-white font-semibold py-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                      className="w-full bg-ksc-navy hover:bg-ksc-navy/90 text-white font-semibold py-5 md:py-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-base md:text-lg"
                     >
                       <Link to="/contact">Learn More</Link>
                     </Button>
@@ -217,10 +217,10 @@ const Services = () => {
         <section className="py-24 bg-gradient-to-b from-ksc-lightgray/50 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-semibold text-ksc-navy mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-ksc-navy mb-6">
                 Our Investment Process
               </h2>
-              <p className="text-ksc-darkgray text-xl max-w-3xl mx-auto leading-relaxed">
+              <p className="text-ksc-darkgray text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-sans">
                 A disciplined, research-driven approach to building and managing investment portfolios with proven methodologies and continuous optimization.
               </p>
             </div>
@@ -232,23 +232,23 @@ const Services = () => {
                     <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 rounded-2xl overflow-hidden h-full">
                       <CardHeader className="relative bg-gradient-to-br from-ksc-navy to-ksc-navy/90 text-white p-8">
                         <div className="flex items-center justify-between mb-4">
-                          <div className="bg-ksc-gold text-ksc-navy font-black text-2xl w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                          <div className="bg-ksc-gold text-ksc-navy font-black text-xl md:text-2xl w-12 md:w-16 h-12 md:h-16 rounded-full flex items-center justify-center shadow-lg">
                             {step.step}
                           </div>
-                          <div className="w-24 h-1 bg-ksc-gold rounded-full"></div>
+                          <div className="w-16 md:w-24 h-1 bg-ksc-gold rounded-full"></div>
                         </div>
-                        <CardTitle className="text-2xl font-serif font-semibold mb-4">
+                        <CardTitle className="text-xl md:text-2xl font-serif font-semibold mb-4">
                           {step.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-300 leading-relaxed text-base">
+                        <CardDescription className="text-gray-300 leading-relaxed text-sm md:text-base font-sans">
                           {step.description}
                         </CardDescription>
                       </CardHeader>
                       
                       <CardContent className="p-8">
-                        <div className="bg-gradient-to-r from-ksc-gold/10 to-ksc-gold/5 p-6 rounded-xl border-l-4 border-ksc-gold">
-                          <h4 className="font-semibold text-ksc-navy mb-3 text-lg">{step.highlight}</h4>
-                          <p className="text-ksc-darkgray text-sm leading-relaxed">
+                        <div className="bg-gradient-to-r from-ksc-gold/10 to-ksc-gold/5 p-5 md:p-6 rounded-xl border-l-4 border-ksc-gold">
+                          <h4 className="font-semibold text-ksc-navy mb-3 text-base md:text-lg font-sans">{step.highlight}</h4>
+                          <p className="text-ksc-darkgray text-xs md:text-sm leading-relaxed font-sans">
                             {step.highlightDescription}
                           </p>
                         </div>
@@ -270,3 +270,4 @@ const Services = () => {
 };
 
 export default Services;
+
