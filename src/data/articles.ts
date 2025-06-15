@@ -307,6 +307,40 @@ export const articlesData: Article[] = [
       <p>Biến đổi khí hậu là yếu tố không thể thiếu trong quyết định đầu tư dài hạn, đòi hỏi doanh nghiệp liên tục thích nghi và đổi mới.</p>
     `,
     image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
+  },
+  {
+    id: 13,
+    title: "Digital Transformation in Finance: A New Era",
+    summary: "An overview of how digital transformation is shaping the future of finance with practical implications for organizations.",
+    author: "Anna Nguyen, Digital Transformation Lead",
+    date: "June 15, 2025",
+    category: "FinTech",
+    status: "Published",
+    tags: ["Digital", "Transformation", "Finance"],
+    readTime: "6 min read",
+    views: 0,
+    content: `
+      <h2>Introduction</h2>
+      <p>Digital transformation is revolutionizing the finance industry, from how services are delivered to the way organizations operate. This article will explore the essential drivers, benefits, and real-world examples of digital innovation in the sector.</p>
+      
+      <h2>Key Drivers of Change</h2>
+      <p>New technologies such as artificial intelligence, cloud computing, and big data analytics create significant opportunities for financial institutions. Companies are investing heavily to stay competitive and meet growing customer expectations.</p>
+      
+      <h3>Main Benefits</h3>
+      <ul>
+        <li>Enhanced customer experience with personalized services</li>
+        <li>Improved operational efficiency and cost reduction</li>
+        <li>Greater data security and compliance</li>
+        <li>Faster product and service innovation</li>
+      </ul>
+      
+      <h2>Case Study: BankGo’s Journey</h2>
+      <p>BankGo, a leading retail bank, adopted cloud-based solutions and introduced AI-powered chatbots. As a result, they reduced operation times, improved the customer helpdesk, and launched mobile loan approval in minutes.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Embracing digital transformation is essential for any financial organization that wishes to remain relevant. Leaders should promote a culture of innovation and continuously monitor emerging technologies to sustain growth.</p>
+    `,
+    image: "/lovable-uploads/6bc959bc-62be-47e2-ae92-718ccf8ccc96.png"
   }
 ];
 
