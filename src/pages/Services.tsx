@@ -57,14 +57,14 @@ const services = [
   },
   {
     icon: <Coins className="h-12 w-12 text-ksc-gold" />,
-    title: "Estate Planning",
+    title: "Investment Strategy",
     description:
-      "Our estate planning services help you create a comprehensive plan to preserve your wealth and legacy. We work with your legal advisors to ensure your estate plan reflects your wishes and minimizes potential tax implications for your heirs.",
+      "Our investment strategy services help you design, implement, and manage sophisticated portfolios that align with your financial ambitions. We focus on asset allocation, research-driven insights, and disciplined processes to optimize returns and manage risk.",
     benefits: [
-      "Wealth transfer strategies",
-      "Estate tax minimization",
-      "Trust services coordination",
-      "Legacy planning",
+      "Strategic asset allocation",
+      "Research-driven decision making",
+      "Dynamic portfolio adjustments",
+      "Emphasis on consistent performance",
     ],
   },
   {
