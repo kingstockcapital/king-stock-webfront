@@ -55,7 +55,7 @@ export const getPublishedArticles = () => articlesData.filter(article => article
 
 export const getFeaturedArticles = () => articlesData.filter(article => article.status === 'Published' && !article.isDeleted).slice(0, 3);
 
-export const getRecentPublications = () => articlesData.filter(article => article.status === 'Published' && !article.isDeleted).slice(3, 8);
+export const getRecentPublications = () => articlesData.filter(article => article.status === 'Published' && !article.isDeleted).slice(0, 5);
 
 export const getArticleById = (id: number) => articlesData.find(article => article.id === id && !article.isDeleted);
 
