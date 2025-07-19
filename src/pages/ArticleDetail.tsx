@@ -1,4 +1,5 @@
 
+
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -42,12 +43,12 @@ const ArticleDetail = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-b from-ksc-navy to-slate-900">
+      <section className="pt-20 pb-12 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <Link 
               to="/research" 
-              className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors group text-sm font-medium"
+              className="inline-flex items-center text-slate-600 hover:text-ksc-navy mb-8 transition-colors group text-sm font-medium"
             >
               <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to Research
@@ -59,23 +60,23 @@ const ArticleDetail = () => {
                   <Badge className="bg-ksc-gold text-white font-semibold px-3 py-1">
                     {article.category}
                   </Badge>
-                  <div className="flex items-center text-white/60 text-sm">
+                  <div className="flex items-center text-slate-500 text-sm">
                     <Eye className="h-4 w-4 mr-1" />
                     {article.views} views
                   </div>
                 </div>
                 
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
                   {article.title}
                 </h1>
                 
                 {article.summary && (
-                  <p className="text-xl text-white/90 leading-relaxed">
+                  <p className="text-xl text-slate-700 leading-relaxed">
                     {article.summary}
                   </p>
                 )}
                 
-                <div className="flex flex-wrap items-center gap-6 text-white/80 text-sm">
+                <div className="flex flex-wrap items-center gap-6 text-slate-600 text-sm">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-2" />
                     {article.author}
@@ -272,3 +273,4 @@ const ArticleDetail = () => {
 };
 
 export default ArticleDetail;
+
