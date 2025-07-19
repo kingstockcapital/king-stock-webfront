@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -41,7 +42,7 @@ const ArticleDetail = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900">
+      <section className="pt-20 pb-12 bg-gradient-to-b from-ksc-navy to-slate-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <Link 
@@ -55,7 +56,7 @@ const ArticleDetail = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex items-center gap-3">
-                  <Badge className="bg-amber-500 text-white font-semibold px-3 py-1">
+                  <Badge className="bg-ksc-gold text-white font-semibold px-3 py-1">
                     {article.category}
                   </Badge>
                   <div className="flex items-center text-white/60 text-sm">
@@ -92,7 +93,7 @@ const ArticleDetail = () => {
               
               <div className="lg:col-span-1">
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 to-amber-400/40 rounded-2xl blur-lg"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-ksc-gold/20 to-ksc-gold/40 rounded-2xl blur-lg"></div>
                   <div className="relative bg-white p-4 rounded-xl shadow-2xl">
                     <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
                       <img
