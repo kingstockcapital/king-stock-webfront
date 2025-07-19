@@ -1,41 +1,38 @@
+
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Calendar, User, Tag, ArrowLeft, FileText, Clock, Share2 } from "lucide-react";
-
-// Sử dụng dữ liệu đúng từ data/articles.ts
+import { Calendar, User, Tag, ArrowLeft, Clock, Share2, Eye, TrendingUp } from "lucide-react";
 import { getArticleById, getAllArticles } from "@/data/articles";
 
 const ArticleDetail = () => {
   const { articleId } = useParams();
-
-  // Lấy bài viết theo id từ đúng nguồn dữ liệu
   const article = getArticleById(Number(articleId));
-
-  // Debug logging
-  console.log('Article content:', article?.content);
-
-  // Lấy tất cả bài viết để hiện Related Articles, loại bỏ bài hiện tại và lấy 3 bài khác đầu tiên
-  const relatedArticles = getAllArticles().filter(
-    (a) => a.id !== Number(articleId)
-  ).slice(0, 3);
+  const relatedArticles = getAllArticles()
+    .filter((a) => a.id !== Number(articleId) && a.category === article?.category)
+    .slice(0, 2);
 
   if (!article) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         <Navbar />
-        <main className="pt-24 pb-12">
+        <main className="pt-32 pb-20">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <h1 className="font-serif text-3xl font-semibold text-ksc-navy mb-6">
-              Article Not Found
-            </h1>
-            <p className="mb-8">The article you're looking for doesn't exist or has been moved.</p>
-            <Button asChild>
-              <Link to="/publications">Return to Publications</Link>
-            </Button>
+            <div className="max-w-md mx-auto">
+              <div className="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="h-10 w-10 text-slate-400" />
+              </div>
+              <h1 className="font-serif text-3xl font-bold text-slate-900 mb-4">
+                Article Not Found
+              </h1>
+              <p className="text-slate-600 mb-8">The article you're looking for doesn't exist or has been moved.</p>
+              <Button asChild size="lg" className="bg-ksc-navy hover:bg-ksc-navy/90">
+                <Link to="/research">Browse All Research</Link>
+              </Button>
+            </div>
           </div>
         </main>
         <Footer />
@@ -44,70 +41,69 @@ const ArticleDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <main>
-        {/* Hero Section */}
-        <section className="pt-20 pb-16 bg-gradient-to-br from-ksc-navy via-ksc-navy/95 to-ksc-navy/90 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="container mx-auto px-4 md:px-6 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <Link 
-                to="/research" 
-                className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors group"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                Back to Research
-              </Link>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                {/* Article Info */}
-                <div className="lg:col-span-2">
-                  {article.category && (
-                    <Badge className="bg-ksc-gold/20 text-ksc-gold border-ksc-gold/30 mb-4">
-                      {article.category}
-                    </Badge>
-                  )}
-                  
-                  <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                    {article.title}
-                  </h1>
-                  
-                  {article.summary && (
-                    <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8">
-                      {article.summary}
-                    </p>
-                  )}
-                  
-                  {/* Meta Info */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-white/80">
-                    {article.author && (
-                      <div className="flex items-center">
-                        <User className="h-4 w-4 mr-2" />
-                        <span className="text-sm">{article.author}</span>
-                      </div>
-                    )}
-                    {article.date && (
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span className="text-sm">{article.date}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{article.readTime || "12 min read"}</span>
-                    </div>
+      
+      {/* Hero Section with Magazine-style Layout */}
+      <section className="pt-20 pb-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              to="/research" 
+              className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors group text-sm font-medium"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Research
+            </Link>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+              <div className="lg:col-span-2 space-y-6">
+                <div className="flex items-center gap-3">
+                  <Badge className="bg-ksc-gold text-ksc-navy font-semibold px-3 py-1">
+                    {article.category}
+                  </Badge>
+                  <div className="flex items-center text-white/60 text-sm">
+                    <Eye className="h-4 w-4 mr-1" />
+                    {article.views} views
                   </div>
                 </div>
                 
-                {/* Featured Image with proper aspect ratio */}
-                <div className="lg:col-span-1">
-                  <div className="bg-white p-3 rounded-xl shadow-2xl">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  {article.title}
+                </h1>
+                
+                {article.summary && (
+                  <p className="text-xl text-white/90 leading-relaxed">
+                    {article.summary}
+                  </p>
+                )}
+                
+                <div className="flex flex-wrap items-center gap-6 text-white/80 text-sm">
+                  <div className="flex items-center">
+                    <User className="h-4 w-4 mr-2" />
+                    {article.author}
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    {article.date}
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="h-4 w-4 mr-2" />
+                    {article.readTime}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-1">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-ksc-gold/20 to-ksc-gold/40 rounded-2xl blur-lg"></div>
+                  <div className="relative bg-white p-4 rounded-xl shadow-2xl">
                     <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg">
                       <img
                         src={article.image}
                         alt={article.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                       />
                     </AspectRatio>
                   </div>
@@ -115,78 +111,128 @@ const ArticleDetail = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Article Content */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-              {/* Tags & Share */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 p-6 bg-white rounded-lg shadow-sm border">
-                <div className="flex items-center flex-wrap gap-3">
-                  <span className="flex items-center text-ksc-darkgray font-medium">
-                    <Tag className="h-4 w-4 mr-2" />
-                    Topics:
-                  </span>
-                  {article.tags && article.tags.map((tag) => (
+      {/* Article Content */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            {/* Tags and Share Bar */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+              <div className="flex items-center flex-wrap gap-3">
+                <Tag className="h-5 w-5 text-slate-600" />
+                <div className="flex flex-wrap gap-2">
+                  {article.tags?.map((tag) => (
                     <Badge 
                       key={tag} 
                       variant="outline"
-                      className="bg-ksc-lightgray/50 border-ksc-navy/20 text-ksc-navy hover:bg-ksc-navy hover:text-white transition-colors"
+                      className="bg-white border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
-                
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <Share2 className="h-4 w-4" />
-                  Share
-                </Button>
               </div>
               
-              {/* Article Content with better typography */}
-              <article
-                className="prose prose-slate prose-lg max-w-none
-                  bg-white rounded-lg shadow-sm border p-8 lg:p-12
-                  prose-headings:font-serif 
-                  prose-headings:text-ksc-navy 
-                  prose-headings:font-bold 
-                  prose-h2:text-4xl 
-                  prose-h2:mt-12
-                  prose-h2:mb-6
-                  prose-h2:border-b 
-                  prose-h2:border-ksc-gold/30 
-                  prose-h2:pb-4
-                  prose-h3:text-2xl 
-                  prose-h3:mt-8
-                  prose-h3:mb-4
-                  prose-p:text-gray-700 
-                  prose-strong:text-ksc-navy"
+              <Button variant="outline" className="flex items-center gap-2 hover:bg-slate-100">
+                <Share2 className="h-4 w-4" />
+                Share Article
+              </Button>
+            </div>
+            
+            {/* Main Article Content */}
+            <div className="prose prose-lg max-w-none">
+              <style jsx>{`
+                .article-content h1 {
+                  font-size: 2.5rem;
+                  font-weight: 700;
+                  color: #1e293b;
+                  margin: 2rem 0 1.5rem 0;
+                  font-family: serif;
+                  line-height: 1.2;
+                }
+                
+                .article-content h2 {
+                  font-size: 2rem;
+                  font-weight: 600;
+                  color: #1e293b;
+                  margin: 3rem 0 1.5rem 0;
+                  padding-bottom: 0.75rem;
+                  border-bottom: 3px solid #d4af37;
+                  font-family: serif;
+                }
+                
+                .article-content h3 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #334155;
+                  margin: 2rem 0 1rem 0;
+                  font-family: serif;
+                }
+                
+                .article-content p {
+                  color: #475569;
+                  line-height: 1.8;
+                  margin: 1.5rem 0;
+                  font-size: 1.125rem;
+                }
+                
+                .article-content ul, .article-content ol {
+                  margin: 1.5rem 0;
+                  padding-left: 2rem;
+                  color: #475569;
+                }
+                
+                .article-content li {
+                  margin: 0.75rem 0;
+                  line-height: 1.7;
+                }
+                
+                .article-content blockquote {
+                  background: #f8fafc;
+                  border-left: 4px solid #d4af37;
+                  padding: 1.5rem 2rem;
+                  margin: 2rem 0;
+                  font-style: italic;
+                  font-size: 1.25rem;
+                  color: #334155;
+                  border-radius: 0 0.5rem 0.5rem 0;
+                }
+                
+                .article-content blockquote p {
+                  margin: 0;
+                  font-weight: 500;
+                }
+              `}</style>
+              
+              <div 
+                className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100"
                 dangerouslySetInnerHTML={{ __html: article.content || "" }}
               />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Related Articles */}
-        <section className="py-16 bg-ksc-lightgray">
+      {/* Related Articles */}
+      {relatedArticles.length > 0 && (
+        <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="font-serif text-3xl font-bold text-ksc-navy mb-4 flex items-center justify-center gap-3">
-                  <FileText className="h-8 w-8 text-ksc-gold" />
-                  Related Articles
+                <h2 className="font-serif text-3xl font-bold text-slate-900 mb-4">
+                  More in {article.category}
                 </h2>
-                <p className="text-ksc-darkgray text-lg">Continue exploring our latest research and insights</p>
+                <p className="text-slate-600 text-lg">Continue exploring related insights</p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 {relatedArticles.map(relatedArticle => (
                   <Link 
                     to={`/research/${relatedArticle.id}`}
                     key={relatedArticle.id}
-                    className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border"
+                    className="group block bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-slate-200"
                   >
                     <div className="overflow-hidden">
                       <AspectRatio ratio={16/9}>
@@ -198,19 +244,17 @@ const ArticleDetail = () => {
                       </AspectRatio>
                     </div>
                     <div className="p-6">
-                      {relatedArticle.category && (
-                        <Badge className="bg-ksc-gold/10 text-ksc-gold border-ksc-gold/20 mb-3">
-                          {relatedArticle.category}
-                        </Badge>
-                      )}
-                      <h3 className="font-serif text-xl font-bold text-ksc-navy mb-3 group-hover:text-ksc-gold transition-colors line-clamp-2">
+                      <Badge className="bg-slate-100 text-slate-700 mb-3">
+                        {relatedArticle.category}
+                      </Badge>
+                      <h3 className="font-serif text-xl font-bold text-slate-900 mb-3 group-hover:text-ksc-gold transition-colors line-clamp-2">
                         {relatedArticle.title}
                       </h3>
-                      <p className="text-ksc-darkgray mb-4 line-clamp-2 text-sm leading-relaxed">
+                      <p className="text-slate-600 mb-4 line-clamp-2 text-sm leading-relaxed">
                         {relatedArticle.summary}
                       </p>
-                      <div className="flex items-center justify-between text-xs text-gray-500">
-                        <span>{relatedArticle.author?.split(",")[0]}</span>
+                      <div className="flex items-center justify-between text-xs text-slate-500">
+                        <span>{relatedArticle.author.split(",")[0]}</span>
                         <span>{relatedArticle.date}</span>
                       </div>
                     </div>
@@ -222,15 +266,16 @@ const ArticleDetail = () => {
                 <Button 
                   asChild
                   size="lg"
-                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-3"
+                  className="bg-ksc-navy hover:bg-ksc-navy/90 text-white px-8 py-3 rounded-xl"
                 >
-                  <Link to="/research">View All Research</Link>
+                  <Link to="/research">Explore All Research</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
-      </main>
+      )}
+      
       <Footer />
     </div>
   );
