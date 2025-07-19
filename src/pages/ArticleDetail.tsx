@@ -110,11 +110,11 @@ const ArticleDetail = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             {/* Share Bar */}
-            <div className="flex items-center justify-between mb-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200 shadow-sm">
+            <div className="flex items-center justify-between mb-12 p-6 bg-slate-50 rounded-2xl border border-slate-200">
               <div className="flex items-center gap-3">
                 {article.tags?.map((tag) => (
                   <Badge 
@@ -196,7 +196,7 @@ const ArticleDetail = () => {
               </style>
               
               <div 
-                className="article-content bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100"
+                className="article-content bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100"
                 dangerouslySetInnerHTML={{ __html: article.content || "" }}
               />
             </div>
@@ -206,7 +206,7 @@ const ArticleDetail = () => {
 
       {/* Related Articles */}
       {relatedArticles.length > 0 && (
-        <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+        <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
